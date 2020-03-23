@@ -1,3 +1,5 @@
 module.exports = {
-  lintOnSave: false
+  lintOnSave: false,
+  publicPath: '/tmdip.co.uk/',
+  outputDir: 'docs'
 };
