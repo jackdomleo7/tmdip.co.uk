@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b24cb2ac8e43766d64ccf88e3fd914fc.js"
+  "/precache-manifest.7d5f3dd48f0553312c36c539205b30f6.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "tmdip.co.uk"});
+workbox.core.setCacheNameDetails({prefix: "tmdip"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
