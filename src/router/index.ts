@@ -53,6 +53,7 @@ export default class Router implements RouterOptions {
   private static async beforeEach(
     to: Route,
     from: Route,
+    /* eslint-disable-next-line */
     next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
   ) {
     // Set <title>
