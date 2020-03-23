@@ -58,6 +58,8 @@ export default class Router implements RouterOptions {
     // Set <title>
     if (to.meta.title) {
       document.title = to.meta.title;
+    } else {
+      document.title = process.env.VUE_APP_NAME;
     }
     next();
   }
