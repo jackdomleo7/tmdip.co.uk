@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tmdip.co.uk/precache-manifest.a1a8b15e5e6cfbedbbaec3b5c14e3a0c.js"
+  "/precache-manifest.b24cb2ac8e43766d64ccf88e3fd914fc.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "tmdip.co.uk"});
