@@ -36,12 +36,14 @@ export default class App extends Vue {}
   }
 
   &__text {
-    color: #fff;
+    color: var(--color-grey-50);
     position: absolute;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px var(--color-grey-900);
+    width: 80%;
+    text-align: center
   }
 }
 

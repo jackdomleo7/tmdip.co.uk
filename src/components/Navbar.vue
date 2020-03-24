@@ -14,9 +14,9 @@ export default class Navbar extends Vue {}
 <style lang="scss" scoped>
 .navbar {
   width: 100%;
-  background-color: grey;
+  background-color: var(--color-grey-400);
   height: 5rem;
   position: sticky;
-  top: 0;
+  top: 0;;
 }
 </style>
