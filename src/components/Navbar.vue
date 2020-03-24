@@ -15,7 +15,7 @@ export default class Navbar extends Vue {}
 .navbar {
   width: 100%;
   background-color: grey;
-  height: 3rem;
+  height: 5rem;
   position: sticky;
   top: 0;
 }
