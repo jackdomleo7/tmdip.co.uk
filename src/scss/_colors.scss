@@ -1,6 +1,6 @@
 :root {
     // Double split complimentary colour scheme
-    --color-brand: #f15a25;
+    --color-base: #f15a25;
     --color-orange: #F29D30;
     --color-green: #3DF267;
     --color-blue: #0CA4F2;
@@ -18,4 +18,7 @@
     --color-grey-700: rgb(110, 110, 110);
     --color-grey-800: rgb(75, 75, 75);
     --color-grey-900: rgb(44, 44, 44);
+
+    // Brand
+    --color-brand-orange: var(--color-base);
 }
