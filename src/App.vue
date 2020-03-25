@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <div class="jumbo">
-      <img class="jumbo__image" src="./assets/jumbo.jpg" alt="Jumbo image" />
+    <section class="jumbo">
       <h1 class="jumbo__text">Shops. Pubs. Restaurants. Offices. New Builds. HMOs.</h1>
-    </div>
+    </section>
     <navbar />
     <router-view />
   </div>
@@ -26,14 +25,11 @@ export default class App extends Vue {}
 .jumbo {
   width: 100%;
   height: 65vh;
+  max-height: 25rem;
   overflow: hidden;
   position: relative;
-
-  &__image {
-    position: relative;
-    top: -50%;
-    width: 100%;
-  }
+  background-image: url("./assets/jumbo.jpg");
+  background-size: cover;
 
   &__text {
     color: var(--color-grey-50);
