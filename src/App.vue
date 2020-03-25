@@ -30,6 +30,7 @@ export default class App extends Vue {}
   position: relative;
   background-image: url("./assets/jumbo.jpg");
   background-size: cover;
+  background-position: center;
 
   &__text {
     color: var(--color-grey-50);
