@@ -9,7 +9,7 @@
           <span class="navbar__link" tabindex="0">{{ navItem.text }}</span>
           <ul class="navbar__sublist">
             <li v-for="(subItem, index) in navItem.subList" :key="index" class="navbar__subitem">
-              <router-link :to="subItem.link">
+              <router-link class="navbar__link" :to="subItem.link">
                 {{ subItem.text }}
               </router-link>
             </li>
@@ -125,6 +125,15 @@ export default class Navbar extends Vue {
   &__sublist {
     position: absolute;
     display: none;
+    list-style-type: none;
+    padding-left: 0;
+    width: 18rem;
+    top: 100%;
+    background-color: var(--color-grey-300);
+
+    .navbar__link {
+      padding: 0.5rem 1rem;
+    }
   }
 
   &__dropdown {
