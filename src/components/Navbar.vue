@@ -6,7 +6,7 @@
           {{ navItem.text }}
         </router-link>
         <div v-else-if="navItem.subList" class="navbar__dropdown">
-          <span class="navbar__link">{{ navItem.text }}</span>
+          <span class="navbar__link" tabindex="0">{{ navItem.text }}</span>
           <ul class="navbar__sublist">
             <li v-for="(subItem, index) in navItem.subList" :key="index" class="navbar__subitem">
               <router-link :to="subItem.link">
@@ -85,7 +85,7 @@ export default class Navbar extends Vue {
 <style lang="scss" scoped>
 .navbar {
   width: 100%;
-  background-color: var(--color-grey-400);
+  background-color: var(--color-grey-300);
   position: sticky;
   top: 0;
   display: inline-block;
@@ -113,11 +113,34 @@ export default class Navbar extends Vue {
     display: block;
     padding: 1.2rem;
     cursor: pointer;
+    font-weight: 700;
+    color: initial;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--color-grey-200);
+    }
   }
 
   &__sublist {
     position: absolute;
     display: none;
+  }
+
+  &__dropdown {
+    &:focus-within {
+      .navbar__sublist {
+        display: block;
+      }
+    }
+
+    .navbar__link {
+        &:focus {
+        ~ .navbar__sublist {
+          display: block;
+        }
+      }
+    }
   }
 }
 </style>
