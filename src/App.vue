@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <section class="jumbo">
+      <router-link class="jumbo__logo" to="/">
+        <img src="./assets/nav-logo.png" alt="TMD logo" />
+      </router-link>
       <div class="jumbo__text">
         <h1 class="jumbo__text--header">{{ companyName }}</h1>
         <h2 class="jumbo__text--sub">Shops. Pubs. Restaurants. Offices. New Builds. HMOs.</h2>
@@ -52,6 +55,13 @@ export default class App extends Vue {
     &--sub {
       color: var(--color-grey-50);
     }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 6rem;
   }
 }
 
