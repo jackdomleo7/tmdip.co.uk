@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <section class="jumbo">
-      <h1 class="jumbo__text">Shops. Pubs. Restaurants. Offices. New Builds. HMOs.</h1>
+      <div class="jumbo__text">
+        <h1 class="jumbo__text--header">{{ companyName }}</h1>
+        <h2 class="jumbo__text--sub">Shops. Pubs. Restaurants. Offices. New Builds. HMOs.</h2>
+      </div>
     </section>
     <navbar />
     <router-view />
@@ -16,7 +19,11 @@ import Navbar from "@/components/Navbar.vue";
 @Component({
   components: { Navbar },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private get companyName() {
+    return process.env.VUE_APP_NAME;
+  }
+}
 </script>
 
 <style lang="scss">
@@ -33,14 +40,18 @@ export default class App extends Vue {}
   background-position: center;
 
   &__text {
-    color: var(--color-grey-50);
     position: absolute;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
     text-shadow: 1px 1px var(--color-grey-900);
     width: 80%;
-    text-align: center
+    text-align: center;
+
+    &--header,
+    &--sub {
+      color: var(--color-grey-50);
+    }
   }
 }
 
