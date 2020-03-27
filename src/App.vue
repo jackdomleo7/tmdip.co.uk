@@ -47,13 +47,38 @@ export default class App extends Vue {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    text-shadow: 1px 1px var(--color-grey-900);
     width: 80%;
     text-align: center;
 
     &--header,
     &--sub {
       color: var(--color-grey-50);
+      text-shadow: 1px 1px var(--color-grey-900);
+    }
+
+    &--header {
+      font-size: 1.325rem;
+
+      @media (min-width: 488px) {
+        font-size: 2rem;
+      }
+
+      @media (min-width: 1400px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    &--sub {
+      font-size: 1rem;
+      margin-top: 0.75rem;
+
+      @media (min-width: 488px) {
+        font-size: 1.4rem;
+      }
+
+      @media (min-width: 1400px) {
+        font-size: 1.8rem;
+      }
     }
   }
 
