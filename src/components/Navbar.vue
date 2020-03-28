@@ -2,7 +2,7 @@
   <nav v-show="showMobileNav" class="navbar">
     <ul class="navbar__list" :class="isNavDisplayed ? 'navbar__list--show' : ''">
       <li v-for="(navItem, index) in navList" :key="index" class="navbar__navitem">
-        <router-link v-if="navItem.link" :to="navItem.link" class="navbar__link">
+        <router-link v-if="navItem.link" :to="navItem.link" class="navbar__link" :aria-current="isCurrentRoute(navItem.link) ? 'page' : null">
           {{ navItem.text }}
         </router-link>
         <div v-else-if="navItem.subList" class="navbar__dropdown">
@@ -82,6 +82,10 @@ export default class Navbar extends Vue {
       ]
     }
   ];
+
+  private isCurrentRoute(to: string) {
+    return this.$route.path === to;
+  }
 }
 </script>
 
@@ -122,7 +126,8 @@ export default class Navbar extends Vue {
       text-decoration: none;
       user-select: none;
 
-      &:hover {
+      &:hover,
+      &.router-link-exact-active {
         background-color: var(--color-grey-200);
       }
     }
@@ -202,6 +207,10 @@ export default class Navbar extends Vue {
         ~ .navbar__sublist {
           display: block;
         }
+      }
+
+      &.router-link-exact-active {
+        color: var(--color-orange);
       }
     }
 
