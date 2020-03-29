@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint && npm run stylelint:fix",
-    "stylelint": "stylelint \"**/*.(scss|css|vue)\"",
-    "stylelint:fix": "stylelint \"**/*.(scss|css|vue)\" --fix"
+    "stylelint": "stylelint \"src/**/*.(scss|css|vue)\"",
+    "stylelint:fix": "stylelint \"src/**/*.(scss|css|vue)\" --fix"
 
   },
   "dependencies": {
