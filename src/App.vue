@@ -81,11 +81,11 @@ export default class App extends Vue {
     &--header {
       font-size: 1.325rem;
 
-      @media (min-width: 488px) {
+      @media (min-width: 30.5em) {
         font-size: 2rem;
       }
 
-      @media (min-width: 1400px) {
+      @media (min-width: 87.5em) {
         font-size: 2.5rem;
       }
     }
@@ -94,11 +94,11 @@ export default class App extends Vue {
       font-size: 1rem;
       margin-top: 0.75rem;
 
-      @media (min-width: 488px) {
+      @media (min-width: 30.5em) {
         font-size: 1.4rem;
       }
 
-      @media (min-width: 1400px) {
+      @media (min-width: 87.5em) {
         font-size: 1.8rem;
       }
     }
@@ -122,7 +122,7 @@ export default class App extends Vue {
   top: 1rem;
   z-index: 999;
 
-  @media (min-width: 730px) {
+  @media (min-width: 45.625em) {
     display: none !important;
   }
 
