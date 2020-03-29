@@ -106,7 +106,7 @@ export default class Navbar extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@media (min-width: 730px) {
+@media (min-width: 45.625em) {
   .navbar {
     background-color: var(--color-grey-300);
     display: inline-block !important;
@@ -180,7 +180,7 @@ export default class Navbar extends Vue {
     }
   }
 }
-@media (max-width: 729px) {
+@media (max-width: 45.5625em) {
   .navbar {
     background-color: var(--color-grey-700);
     color: var(--color-grey-50);
