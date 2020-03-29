@@ -1,14 +1,30 @@
 <template>
   <nav v-show="showMobileNav" class="navbar">
-    <ul class="navbar__list" :class="isNavDisplayed ? 'navbar__list--show' : ''">
-      <li v-for="(navItem, index) in navList" :key="index" class="navbar__navitem">
-        <router-link v-if="navItem.link" :to="navItem.link" class="navbar__link" :aria-current="isCurrentRoute(navItem.link) ? 'page' : null">
+    <ul
+      class="navbar__list"
+      :class="isNavDisplayed ? 'navbar__list--show' : ''"
+    >
+      <li
+        v-for="(navItem, index) in navList"
+        :key="index"
+        class="navbar__navitem"
+      >
+        <router-link
+          v-if="navItem.link"
+          :to="navItem.link"
+          class="navbar__link"
+          :aria-current="isCurrentRoute(navItem.link) ? 'page' : null"
+        >
           {{ navItem.text }}
         </router-link>
         <div v-else-if="navItem.subList" class="navbar__dropdown">
           <span class="navbar__link" tabindex="0">{{ navItem.text }}</span>
           <ul class="navbar__sublist">
-            <li v-for="(subItem, index) in navItem.subList" :key="index" class="navbar__subitem">
+            <li
+              v-for="(subItem, index) in navItem.subList"
+              :key="index"
+              class="navbar__subitem"
+            >
               <router-link class="navbar__link" :to="subItem.link">
                 {{ subItem.text }}
               </router-link>
@@ -23,15 +39,15 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-interface INavList {
-  text: string,
-  link?: string | object,
-  subList?: INavSubList[]
+interface NavList {
+  text: string;
+  link?: string | object;
+  subList?: NavSubList[];
 }
 
-interface INavSubList {
-  text: string,
-  link: string | object
+interface NavSubList {
+  text: string;
+  link: string | object;
 }
 
 @Component
@@ -39,46 +55,46 @@ export default class Navbar extends Vue {
   @Prop({ type: Boolean, default: false })
   private readonly showMobileNav!: boolean;
 
-  private readonly navList: INavList[] = [
+  private readonly navList: NavList[] = [
     {
-      text: 'Home',
-      link: '/',
+      text: "Home",
+      link: "/"
     },
     {
-      text: 'Interior fit outs',
-      link: '/interior-fit-outs'
+      text: "Interior fit outs",
+      link: "/interior-fit-outs"
     },
     {
-      text: 'Timber homes',
-      link: '/timber-homes'
+      text: "Timber homes",
+      link: "/timber-homes"
     },
     {
-      text: 'Policies',
+      text: "Policies",
       subList: [
         {
-          text: 'Modern Slavery Act',
-          link: '#'
+          text: "Modern Slavery Act",
+          link: "#"
         },
         {
-          text: 'Health & Safety',
-          link: '#'
+          text: "Health & Safety",
+          link: "#"
         },
         {
-          text: 'Environmental Policy',
-          link: '#'
+          text: "Environmental Policy",
+          link: "#"
         },
         {
-          text: 'Quality Managemnet System',
-          link: '#'
+          text: "Quality Managemnet System",
+          link: "#"
         },
         {
-          text: 'Privacy Policy',
-          link: '#'
+          text: "Privacy Policy",
+          link: "#"
         },
         {
-          text: 'ICO',
-          link: '#'
-        },
+          text: "ICO",
+          link: "#"
+        }
       ]
     }
   ];
@@ -155,7 +171,7 @@ export default class Navbar extends Vue {
       }
 
       .navbar__link {
-          &:focus {
+        &:focus {
           ~ .navbar__sublist {
             display: block;
           }
@@ -216,7 +232,7 @@ export default class Navbar extends Vue {
 
     span.navbar__link {
       &::before {
-        content: '+';
+        content: "+";
         position: absolute;
         left: -1.25rem;
       }
