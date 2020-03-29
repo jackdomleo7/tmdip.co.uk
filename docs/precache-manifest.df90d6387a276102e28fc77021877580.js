@@ -4,12 +4,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CNAME"
   },
   {
-    "revision": "efb8829c089abc61b4d33acfaaeb2c66",
+    "revision": "660307728a88403fb90957bb0bf2e239",
+    "url": "/assets/svg-sprite.svg"
+  },
+  {
+    "revision": "cddf9d12e1f94156272744a6cb61cf56",
     "url": "/browserconfig.xml"
   },
   {
-    "revision": "2245ad3aac48f0f73bf4",
-    "url": "/css/app.04666d95.css"
+    "revision": "0d3bd97457ec34daadd8",
+    "url": "/css/app.2c225cf3.css"
+  },
+  {
+    "revision": "873de7781dc8958b4ba5",
+    "url": "/css/chunk-vendors.391ed6f9.css"
   },
   {
     "revision": "ad2cd74720b063e4c9d7115bc81a8506",
@@ -160,24 +168,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/favicons/safari-pinned-tab.svg"
   },
   {
-    "revision": "82b9c7a5a3f405032b1db71a25f67021",
-    "url": "/img/logo.82b9c7a5.png"
+    "revision": "672afc5c9ac6985616424ad27c048015",
+    "url": "/img/jumbo.672afc5c.jpg"
   },
   {
-    "revision": "2c3fceb414c1f443a84d8e1c03403841",
+    "revision": "a7f359ab34189779553d36a5e3dc0710",
+    "url": "/img/nav-logo.a7f359ab.png"
+  },
+  {
+    "revision": "fa63395fbbb4a22764c5c02928ae53a9",
     "url": "/index.html"
   },
   {
-    "revision": "9be2f8210c3f553dc5e8",
-    "url": "/js/about.0038dd42.js"
+    "revision": "b519816f8bc1778fda86",
+    "url": "/js/about.50913995.js"
   },
   {
-    "revision": "2245ad3aac48f0f73bf4",
-    "url": "/js/app.0818534a.js"
+    "revision": "0d3bd97457ec34daadd8",
+    "url": "/js/app.13a6c24a.js"
   },
   {
-    "revision": "a7a5a33fa14833d30930",
-    "url": "/js/chunk-vendors.95a2d191.js"
+    "revision": "873de7781dc8958b4ba5",
+    "url": "/js/chunk-vendors.c54819d4.js"
   },
   {
     "revision": "f8cce1f7011e6590b05b7f4ae827961f",
@@ -188,7 +200,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/robots.txt"
   },
   {
-    "revision": "45c359d98f20b3fdf8dff6a2bbfbc1a9",
+    "revision": "e22f817abdd8344686e0c281bc6db2fe",
     "url": "/site.webmanifest"
   }
 ]);
