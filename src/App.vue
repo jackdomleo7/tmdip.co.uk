@@ -4,15 +4,29 @@
       <router-link class="jumbo__logo" to="/">
         <img src="./assets/nav-logo.png" alt="TMD logo" />
       </router-link>
-      <button class="navbar__toggler" :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null" @click="isMobileNavDisplayed = !isMobileNavDisplayed" :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'">
-        <span hidden>{{ (isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation' }}</span>
+      <button
+        class="navbar__toggler"
+        :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
+        @click="isMobileNavDisplayed = !isMobileNavDisplayed"
+        :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'"
+      >
+        <span hidden>{{
+          (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
+        }}</span>
         <svg class="navbar__toggler-icon">
-          <use :xlink:href="'assets/svg-sprite.svg#icon-' + (isMobileNavDisplayed ? 'close' : 'hamburger')"></use>
+          <use
+            :xlink:href="
+              'assets/svg-sprite.svg#icon-' +
+                (isMobileNavDisplayed ? 'close' : 'hamburger')
+            "
+          ></use>
         </svg>
       </button>
       <div class="jumbo__text">
         <h1 class="jumbo__text--header">{{ companyName }}</h1>
-        <h2 class="jumbo__text--sub">Shops. Pubs. Restaurants. Offices. New Builds. HMOs.</h2>
+        <h2 class="jumbo__text--sub">
+          Shops. Pubs. Restaurants. Offices. New Builds. HMOs.
+        </h2>
       </div>
     </header>
     <navbar :show-mobile-nav="isMobileNavDisplayed" />
@@ -22,14 +36,14 @@
 
 <script lang="ts">
 import "normalize.css";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/Navbar.vue";
 
 @Component({
-  components: { Navbar },
+  components: { Navbar }
 })
 export default class App extends Vue {
-  private isMobileNavDisplayed: boolean = false;
+  private isMobileNavDisplayed = false;
 
   private get companyName() {
     return process.env.VUE_APP_NAME;
