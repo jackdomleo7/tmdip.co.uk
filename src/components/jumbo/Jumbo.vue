@@ -1,33 +1,33 @@
 <template>
   <header class="jumbo">
     <router-link class="jumbo__logo" to="/">
-        <img src="@/assets/nav-logo.png" alt="TMD logo" />
+      <img src="@/assets/nav-logo.png" alt="TMD logo" />
     </router-link>
     <button
-        class="navbar__toggler"
-        :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
-        @click="isMobileNavDisplayed = !isMobileNavDisplayed"
-        :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'"
+      class="navbar__toggler"
+      :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
+      @click="isMobileNavDisplayed = !isMobileNavDisplayed"
+      :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'"
     >
-    <span hidden>{{
+      <span hidden>{{
         (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
-    }}</span>
-    <svg class="navbar__toggler-icon">
+      }}</span>
+      <svg class="navbar__toggler-icon">
         <use
-        :xlink:href="
+          :xlink:href="
             'assets/svg-sprite.svg#icon-' +
-            (isMobileNavDisplayed ? 'close' : 'hamburger')
-        "
+              (isMobileNavDisplayed ? 'close' : 'hamburger')
+          "
         ></use>
-    </svg>
+      </svg>
     </button>
     <div class="jumbo__text">
-    <h1 class="jumbo__text--header">{{ companyName }}</h1>
-    <h2 class="jumbo__text--sub">
+      <h1 class="jumbo__text--header">{{ companyName }}</h1>
+      <h2 class="jumbo__text--sub">
         Shops. Pubs. Restaurants. Offices. New Builds. HMOs.
-    </h2>
+      </h2>
     </div>
-</header>
+  </header>
 </template>
 
 <script lang="ts">
