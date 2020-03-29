@@ -9,7 +9,7 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import Jumbo from "@/components/Jumbo.vue";
+import Jumbo from "@/components/jumbo/Jumbo.vue";
 import Navbar from "@/components/Navbar.vue";
 
 @Component({
