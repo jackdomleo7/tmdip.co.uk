@@ -55,22 +55,22 @@ export default class App extends Vue {
 @import "./scss/main";
 
 .jumbo {
-  width: 100%;
+  background-image: url("./assets/jumbo.jpg");
+  background-position: center;
+  background-size: cover;
   height: 65vh;
   max-height: 25rem;
   overflow: hidden;
   position: relative;
-  background-image: url("./assets/jumbo.jpg");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
 
   &__text {
     position: absolute;
-    top: 50%;
     right: 50%;
+    text-align: center;
+    top: 50%;
     transform: translate(50%, -50%);
     width: 80%;
-    text-align: center;
 
     &--header,
     &--sub {
@@ -105,22 +105,22 @@ export default class App extends Vue {
   }
 
   &__logo {
-    position: absolute;
     left: 1rem;
+    position: absolute;
     top: 1rem;
     width: 6rem;
   }
 }
 
 .navbar__toggler {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 999;
 
   @media (min-width: 730px) {
     display: none !important;
@@ -131,9 +131,9 @@ export default class App extends Vue {
   }
 
   &-icon {
+    color: var(--color-grey-50);
     height: 2rem;
     width: 2rem;
-    color: var(--color-grey-50);
   }
 }
 
