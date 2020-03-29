@@ -43,7 +43,7 @@ export default class Jumbo extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .jumbo {
   background-image: url("./jumbo.jpg");
   background-position: center;
