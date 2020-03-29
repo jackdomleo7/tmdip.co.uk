@@ -2,7 +2,8 @@
   <div id="app">
     <jumbo />
     <navbar :show-mobile-nav="isMobileNavDisplayed" />
-    <router-view />
+    <router-view style="flex: 1;" />
+    <footer-bar />
   </div>
 </template>
 
@@ -11,9 +12,10 @@ import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
 import Jumbo from "@/components/jumbo/Jumbo.vue";
 import Navbar from "@/components/Navbar.vue";
+import FooterBar from "@/components/FooterBar.vue";
 
 @Component({
-  components: { Jumbo, Navbar }
+  components: { Jumbo, Navbar, FooterBar }
 })
 export default class App extends Vue {
   private isMobileNavDisplayed = false;
@@ -28,6 +30,8 @@ export default class App extends Vue {
 @import "./scss/main";
 
 #app {
-  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>
