@@ -108,23 +108,23 @@ export default class Navbar extends Vue {
 <style lang="scss" scoped>
 @media (min-width: 730px) {
   .navbar {
-    width: 100%;
     background-color: var(--color-grey-300);
-    position: sticky;
-    top: 0;
     display: inline-block !important;
     font-size: 1rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
 
     &__list {
+      height: 100%;
       list-style-type: none;
       margin: 0;
       padding: 0;
-      height: 100%;
     }
 
     &__navitem {
-      position: relative;
       float: left;
+      position: relative;
 
       &:hover {
         .navbar__sublist {
@@ -134,11 +134,11 @@ export default class Navbar extends Vue {
     }
 
     &__link {
-      display: block;
-      padding: 1.2rem;
-      cursor: pointer;
-      font-weight: 700;
       color: initial;
+      cursor: pointer;
+      display: block;
+      font-weight: 700;
+      padding: 1.2rem;
       text-decoration: none;
       user-select: none;
 
@@ -149,14 +149,14 @@ export default class Navbar extends Vue {
     }
 
     &__sublist {
-      position: absolute;
+      background-color: var(--color-grey-300);
       display: none;
       list-style-type: none;
       padding-left: 0;
-      width: 18rem;
-      top: 100%;
+      position: absolute;
       text-align: center;
-      background-color: var(--color-grey-300);
+      top: 100%;
+      width: 18rem;
 
       .navbar__link {
         padding: 0.5rem 1rem;
@@ -180,20 +180,19 @@ export default class Navbar extends Vue {
     }
   }
 }
-
 @media (max-width: 729px) {
   .navbar {
     background-color: var(--color-grey-700);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 1rem;
     color: var(--color-grey-50);
+    display: flex;
+    font-size: 1rem;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100vw;
 
     &__list,
     &__sublist {
@@ -215,8 +214,8 @@ export default class Navbar extends Vue {
 
     &__link {
       color: inherit;
-      text-decoration: none;
       position: relative;
+      text-decoration: none;
 
       &:focus,
       &:focus-within {
@@ -233,8 +232,8 @@ export default class Navbar extends Vue {
     span.navbar__link {
       &::before {
         content: "+";
-        position: absolute;
         left: -1.25rem;
+        position: absolute;
       }
     }
 
