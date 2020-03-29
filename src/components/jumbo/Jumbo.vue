@@ -45,7 +45,7 @@ export default class Jumbo extends Vue {
 
 <style lang="scss">
 .jumbo {
-  background-image: url("../assets/jumbo.jpg");
+  background-image: url("./jumbo.jpg");
   background-position: center;
   background-size: cover;
   height: 65vh;
