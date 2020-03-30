@@ -10,9 +10,7 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import Jumbo from "@/components/jumbo/Jumbo.vue";
-import Navigation from "@/components/navigation/Navigation.vue";
-import FooterBar from "@/components/FooterBar.vue";
+import { Jumbo, Navigation, FooterBar } from "@/layout";
 
 @Component({
   components: { Jumbo, Navigation, FooterBar }

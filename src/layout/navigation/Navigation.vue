@@ -25,7 +25,7 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import Navbar from "@/components/navigation/Navbar.vue";
+import Navbar from "./Navbar.vue";
 
 @Component({
   components: { Navbar }
