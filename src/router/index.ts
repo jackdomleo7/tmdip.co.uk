@@ -13,7 +13,7 @@ export default class Router implements RouterOptions {
     {
       path: "/",
       name: "Home",
-      component: () => import('@/views/Home.vue'),
+      component: () => import("@/views/Home.vue"),
       meta: {
         title: "Home"
       }
