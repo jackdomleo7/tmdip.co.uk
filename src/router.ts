@@ -8,24 +8,25 @@ import {
   RouterOptions
 } from "vue-router/types/router";
 
+// Named routes to be used when programmatically navigating
+export class Routes {
+  public static readonly Home: string = 'home';
+}
+
+/**
+ * Describes vue-router configuration.
+ *
+ * More info: http://router.vuejs.org/en/
+ */
 export default class Router implements RouterOptions {
   public routes: RouteConfig[] = [
     {
       path: "/",
-      name: "Home",
+      name: Routes.Home,
       component: () => import("@/views/Home.vue"),
       meta: {
         title: "Home"
       }
-    },
-    {
-      path: "/about",
-      name: "About",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "@/views/About.vue")
     }
   ];
 
@@ -57,6 +58,14 @@ export default class Router implements RouterOptions {
     } else {
       document.title = process.env.VUE_APP_NAME;
     }
+    // TODO: Uncomment and refactor below for meta data for SEO
+    // if (to.meta.description) {
+    //   let tag = document.createElement('meta');
+    //   tag.setAttribute('name', 'description');
+    //   tag.setAttribute('content', to.meta.description);
+    //   document.head.appendChild(tag);
+    // }
+    
     next();
   }
 }
