@@ -14,11 +14,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import CompanyInfo from "@/helpers/companyInfo";
 
 @Component
 export default class Jumbo extends Vue {
-  private get companyName() {
-    return process.env.VUE_APP_NAME;
+  private get companyName(): string {
+    return CompanyInfo.companyName;
   }
 }
 </script>

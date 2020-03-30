@@ -68,16 +68,17 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { SiteLink } from "@/components";
+import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
   components: { SiteLink }
 })
 export default class FooterBar extends Vue {
-  private get companyName() {
-    return process.env.VUE_APP_NAME;
+  private get companyName(): string {
+    return CompanyInfo.companyName;
   }
 
-  private get year() {
+  private get year(): number {
     return new Date().getFullYear();
   }
 }
