@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <jumbo />
     <navigation />
     <router-view style="flex: 1;" />
@@ -25,7 +25,7 @@ export default class App extends Vue {
 <style lang="scss">
 @import "./scss/main";
 
-#app {
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
