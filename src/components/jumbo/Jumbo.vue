@@ -3,24 +3,6 @@
     <router-link class="jumbo__logo" to="/">
       <img src="@/assets/nav-logo.png" alt="TMD logo" />
     </router-link>
-    <button
-      class="navbar__toggler"
-      :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
-      @click="isMobileNavDisplayed = !isMobileNavDisplayed"
-      :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'"
-    >
-      <span hidden>{{
-        (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
-      }}</span>
-      <svg class="navbar__toggler-icon">
-        <use
-          :xlink:href="
-            'assets/svg-sprite.svg#icon-' +
-              (isMobileNavDisplayed ? 'close' : 'hamburger')
-          "
-        ></use>
-      </svg>
-    </button>
     <div class="jumbo__text">
       <h1 class="jumbo__text--header">{{ companyName }}</h1>
       <h2 class="jumbo__text--sub">
@@ -35,8 +17,6 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class Jumbo extends Vue {
-  private isMobileNavDisplayed = false;
-
   private get companyName() {
     return process.env.VUE_APP_NAME;
   }
@@ -50,6 +30,7 @@ export default class Jumbo extends Vue {
   background-size: cover;
   height: 65vh;
   max-height: 25rem;
+  min-height: 16rem;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -99,31 +80,6 @@ export default class Jumbo extends Vue {
     position: absolute;
     top: 1rem;
     width: 6rem;
-  }
-}
-
-.navbar__toggler {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 1rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 999;
-
-  @media (min-width: 45.625em) {
-    display: none !important;
-  }
-
-  &--fixed {
-    position: fixed;
-  }
-
-  &-icon {
-    color: var(--color-grey-50);
-    height: 2rem;
-    width: 2rem;
   }
 }
 </style>
