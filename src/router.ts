@@ -10,7 +10,7 @@ import {
 
 // Named routes to be used when programmatically navigating
 export class Routes {
-  public static readonly Home: string = 'home';
+  public static readonly Home: string = "home";
 }
 
 /**
@@ -65,7 +65,7 @@ export default class Router implements RouterOptions {
     //   tag.setAttribute('content', to.meta.description);
     //   document.head.appendChild(tag);
     // }
-    
+
     next();
   }
 }
