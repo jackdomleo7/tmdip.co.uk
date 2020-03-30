@@ -7,14 +7,13 @@ import {
   RouterMode,
   RouterOptions
 } from "vue-router/types/router";
-import Home from "../views/Home.vue";
 
 export default class Router implements RouterOptions {
   public routes: RouteConfig[] = [
     {
       path: "/",
       name: "Home",
-      component: Home,
+      component: () => import('@/views/Home.vue'),
       meta: {
         title: "Home"
       }
