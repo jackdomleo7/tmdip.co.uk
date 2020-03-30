@@ -138,6 +138,10 @@ export default class FooterBar extends Vue {
     transition: 160ms color ease-in-out, 160ms background-color ease-in-out;
     width: 3rem;
 
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
     &:hover,
     &:focus {
       background-color: var(--color-grey-50);
