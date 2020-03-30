@@ -15,11 +15,7 @@ import { Jumbo, Navigation, FooterBar } from "@/layout";
 @Component({
   components: { Jumbo, Navigation, FooterBar }
 })
-export default class App extends Vue {
-  private get companyName() {
-    return process.env.VUE_APP_NAME;
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
