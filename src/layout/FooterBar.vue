@@ -27,8 +27,8 @@
           <site-link
             style="display: block;"
             type="email"
-            link="info@tmdip.co.uk"
-            >info@tmdip.co.uk</site-link
+            :link="companyEmail"
+            >{{ companyEmail }}</site-link
           >
         </p>
       </div>
@@ -86,6 +86,10 @@ export default class FooterBar extends Vue {
 
   private get companyTelNumber(): TelNumber {
     return CompanyInfo.companyTelNumber;
+  }
+
+  private get companyEmail(): string {
+    return CompanyInfo.companyEmail;
   }
 
   private get year(): number {
