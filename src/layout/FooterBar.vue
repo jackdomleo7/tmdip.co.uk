@@ -65,7 +65,7 @@ import { Icon, SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: {Icon,  SiteLink }
+  components: { Icon, SiteLink }
 })
 export default class FooterBar extends Vue {
   private get companyName(): string {
