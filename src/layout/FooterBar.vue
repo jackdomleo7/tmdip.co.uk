@@ -9,7 +9,7 @@
           link="https://www.linkedin.com/company/tmdip"
         >
           <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-linkedin'"></use>
+            <use xlink:href="assets/svg-sprite.svg#icon-linkedin"></use>
           </svg>
           <span hidden>LinkedIn</span>
         </site-link>
@@ -20,7 +20,7 @@
           link="https://www.facebook.com/TMD-Interior-Projects-615787538843133"
         >
           <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-facebook'"></use>
+            <use xlink:href="assets/svg-sprite.svg#icon-facebook"></use>
           </svg>
           <span hidden>Facebook</span>
         </site-link>
@@ -31,7 +31,7 @@
           link="https://www.instagram.com/TMD_Interior_Projects/"
         >
           <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-instagram'"></use>
+            <use xlink:href="assets/svg-sprite.svg#icon-instagram"></use>
           </svg>
           <span hidden>Instagram</span>
         </site-link>
