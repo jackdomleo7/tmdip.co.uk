@@ -21,9 +21,9 @@
           :alt="companyName + ' logo'"
         />
         <p>
-          <site-link type="tel" link="+441157722100"
-            >+44 (0)115 772 2100</site-link
-          >
+          <site-link type="tel" :link="companyTelNumber.tel">
+            {{ companyTelNumber.telPretty }}
+          </site-link>
           <site-link
             style="display: block;"
             type="email"
@@ -46,7 +46,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Icon, SiteLink } from "@/components";
-import CompanyInfo from "@/helpers/companyInfo";
+import CompanyInfo, { TelNumber } from "@/helpers/companyInfo";
 
 interface FooterSocialLink {
   platform: string;
@@ -82,6 +82,10 @@ export default class FooterBar extends Vue {
 
   private get companyVatNumber(): string {
     return CompanyInfo.companyVatNumber;
+  }
+
+  private get companyTelNumber(): TelNumber {
+    return CompanyInfo.companyTelNumber;
   }
 
   private get year(): number {
