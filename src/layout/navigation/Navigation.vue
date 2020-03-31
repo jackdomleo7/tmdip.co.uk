@@ -9,7 +9,10 @@
       <span hidden>{{
         (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
       }}</span>
-      <icon class="navbar__toggler-icon" :icon="isMobileNavDisplayed ? 'close' : 'hamburger'" />
+      <icon
+        class="navbar__toggler-icon"
+        :icon="isMobileNavDisplayed ? 'close' : 'hamburger'"
+      />
     </button>
     <navbar :show-mobile-nav="isMobileNavDisplayed" />
   </div>
