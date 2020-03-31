@@ -43,7 +43,8 @@ export default class SiteLink extends Vue {
   font-weight: 700;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }
