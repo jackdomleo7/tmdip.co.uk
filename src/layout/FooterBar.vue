@@ -53,7 +53,7 @@
           &copy;<time :datetime="year">{{ year }}</time>
           {{ companyName }}.<br />All rights reserved.
         </p>
-        <p>Company Registration: 11272002<br />VAT Number: 291620212</p>
+        <p>Company Registration: {{ companyRegistration }}<br />VAT Number: {{ companyVatNumber }}</p>
       </div>
     </div>
   </footer>
@@ -70,6 +70,14 @@ import CompanyInfo from "@/helpers/companyInfo";
 export default class FooterBar extends Vue {
   private get companyName(): string {
     return CompanyInfo.companyName;
+  }
+
+  private get companyRegistration(): string {
+    return CompanyInfo.companyRegistration;
+  }
+
+  private get companyVatNumber(): string {
+    return CompanyInfo.companyVatNumber;
   }
 
   private get year(): number {
