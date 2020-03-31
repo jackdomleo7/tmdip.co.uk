@@ -1,12 +1,9 @@
 <template>
-  <router-link
-    v-if="type === 'internal'"
-    class="link"
-    :to="link"
-  >
+  <router-link v-if="type === 'internal'" class="link" :to="link">
     <slot />
   </router-link>
-  <a v-else 
+  <a
+    v-else
     class="link"
     :href="(type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link"
     :target="type === 'external' ? '_blank' : null"
