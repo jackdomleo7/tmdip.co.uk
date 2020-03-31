@@ -3,38 +3,22 @@
     <div class="footer__content">
       <div class="footer__row">
         <site-link
+          v-for="(socialLink, index) in footerSocialLinks"
+          :key="index"
           class="footer__social"
-          title="LinkedIn"
           type="social"
-          link="https://www.linkedin.com/company/tmdip"
+          :title="socialLink.platform"
+          :link="socialLink.link"
         >
-          <icon icon="linkedin" />
-          <span hidden>LinkedIn</span>
-        </site-link>
-        <site-link
-          class="footer__social"
-          title="Facebook"
-          type="social"
-          link="https://www.facebook.com/TMD-Interior-Projects-615787538843133"
-        >
-          <icon icon="facebook" />
-          <span hidden>Facebook</span>
-        </site-link>
-        <site-link
-          class="footer__social"
-          title="Instagram"
-          type="social"
-          link="https://www.instagram.com/TMD_Interior_Projects/"
-        >
-          <icon icon="instagram" />
-          <span hidden>Instagram</span>
+          <icon :icon="socialLink.platform" />
+          <span hidden>{{ socialLink.platform }}</span>
         </site-link>
       </div>
       <div class="footer__row">
         <img
           class="footer__logo"
           src="@/assets/footer-logo.png"
-          :alt="companyName"
+          :alt="companyName + ' logo'"
         />
         <p>
           <site-link type="tel" link="+441157722100"
@@ -64,10 +48,30 @@ import { Component, Vue } from "vue-property-decorator";
 import { Icon, SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
+interface FooterSocialLink {
+  platform: string;
+  link: string;
+}
+
 @Component({
   components: { Icon, SiteLink }
 })
 export default class FooterBar extends Vue {
+  private readonly footerSocialLinks: FooterSocialLink[] = [
+    {
+      platform: 'LinkedIn',
+      link: 'https://www.linkedin.com/company/tmdip'
+    },
+    {
+      platform: 'Facebook',
+      link: 'https://www.facebook.com/TMD-Interior-Projects-615787538843133'
+    },
+    {
+      platform: 'Instagram',
+      link: 'https://www.instagram.com/TMD_Interior_Projects'
+    }
+  ];
+
   private get companyName(): string {
     return CompanyInfo.companyName;
   }
