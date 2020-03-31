@@ -37,7 +37,11 @@
           &copy;<time :datetime="year">{{ year }}</time>
           {{ companyName }}.<br />All rights reserved.
         </p>
-        <p>Company Registration: {{ companyRegistration }}<br />VAT Number: {{ companyVatNumber }}</p>
+        <p>
+          Company Registration: {{ companyRegistration }}
+          <br />
+          VAT Number: {{ companyVatNumber }}
+        </p>
       </div>
     </div>
   </footer>
@@ -59,16 +63,16 @@ interface FooterSocialLink {
 export default class FooterBar extends Vue {
   private readonly footerSocialLinks: FooterSocialLink[] = [
     {
-      platform: 'LinkedIn',
-      link: 'https://www.linkedin.com/company/tmdip'
+      platform: "LinkedIn",
+      link: "https://www.linkedin.com/company/tmdip"
     },
     {
-      platform: 'Facebook',
-      link: 'https://www.facebook.com/TMD-Interior-Projects-615787538843133'
+      platform: "Facebook",
+      link: "https://www.facebook.com/TMD-Interior-Projects-615787538843133"
     },
     {
-      platform: 'Instagram',
-      link: 'https://www.instagram.com/TMD_Interior_Projects'
+      platform: "Instagram",
+      link: "https://www.instagram.com/TMD_Interior_Projects"
     }
   ];
 

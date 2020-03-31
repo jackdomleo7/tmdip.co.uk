@@ -1,6 +1,10 @@
 <template>
   <header class="jumbo">
-    <site-link class="jumbo__logo" :link="{ name: Routes.Sites }" type="internal">
+    <site-link
+      class="jumbo__logo"
+      :link="{ name: Routes.Sites }"
+      type="internal"
+    >
       <img src="@/assets/nav-logo.png" alt="TMD logo" />
     </site-link>
     <div class="jumbo__text">
@@ -14,7 +18,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Routes } from '@/router';
+import { Routes } from "@/router";
 import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
@@ -23,7 +27,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 })
 export default class Jumbo extends Vue {
   private Routes: Routes = Routes;
-  
+
   private get companyName(): string {
     return CompanyInfo.companyName;
   }
