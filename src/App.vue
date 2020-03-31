@@ -4,16 +4,17 @@
     <navigation />
     <router-view style="flex: 1;" />
     <footer-bar />
+    <quick-action-bar />
   </div>
 </template>
 
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import { Jumbo, Navigation, FooterBar } from "@/layout";
+import { Jumbo, Navigation, FooterBar, QuickActionBar } from "@/layout";
 
 @Component({
-  components: { Jumbo, Navigation, FooterBar }
+  components: { Jumbo, Navigation, FooterBar, QuickActionBar }
 })
 export default class App extends Vue {}
 </script>
