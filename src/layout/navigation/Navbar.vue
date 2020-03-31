@@ -1,9 +1,6 @@
 <template>
   <nav v-show="showMobileNav" class="navbar">
-    <ul
-      class="navbar__list"
-      :class="isNavDisplayed ? 'navbar__list--show' : ''"
-    >
+    <ul class="navbar__list">
       <li
         v-for="(navItem, index) in navList"
         :key="index"
