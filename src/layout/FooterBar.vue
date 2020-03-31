@@ -8,9 +8,7 @@
           type="social"
           link="https://www.linkedin.com/company/tmdip"
         >
-          <svg>
-            <use xlink:href="assets/svg-sprite.svg#icon-linkedin"></use>
-          </svg>
+          <icon icon="linkedin" />
           <span hidden>LinkedIn</span>
         </site-link>
         <site-link
@@ -19,9 +17,7 @@
           type="social"
           link="https://www.facebook.com/TMD-Interior-Projects-615787538843133"
         >
-          <svg>
-            <use xlink:href="assets/svg-sprite.svg#icon-facebook"></use>
-          </svg>
+          <icon icon="facebook" />
           <span hidden>Facebook</span>
         </site-link>
         <site-link
@@ -30,9 +26,7 @@
           type="social"
           link="https://www.instagram.com/TMD_Interior_Projects/"
         >
-          <svg>
-            <use xlink:href="assets/svg-sprite.svg#icon-instagram"></use>
-          </svg>
+          <icon icon="instagram" />
           <span hidden>Instagram</span>
         </site-link>
       </div>
@@ -67,11 +61,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { SiteLink } from "@/components";
+import { Icon, SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: { SiteLink }
+  components: {Icon,  SiteLink }
 })
 export default class FooterBar extends Vue {
   private get companyName(): string {
