@@ -99,7 +99,7 @@ export default class Navbar extends Vue {
     }
   ];
 
-  private isCurrentRoute(to: string) {
+  private isCurrentRoute(to: string): boolean {
     return this.$route.path === to;
   }
 }

@@ -9,14 +9,10 @@
       <span hidden>{{
         (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
       }}</span>
-      <svg class="navbar__toggler-icon">
-        <use
-          :xlink:href="
-            'assets/svg-sprite.svg#icon-' +
-              (isMobileNavDisplayed ? 'close' : 'hamburger')
-          "
-        ></use>
-      </svg>
+      <icon
+        class="navbar__toggler-icon"
+        :icon="isMobileNavDisplayed ? 'close' : 'hamburger'"
+      />
     </button>
     <navbar :show-mobile-nav="isMobileNavDisplayed" />
   </div>
@@ -25,10 +21,11 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import Navbar from "@/components/navigation/Navbar.vue";
+import Navbar from "./Navbar.vue";
+import { Icon } from "@/components";
 
 @Component({
-  components: { Navbar }
+  components: { Icon, Navbar }
 })
 export default class Navigation extends Vue {
   private isMobileNavDisplayed = false;

@@ -3,54 +3,32 @@
     <div class="footer__content">
       <div class="footer__row">
         <site-link
+          v-for="(socialLink, index) in footerSocialLinks"
+          :key="index"
           class="footer__social"
-          title="LinkedIn"
           type="social"
-          link="https://www.linkedin.com/company/tmdip"
+          :title="socialLink.platform"
+          :link="socialLink.link"
         >
-          <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-linkedin'"></use>
-          </svg>
-          <span hidden>LinkedIn</span>
-        </site-link>
-        <site-link
-          class="footer__social"
-          title="Facebook"
-          type="social"
-          link="https://www.facebook.com/TMD-Interior-Projects-615787538843133"
-        >
-          <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-facebook'"></use>
-          </svg>
-          <span hidden>Facebook</span>
-        </site-link>
-        <site-link
-          class="footer__social"
-          title="Instagram"
-          type="social"
-          link="https://www.instagram.com/TMD_Interior_Projects/"
-        >
-          <svg>
-            <use :xlink:href="'assets/svg-sprite.svg#icon-instagram'"></use>
-          </svg>
-          <span hidden>Instagram</span>
+          <icon :icon="socialLink.platform" />
+          <span hidden>{{ socialLink.platform }}</span>
         </site-link>
       </div>
       <div class="footer__row">
         <img
           class="footer__logo"
           src="@/assets/footer-logo.png"
-          :alt="companyName"
+          :alt="companyName + ' logo'"
         />
         <p>
-          <site-link type="tel" link="+441157722100"
-            >+44 (0)115 772 2100</site-link
-          >
+          <site-link type="tel" :link="companyTelNumber.tel">
+            {{ companyTelNumber.telPretty }}
+          </site-link>
           <site-link
             style="display: block;"
             type="email"
-            link="info@tmdip.co.uk"
-            >info@tmdip.co.uk</site-link
+            :link="companyEmail"
+            >{{ companyEmail }}</site-link
           >
         </p>
       </div>
@@ -59,7 +37,11 @@
           &copy;<time :datetime="year">{{ year }}</time>
           {{ companyName }}.<br />All rights reserved.
         </p>
-        <p>Company Registration: 11272002<br />VAT Number: 291620212</p>
+        <p>
+          Company Registration: {{ companyRegistration }}
+          <br />
+          VAT Number: {{ companyVatNumber }}
+        </p>
       </div>
     </div>
   </footer>
@@ -67,17 +49,54 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import SiteLink from "@/components/SiteLink.vue";
+import { Icon, SiteLink } from "@/components";
+import CompanyInfo, { TelNumber } from "@/helpers/companyInfo";
+
+interface FooterSocialLink {
+  platform: string;
+  link: string;
+}
 
 @Component({
-  components: { SiteLink }
+  components: { Icon, SiteLink }
 })
 export default class FooterBar extends Vue {
-  private get companyName() {
-    return process.env.VUE_APP_NAME;
+  private readonly footerSocialLinks: FooterSocialLink[] = [
+    {
+      platform: "LinkedIn",
+      link: "https://www.linkedin.com/company/tmdip"
+    },
+    {
+      platform: "Facebook",
+      link: "https://www.facebook.com/TMD-Interior-Projects-615787538843133"
+    },
+    {
+      platform: "Instagram",
+      link: "https://www.instagram.com/TMD_Interior_Projects"
+    }
+  ];
+
+  private get companyName(): string {
+    return CompanyInfo.companyName;
   }
 
-  private get year() {
+  private get companyRegistration(): string {
+    return CompanyInfo.companyRegistration;
+  }
+
+  private get companyVatNumber(): string {
+    return CompanyInfo.companyVatNumber;
+  }
+
+  private get companyTelNumber(): TelNumber {
+    return CompanyInfo.companyTelNumber;
+  }
+
+  private get companyEmail(): string {
+    return CompanyInfo.companyEmail;
+  }
+
+  private get year(): number {
     return new Date().getFullYear();
   }
 }
@@ -136,6 +155,10 @@ export default class FooterBar extends Vue {
     padding: 0.5rem;
     transition: 160ms color ease-in-out, 160ms background-color ease-in-out;
     width: 3rem;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
 
     &:hover,
     &:focus {
