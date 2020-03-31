@@ -7,6 +7,7 @@ import {
   RouterMode,
   RouterOptions
 } from "vue-router/types/router";
+import CompanyInfo from "@/helpers/companyInfo";
 
 // Named routes to be used when programmatically navigating
 export class Routes {
@@ -54,9 +55,9 @@ export default class Router implements RouterOptions {
   ) {
     // Set <title>
     if (to.meta.title) {
-      document.title = to.meta.title + " | " + process.env.VUE_APP_NAME;
+      document.title = to.meta.title + " | " + CompanyInfo.companyName;
     } else {
-      document.title = process.env.VUE_APP_NAME;
+      document.title = CompanyInfo.companyName;
     }
     // TODO: Uncomment and refactor below for meta data for SEO
     // if (to.meta.description) {
