@@ -1,3 +1,4 @@
+import Icon from "./Icon.vue";
 import SiteLink from "./SiteLink.vue";
 
-export { SiteLink };
+export { Icon, SiteLink };
