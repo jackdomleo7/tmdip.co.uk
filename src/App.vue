@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <jumbo />
     <navigation />
     <router-view style="flex: 1;" />
@@ -10,24 +10,18 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import Jumbo from "@/components/jumbo/Jumbo.vue";
-import Navigation from "@/components/navigation/Navigation.vue";
-import FooterBar from "@/components/FooterBar.vue";
+import { Jumbo, Navigation, FooterBar } from "@/layout";
 
 @Component({
   components: { Jumbo, Navigation, FooterBar }
 })
-export default class App extends Vue {
-  private get companyName() {
-    return process.env.VUE_APP_NAME;
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
 @import "./scss/main";
 
-#app {
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

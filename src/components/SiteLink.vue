@@ -1,13 +1,11 @@
 <template>
-  <component
-    :is="type === 'internal' ? 'router-link' : 'a'"
+  <router-link v-if="type === 'internal'" class="link" :to="link">
+    <slot />
+  </router-link>
+  <a
+    v-else
     class="link"
-    :to="type === 'internal' ? link : null"
-    :href="
-      type !== 'internal'
-        ? (type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link
-        : null
-    "
+    :href="(type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link"
     :target="type === 'external' ? '_blank' : null"
     :rel="
       type === 'external' || type === 'email'
@@ -18,7 +16,7 @@
     "
   >
     <slot />
-  </component>
+  </a>
 </template>
 
 <script lang="ts">
@@ -32,8 +30,8 @@ export default class SiteLink extends Vue {
   })
   private readonly type!: string;
 
-  @Prop({ type: String })
-  private readonly link!: string;
+  @Prop({ type: [Object, String] })
+  private readonly link!: object | string;
 }
 </script>
 
@@ -43,7 +41,8 @@ export default class SiteLink extends Vue {
   font-weight: 700;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }
