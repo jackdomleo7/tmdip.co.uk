@@ -31,9 +31,9 @@ export default class App extends Vue {
   private getDeepLinkPath() {
     // Solution for GitHub pages SPA deep linking
     // Also see /public/404.html
-    const path = localStorage.getItem('path');
+    const path = localStorage.getItem("path");
     if (path) {
-      localStorage.removeItem('path');
+      localStorage.removeItem("path");
       this.$router.push(path);
     }
   }
