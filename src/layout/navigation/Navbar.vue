@@ -190,6 +190,7 @@ export default class Navbar extends Vue {
     text-align: center;
     top: 0;
     width: 100vw;
+    z-index: 998;
 
     &__list,
     &__sublist {
