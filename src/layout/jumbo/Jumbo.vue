@@ -2,7 +2,7 @@
   <header class="jumbo">
     <site-link
       class="jumbo__logo"
-      :link="{ name: Routes.Sites }"
+      :link="{ name: Routes.Home }"
       type="internal"
     >
       <img src="@/assets/nav-logo.png" alt="TMD logo" />
