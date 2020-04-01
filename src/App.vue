@@ -13,7 +13,13 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import { Jumbo, Navigation, PageContent, FooterBar, QuickActionBar } from "@/layout";
+import {
+  Jumbo,
+  Navigation,
+  PageContent,
+  FooterBar,
+  QuickActionBar
+} from "@/layout";
 
 @Component({
   components: { Jumbo, Navigation, PageContent, FooterBar, QuickActionBar }
