@@ -1,9 +1,6 @@
 <template>
   <nav v-show="showMobileNav" class="navbar">
-    <ul
-      class="navbar__list"
-      :class="isNavDisplayed ? 'navbar__list--show' : ''"
-    >
+    <ul class="navbar__list">
       <li
         v-for="(navItem, index) in navList"
         :key="index"
@@ -193,6 +190,7 @@ export default class Navbar extends Vue {
     text-align: center;
     top: 0;
     width: 100vw;
+    z-index: 998;
 
     &__list,
     &__sublist {
