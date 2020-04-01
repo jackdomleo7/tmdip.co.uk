@@ -12,6 +12,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 // Named routes to be used when programmatically navigating
 export class Routes {
   public static readonly Home: string = "home";
+  public static readonly PageNotFound: string = "page-not-found";
 }
 
 /**
@@ -27,6 +28,14 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Home.vue"),
       meta: {
         title: "Home"
+      }
+    },
+    {
+      path: "*",
+      name: Routes.PageNotFound,
+      component: () => import("@/views/PageNotFound.vue"),
+      meta: {
+        title: "Page not found"
       }
     }
   ];

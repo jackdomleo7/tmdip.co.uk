@@ -14,5 +14,8 @@ export default class PageContent extends Vue {}
 <style lang="scss" scoped>
 .content {
   flex: 1;
+  margin: 3rem auto;
+  max-width: 68rem;
+  padding: 0 1rem;
 }
 </style>
