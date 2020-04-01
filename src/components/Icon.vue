@@ -9,7 +9,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Icon extends Vue {
-  @Prop({ type: String })
+  @Prop({ type: String, required: true })
   private readonly icon!: string;
 }
 </script>
