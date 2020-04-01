@@ -24,7 +24,20 @@ import {
 @Component({
   components: { Jumbo, Navigation, PageContent, FooterBar, QuickActionBar }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private mounted() {
+    this.getDeepLinkPath();
+  }
+  private getDeepLinkPath() {
+    // Solution for GitHub pages SPA deep linking
+    // Also see /public/404.html
+    const path = localStorage.getItem("path");
+    if (path) {
+      localStorage.removeItem("path");
+      this.$router.push(path);
+    }
+  }
+}
 </script>
 
 <style lang="scss">
