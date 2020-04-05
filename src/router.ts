@@ -14,6 +14,7 @@ export class Routes {
   public static readonly Home: string = "home";
   public static readonly ModernSlaveryAct: string = 'modern-slavery-act'
   public static readonly HealthAndSafety: string = 'health-and-safety'
+  public static readonly PrivacyPolicy: string = 'privacy-policy'
   public static readonly PageNotFound: string = "page-not-found";
 }
 
@@ -48,6 +49,14 @@ export default class Router implements RouterOptions {
         title: "Health and Safety"
       }
     },
+    {
+      path: '/policies/privacy-policy',
+      name: Routes.PrivacyPolicy,
+      component: () => import("@/views/Policies/PrivacyPolicy.vue"),
+      meta: {
+        title: "Privacy Policy"
+      }
+    },
     // Redirects
     {
       path: '/modern-slavery-act',
@@ -60,6 +69,10 @@ export default class Router implements RouterOptions {
     {
       path: '/health-and-safety',
       redirect: { name: Routes.HealthAndSafety }
+    },
+    {
+      path: '/privacy-policy',
+      redirect: Routes.PrivacyPolicy
     },
     // Catch all
     {
