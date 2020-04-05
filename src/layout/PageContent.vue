@@ -23,9 +23,13 @@ export default class PageContent extends Vue {
   padding: 0 1rem;
 
   &__header {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 3rem;
+
+    @media (min-width: 45.625em) {
+      font-size: 2.2rem;;
+    }
   }
 }
 </style>
