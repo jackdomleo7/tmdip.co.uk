@@ -12,6 +12,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 // Named routes to be used when programmatically navigating
 export class Routes {
   public static readonly Home: string = "home";
+  public static readonly ModernSlaveryAct: string = 'modern-slavery-act'
   public static readonly PageNotFound: string = "page-not-found";
 }
 
@@ -29,6 +30,11 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Home"
       }
+    },
+    {
+      path: '/policies/modern-slavery-act',
+      name: Routes.ModernSlaveryAct,
+      component: () => import("@/views/Policies/ModernSlaveryAct.vue")
     },
     {
       path: "*",
