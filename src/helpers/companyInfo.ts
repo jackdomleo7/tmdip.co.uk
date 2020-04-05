@@ -13,6 +13,10 @@ export default class CompanyInfo {
     return process.env.VUE_APP_NAME;
   }
 
+  public static get companyNameWithLtd(): string {
+    return this.companyName + ' Ltd';
+  }
+
   public static get companyRegistration(): string {
     return this._registration;
   }

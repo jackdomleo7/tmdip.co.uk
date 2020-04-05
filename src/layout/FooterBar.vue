@@ -35,7 +35,7 @@
       <div class="footer__row">
         <p>
           &copy;<time :datetime="year">{{ year }}</time>
-          {{ companyName }}.<br />All rights reserved.
+          {{ companyNameWithLtd }}.<br />All rights reserved.
         </p>
         <p>
           Company Registration: {{ companyRegistration }}
@@ -78,6 +78,10 @@ export default class FooterBar extends Vue {
 
   private get companyName(): string {
     return CompanyInfo.companyName;
+  }
+
+  private get companyNameWithLtd(): string {
+    return CompanyInfo.companyNameWithLtd;
   }
 
   private get companyRegistration(): string {
