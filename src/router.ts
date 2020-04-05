@@ -13,6 +13,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 export class Routes {
   public static readonly Home: string = "home";
   public static readonly ModernSlaveryAct: string = 'modern-slavery-act'
+  public static readonly HealthAndSafety: string = 'health-and-safety'
   public static readonly PageNotFound: string = "page-not-found";
 }
 
@@ -39,12 +40,28 @@ export default class Router implements RouterOptions {
         title: "Modern Slavery Act"
       }
     },
+    {
+      path: '/policies/health-and-safety',
+      name: Routes.HealthAndSafety,
+      component: () => import("@/views/Policies/HealthAndSafety.vue"),
+      meta: {
+        title: "Health and Safety"
+      }
+    },
     // Redirects
     {
       path: '/modern-slavery-act',
       redirect: { name: Routes.ModernSlaveryAct }
     },
-    // Page not found
+    {
+      path: '/health-safety',
+      redirect: { name: Routes.HealthAndSafety }
+    },
+    {
+      path: '/health-and-safety',
+      redirect: { name: Routes.HealthAndSafety }
+    },
+    // Catch all
     {
       path: "*",
       name: Routes.PageNotFound,

@@ -8,6 +8,7 @@ export default class CompanyInfo {
   private static readonly _vatNumber: string = "291620212";
   private static readonly _telNumber: string = "+44 (0)115 772 2100";
   private static readonly _email: string = "info@tmdip.co.uk";
+  private static readonly _safeContractorAccreditation: string = "DQ7779";
 
   public static get companyName(): string {
     return process.env.VUE_APP_NAME;
@@ -33,5 +34,9 @@ export default class CompanyInfo {
 
   public static get companyEmail(): string {
     return this._email;
+  }
+
+  public static get companySafeContractorAccreditation(): string {
+    return this._safeContractorAccreditation;
   }
 }
