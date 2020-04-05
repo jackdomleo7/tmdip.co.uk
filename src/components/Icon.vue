@@ -1,6 +1,6 @@
 <template>
   <svg aria-hidden="true">
-    <use :xlink:href="'assets/svg-sprite.svg#icon-' + icon.toLowerCase()"></use>
+    <use :xlink:href="'/assets/svg-sprite.svg#icon-' + icon.toLowerCase()"></use>
   </svg>
 </template>
 
