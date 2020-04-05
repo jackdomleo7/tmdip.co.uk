@@ -34,14 +34,23 @@ export default class Router implements RouterOptions {
     {
       path: '/policies/modern-slavery-act',
       name: Routes.ModernSlaveryAct,
-      component: () => import("@/views/Policies/ModernSlaveryAct.vue")
+      component: () => import("@/views/Policies/ModernSlaveryAct.vue"),
+      meta: {
+        title: "Modern Slavery Act"
+      }
     },
+    // Redirects
+    {
+      path: '/modern-slavery-act',
+      redirect: { name: Routes.ModernSlaveryAct }
+    },
+    // Page not found
     {
       path: "*",
       name: Routes.PageNotFound,
       component: () => import("@/views/PageNotFound.vue"),
       meta: {
-        title: "Page not found"
+        title: "Page Not Found"
       }
     }
   ];
