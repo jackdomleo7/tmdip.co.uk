@@ -33,7 +33,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Routes } from "@/router";
 import { PageContent } from "@/layout";
 import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
@@ -47,5 +46,3 @@ export default class ModernSlaveryAct extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

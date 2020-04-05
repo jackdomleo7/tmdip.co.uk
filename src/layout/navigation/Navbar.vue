@@ -76,7 +76,7 @@ export default class Navbar extends Vue {
         },
         {
           text: "Health & Safety",
-          link: "#"
+          link: { name: Routes.HealthAndSafety }
         },
         {
           text: "Environmental Policy",
