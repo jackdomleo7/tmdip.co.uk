@@ -85,6 +85,131 @@
             If you have any cause for complaint about our use of your personal data, you have the right to lodge a complaint with the Information Commissioner’s Office. We would welcome the opportunity to resolve your concerns ourselves, however, so please contact us first, using the details in Part 10.
           </p>
         </li>
+        <li>
+          What personal data do you collect from me?
+          <p>
+            Subject to the following, we do not collect any personal data from you. We do not place cookies on your computer or device, nor do we use any other means of data collection.
+          </p>
+          <p>
+            If you send us an email or fill out a form on our website, we may collect your name, your email address, and any other information which you choose to give us for the purposes of marketing emails which may regard: business/website updates, potential contractor jobs. For the purposes of the Data Protection Legislation, we are the data controller responsible for such personal data.
+          </p>
+        </li>
+        <li>
+          How do you use my personal data?
+          <p>
+            If we do collect any personal data (i.e. if you contact us), it will be processed and stored securely, for no longer than is necessary in light of the reason(s) for which it was first collected. We will comply with our obligations and safeguard your rights under the Data Protection Legislation at all times. For more details on security see Part 7, below.
+          </p>
+          <p>
+            As stated above, we do not generally collect any personal data, but if you contact us and we obtain your personal details from your email, we may use them to respond to your email.
+          </p>
+          <p>
+            Any and all emails containing your personal data will be deleted no later than 60 Months after project completion and no other personal data will be retained.
+          </p>
+          <p>
+            We will not share any of your personal data with any third parties for any purposes (other than storage on an email server).
+          </p>
+        </li>
+        <li>
+          How and where do you store my data?
+          <p>
+            We will only store your personal data in the UK. This means that it will be fully protected under the Data Protection Legislation.
+          </p>
+          <p>
+            We may store some or all of your personal data in countries that are not part of the [uropean Economic Area (the “EEA” consists of all EU member states, plus Norway, Iceland, and Liechtenstein). These are known as “third countries” and may not have data protection laws that are as strong as those in the UK and/or the EEA. This means that we will take additional steps in order to ensure that your personal data is treated just as safely and securely as it would be within the UK and under the Data Protection Legislation:
+          </p>
+          <p>
+            We store your data with external third parties, as detailed below in Part 8, that are based outside of the EEA. The following safeguard(s) is/are applied:
+            <ul>
+              <li>
+                We will only transfer your personal data to third countries whose levels of data protection are deemed ‘adequate’ by the European Commission. More information is available from the European Commission.
+              </li>
+              <li>
+                We use specific contracts with external third parties that are approved by the European Commission for the transfer of personal data to third countries. Contracts like this require the same levels of personal data protection that would apply under the Data Protection Legislation. More information is available from the European Commission.
+              </li>
+              <li>
+                Where we transfer your data to a third party based in the US, the data may be protected if they are part of the EU-US Privacy Shield. This requires that third party to provide data protection to standards similar to those in Europe. More information is available from the European Commission.<br/>
+                Please contact us using the details below in Part 10 for further information about the particular data protection mechanism[s] used by us when transferring your personal data to a third country.
+              </li>
+              <li>
+                Personal data security is essential to us, and to protect personal data, we take the following measures:
+                <ul>
+                  <li>
+                      Limiting access to your personal data to those employees, agents, contractors, and other third parties with a legitimate need to know and ensuring that they are subject to duties of confidentiality.
+                  </li>
+                  <li>
+                    Procedures for dealing with data breaches (the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, your personal data) including notifying you and/or the Information Commissioner’s Office where we are legally required to do so.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          Do you share my personal data?
+          <p>
+            We will not share any of your personal data with any third parties for any purposes, subject to the following exception(s).
+          </p>
+          <p>
+            If we sell, transfer, or merge parts of our business or assets, your personal data may be transferred to a third party. Any new owner of our business may continue to use your personal data in the same way that we have used it, as specified in this privacy policy (i.e. to communicate with you).
+          </p>
+          <p>
+            In some limited circumstances, we may be legally required to share certain personal data, which might include yours, if we are involved in legal proceedings or complying with legal obligations, a court order, or the instructions of a government authority.
+          </p>
+          <br/>
+          <p>
+            If any of your personal data is transferred to a third party, as described above, we will take steps to ensure that your personal data is handled safely, securely, and in accordance with your rights, our obligations, and the third party’s obligations under the law, as described above in Part 7.
+          </p>
+          <p>
+            If any personal data is transferred outside of the EEA, we will take suitable steps in order to ensure that your personal data is treated just as safely and securely as it would be within the UK and under the Data Protection Legislation, as explained above in Part 7.
+          </p>
+          <p>
+            If we sell, transfer, or merge parts of our business or assets, your personal data may be transferred to a third party. Any new owner of our business may continue to use your personal data in the same way(s) that we have used it, as specified in this Privacy Policy (i.e. to communicate with you).
+          </p>
+          <p>
+            In some limited circumstances, we may be legally required to share certain personal data, which might include yours, if we are involved in legal proceedings or complying with legal obligations, a court order, or the instructions of a government authority.
+          </p>
+        </li>
+        <li>
+          How can I access my personal data?
+          <p>
+            If you want to know what personal data we have about you, you can ask us for details of that personal data and for a copy of it (where any such personal data is held). This is known as a “subject access request”.
+          </p>
+          <p>
+            All subject access requests should be made in writing and sent to the email or postal addresses shown in Part 10. To make this as easy as possible for you, a Subject Access Request Form is available for you to use. You do not have to use this form, but it is the easiest way to tell us everything we need to know to respond to your request as quickly as possible.
+          </p>
+          <p>
+            There is not normally any charge for a subject access request. If your request is ‘manifestly unfounded or excessive’ (for example, if you make repetitive requests) a fee may be charged to cover our administrative costs in responding.
+          </p>
+          <p>
+            We will respond to your subject access request within 14 days and, in any case, not more than one month of receiving it. Normally, we aim to provide a complete response, including a copy of your personal data within that time. In some cases, however, particularly if your request is more complex, more time may be required up to a maximum of three months from the date we receive your request. You will be kept fully informed of our progress.
+          </p>
+        </li>
+        <li>
+          How do I contact you?
+          <p>
+            To contact us about anything to do with your personal data and data protection, including to make a subject access request, please use the following details (for the attention of the <abbr title="Chief Executive Officer">CEO</abbr> of {{ companyNameWithLtd }}):
+            <ul>
+              <li>
+                Email address: <site-link type="email" :link="companyEmail">{{ companyEmail }}</site-link>
+              </li>
+              <li>
+                Telephone number: <site-link type="tel" :link="companyTelNumber.tel">{{ companyTelNumber.telPretty }}</site-link>
+              </li>
+              <li>
+                Registered / main trading / postal address: 28 Melksham Road, Nottingham, England, NG5 5RX
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          Changes to this privacy policy
+          <p>
+            We may change this privacy policy from time to time. This may be necessary, for example, if the law changes, or if we change our business in a way that affects personal data protection.
+          </p>
+          <p>
+            Any changes will be immediately posted on our site and you will be deemed to have accepted the terms of the privacy policy on your first use of Our site following the alterations. Changes will also be posted on our social media pages and an email to those who have given consent for us to send emails to will recieve an email on these changes. We recommend that you check this page regularly to keep up-to-date.
+          </p>
+        </li>
       </ol>
     </article>
   </page-content>
