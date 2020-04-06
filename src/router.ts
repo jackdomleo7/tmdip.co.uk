@@ -12,9 +12,9 @@ import CompanyInfo from "@/helpers/companyInfo";
 // Named routes to be used when programmatically navigating
 export class Routes {
   public static readonly Home: string = "home";
-  public static readonly ModernSlaveryAct: string = 'modern-slavery-act'
-  public static readonly HealthAndSafety: string = 'health-and-safety'
-  public static readonly PrivacyPolicy: string = 'privacy-policy'
+  public static readonly ModernSlaveryAct: string = 'modern-slavery-act';
+  public static readonly HealthAndSafety: string = 'health-and-safety';
+  public static readonly PrivacyPolicy: string = 'privacy-policy';
   public static readonly PageNotFound: string = "page-not-found";
 }
 
