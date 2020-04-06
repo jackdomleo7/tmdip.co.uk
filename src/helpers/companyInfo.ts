@@ -21,7 +21,7 @@ export default class CompanyInfo {
   }
 
   public static get companyNameWithLtd(): string {
-    return this.companyName + ' Ltd';
+    return this.companyName + " Ltd";
   }
 
   public static get companyRegistration(): string {

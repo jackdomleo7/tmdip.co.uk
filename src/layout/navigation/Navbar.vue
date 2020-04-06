@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { Routes } from '@/router';
+import { Routes } from "@/router";
 
 interface NavList {
   text: string;
@@ -57,7 +57,7 @@ export default class Navbar extends Vue {
   private readonly navList: NavList[] = [
     {
       text: "Home",
-      link: { name: Routes.Home}
+      link: { name: Routes.Home }
     },
     {
       text: "Interior fit outs",
