@@ -28,7 +28,7 @@ export default class PageContent extends Vue {
     margin-bottom: 3rem;
 
     @media (min-width: 45.625em) {
-      font-size: 2.2rem;;
+      font-size: 2.2rem;
     }
   }
 }
