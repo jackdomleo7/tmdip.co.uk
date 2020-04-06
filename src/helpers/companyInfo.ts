@@ -10,6 +10,7 @@ export default class CompanyInfo {
   private static readonly _telNumber: string = "+44 (0)115 772 2100";
   private static readonly _email: string = "info@tmdip.co.uk";
   private static readonly _safeContractorAccreditation: string = "DQ7779";
+  private static readonly _icoCertificateNumber: string = "ZA469003";
 
   public static get companyWebsiteDomain(): string {
     return this._websiteDomain;
@@ -43,5 +44,9 @@ export default class CompanyInfo {
 
   public static get companySafeContractorAccreditation(): string {
     return this._safeContractorAccreditation;
+  }
+
+  public static get companyIcoCertificateNumber(): string {
+    return this._icoCertificateNumber;
   }
 }

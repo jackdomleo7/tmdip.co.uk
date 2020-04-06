@@ -202,6 +202,15 @@
           </p>
         </li>
         <li>
+          Are you registered with the Information Commisioner's Office (ICO)?
+          <p>
+             Certificate number: {{ companyIcoCertificateNumber }}
+          </p>
+          <p>
+            {{ companyNameWithLtd }} takes data protection &amp; usage seriously and we registered with the ICO. To view this please visit <site-link type="external" link="https://ico.org.uk/register">ico.org.uk/register</site-link>.
+          </p>
+        </li>
+        <li>
           Changes to this privacy policy
           <p>
             We may change this privacy policy from time to time. This may be necessary, for example, if the law changes, or if we change our business in a way that affects personal data protection.
@@ -250,6 +259,10 @@ export default class PrivacyPolicy extends Vue {
 
   private get companyWebsiteDomain(): string {
     return CompanyInfo.companyWebsiteDomain;
+  }
+
+  private get companyIcoCertificateNumber(): string {
+    return CompanyInfo.companyIcoCertificateNumber;
   }
 }
 </script>
