@@ -272,4 +272,13 @@ export default class PrivacyPolicy extends Vue {
   ul {
     margin: 1rem 0;
   }
+
+  ol,
+  ul {
+    padding-left: 1.5rem;
+
+    @media (min-width: 45.625em) {
+      padding-left: 2.5rem;
+    }
+  }
 </style>
