@@ -1,26 +1,28 @@
 <template>
-  <div class="not-found">
-    <h3 class="not-found__header">404 | Page Not Found</h3>
-    <p>
-      We're sorry but "<em>{{ path }}</em
-      >" could not be found.
-    </p>
-    <p>
-      Please use our navigation or go to our
-      <site-link type="internal" :link="{ name: Routes.Home }"
-        >Home page</site-link
-      >
-      and try again.
-    </p>
-    <p>
-      If this keeps happening, please contact
-      <site-link
-        type="email"
-        :link="companyEmail + '?subject=Cannot find route on website - ' + path"
-        >{{ companyEmail }}</site-link
-      >.
-    </p>
-  </div>
+  <page-content>
+    <div class="not-found">
+      <h3 class="not-found__header">404 | Page Not Found</h3>
+      <p>
+        We're sorry but "<em>{{ path }}</em
+        >" could not be found.
+      </p>
+      <p>
+        Please use our navigation or go to our
+        <site-link type="internal" :link="{ name: Routes.Home }"
+          >Home page</site-link
+        >
+        and try again.
+      </p>
+      <p>
+        If this keeps happening, please contact
+        <site-link
+          type="email"
+          :link="companyEmail + '?subject=Cannot find website URL - ' + path"
+          >{{ companyEmail }}</site-link
+        >.
+      </p>
+    </div>
+  </page-content>
 </template>
 
 <script lang="ts">

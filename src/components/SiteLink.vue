@@ -6,10 +6,10 @@
     v-else
     class="link"
     :href="(type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link"
-    :target="type === 'external' ? '_blank' : null"
+    :target="type === 'external' || type === 'social' ? '_blank' : null"
     :rel="
       type === 'external' || type === 'email'
-        ? 'nofollow'
+        ? 'nofollow noreferrer'
         : type === 'tel'
         ? 'noopener noreferrer'
         : null

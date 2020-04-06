@@ -35,6 +35,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { Routes } from "@/router";
 
 interface NavList {
   text: string;
@@ -49,13 +50,14 @@ interface NavSubList {
 
 @Component
 export default class Navbar extends Vue {
+  private Routes: Routes = Routes;
   @Prop({ type: Boolean, default: false })
   private readonly showMobileNav!: boolean;
 
   private readonly navList: NavList[] = [
     {
       text: "Home",
-      link: "/"
+      link: { name: Routes.Home }
     },
     {
       text: "Interior fit outs",
@@ -70,15 +72,15 @@ export default class Navbar extends Vue {
       subList: [
         {
           text: "Modern Slavery Act",
-          link: "#"
+          link: { name: Routes.ModernSlaveryAct }
         },
         {
           text: "Health & Safety",
-          link: "#"
+          link: { name: Routes.HealthAndSafety }
         },
         {
           text: "Environmental Policy",
-          link: "#"
+          link: { name: Routes.EnvironmentalPolicy }
         },
         {
           text: "Quality Managemnet System",
@@ -86,11 +88,7 @@ export default class Navbar extends Vue {
         },
         {
           text: "Privacy Policy",
-          link: "#"
-        },
-        {
-          text: "ICO",
-          link: "#"
+          link: { name: Routes.PrivacyPolicy }
         }
       ]
     }

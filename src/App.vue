@@ -2,9 +2,7 @@
   <div id="app" class="app">
     <jumbo />
     <navigation />
-    <page-content>
-      <router-view />
-    </page-content>
+    <router-view />
     <footer-bar />
     <quick-action-bar />
   </div>
@@ -13,16 +11,10 @@
 <script lang="ts">
 import "normalize.css";
 import { Component, Vue } from "vue-property-decorator";
-import {
-  Jumbo,
-  Navigation,
-  PageContent,
-  FooterBar,
-  QuickActionBar
-} from "@/layout";
+import { Jumbo, Navigation, FooterBar, QuickActionBar } from "@/layout";
 
 @Component({
-  components: { Jumbo, Navigation, PageContent, FooterBar, QuickActionBar }
+  components: { Jumbo, Navigation, FooterBar, QuickActionBar }
 })
 export default class App extends Vue {
   private mounted() {

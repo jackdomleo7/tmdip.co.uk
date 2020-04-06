@@ -12,6 +12,10 @@ import CompanyInfo from "@/helpers/companyInfo";
 // Named routes to be used when programmatically navigating
 export class Routes {
   public static readonly Home: string = "home";
+  public static readonly ModernSlaveryAct: string = "modern-slavery-act";
+  public static readonly HealthAndSafety: string = "health-and-safety";
+  public static readonly PrivacyPolicy: string = "privacy-policy";
+  public static readonly EnvironmentalPolicy: string = "environmental-policy";
   public static readonly PageNotFound: string = "page-not-found";
 }
 
@@ -31,11 +35,69 @@ export default class Router implements RouterOptions {
       }
     },
     {
+      path: "/policies/modern-slavery-act",
+      name: Routes.ModernSlaveryAct,
+      component: () => import("@/views/Policies/ModernSlaveryAct.vue"),
+      meta: {
+        title: "Modern Slavery Act"
+      }
+    },
+    {
+      path: "/policies/health-and-safety",
+      name: Routes.HealthAndSafety,
+      component: () => import("@/views/Policies/HealthAndSafety.vue"),
+      meta: {
+        title: "Health and Safety"
+      }
+    },
+    {
+      path: "/policies/privacy-policy",
+      name: Routes.PrivacyPolicy,
+      component: () => import("@/views/Policies/PrivacyPolicy.vue"),
+      meta: {
+        title: "Privacy Policy"
+      }
+    },
+    {
+      path: "/policies/environmental-policy",
+      name: Routes.EnvironmentalPolicy,
+      component: () => import("@/views/Policies/EnvironmentalPolicy.vue"),
+      meta: {
+        title: "Environmental Policy"
+      }
+    },
+    // Redirects
+    {
+      path: "/modern-slavery-act",
+      redirect: { name: Routes.ModernSlaveryAct }
+    },
+    {
+      path: "/health-safety",
+      redirect: { name: Routes.HealthAndSafety }
+    },
+    {
+      path: "/health-and-safety",
+      redirect: { name: Routes.HealthAndSafety }
+    },
+    {
+      path: "/privacy-policy",
+      redirect: Routes.PrivacyPolicy
+    },
+    {
+      path: "/ico",
+      redirect: Routes.PrivacyPolicy
+    },
+    {
+      path: "/environmental-policy",
+      redirect: Routes.EnvironmentalPolicy
+    },
+    // Catch all
+    {
       path: "*",
       name: Routes.PageNotFound,
       component: () => import("@/views/PageNotFound.vue"),
       meta: {
-        title: "Page not found"
+        title: "Page Not Found"
       }
     }
   ];
