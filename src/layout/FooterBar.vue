@@ -128,7 +128,7 @@ export default class FooterBar extends Vue {
       margin: 2rem 0;
     }
 
-    &:not( :first-of-type ) {
+    &:not(:first-of-type) {
       @media (min-width: 45.625em) {
         flex-direction: row;
       }
