@@ -74,6 +74,10 @@ export default class Router implements RouterOptions {
       path: '/privacy-policy',
       redirect: Routes.PrivacyPolicy
     },
+    {
+      path: '/ico',
+      redirect: Routes.PrivacyPolicy
+    },
     // Catch all
     {
       path: "*",

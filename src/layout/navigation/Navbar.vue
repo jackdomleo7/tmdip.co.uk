@@ -89,10 +89,6 @@ export default class Navbar extends Vue {
         {
           text: "Privacy Policy",
           link: { name: Routes.PrivacyPolicy }
-        },
-        {
-          text: "ICO",
-          link: "#"
         }
       ]
     }
