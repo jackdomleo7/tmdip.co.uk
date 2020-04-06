@@ -5,10 +5,10 @@
         <li>
           Key legislation
           <p>
-            The Environmental Protection Act 1990<br/>
-            The Waste Electrical and Electronic Equipment Regulations 2007<br/>
-            The Health and Safety at Work Act 1974<br/>
-            The Control of Asbestos Regulations 2012<br/>
+            <site-link type="external" link="https://www.legislation.gov.uk/ukpga/1990/43/contents">The Environmental Protection Act <time datetime="1990">1990</time></site-link><br/>
+            <site-link type="external" link="https://www.legislation.gov.uk/uksi/2007/3454/contents/made">The Waste Electrical and Electronic Equipment Regulations <time datetime="2007">2007</time></site-link><br/>
+            <site-link type="external" link="https://www.legislation.gov.uk/ukpga/1974/37/contents">The Health and Safety at Work Act <time datetime="1974">1974</time></site-link><br/>
+            <site-link type="external" link="https://www.legislation.gov.uk/uksi/2012/632/contents/made">The Control of Asbestos Regulations <time datetime="2012">2012</time></site-link><br/>
           </p>
         </li>
         <li>
@@ -78,7 +78,7 @@
           Reduce waste to a minimum, to ensure its safe disposal and to recycle materials where appropriate.
         </li>
         <li>
-          Comply with requirements under the Site Waste Management Plan Regulations 2008, by developing and maintaining SWMP’s for the duration of projects, in excess of £300,000.  In addition, to use the information to learn how to become more efficient on future projects.
+          Comply with requirements under the <site-link typr="external" link="https://www.legislation.gov.uk/uksi/2008/314/contents/made">Site Waste Management Plan Regulations <time datetime="2008">2008</time></site-link>, by developing and maintaining SWMP’s for the duration of projects, in excess of £300,000.  In addition, to use the information to learn how to become more efficient on future projects.
         </li>
         <li>
           Reduce the consumption of energy and to use it wisely.
