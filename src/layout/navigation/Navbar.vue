@@ -80,7 +80,7 @@ export default class Navbar extends Vue {
         },
         {
           text: "Environmental Policy",
-          link: "#"
+          link: { name: Routes.EnvironmentalPolicy }
         },
         {
           text: "Quality Managemnet System",
