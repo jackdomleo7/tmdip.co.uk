@@ -15,75 +15,75 @@
           <small><span class="form__required">*</span> Indicates required</small>
         </div>
         <div class="mc-field-group">
-          <label>
-						Email Address <span class="form__required">*</span>
+          <label class="textbox">
+						<span>Email Address <span class="form__required">*</span></span>
 						<input
 							type="email"
 							value=""
 							name="EMAIL"
-							class="required email"
+							class="textbox__entry"
 							id="mce-EMAIL"
 						/>
           </label>
         </div>
         <div class="mc-field-group">
-          <label>
+          <label class="textbox">
 						Name
-						<input type="text" value="" name="NAME" class="" id="mce-NAME" />
+						<input type="text" value="" name="NAME" class="textbox__entry" id="mce-NAME" />
 					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label>
+          <label class="textbox">
 						Phone Number
-						<input type="text" name="PHONE" class="" value="" id="mce-PHONE" />
+						<input type="text" name="PHONE" class="textbox__entry" value="" id="mce-PHONE" />
 					</label>
         </div>
         <div class="mc-field-group">
-          <label>
+          <label class="textbox">
 						Company Name
 						<input
 							type="text"
 							value=""
 							name="COMPANY"
-							class=""
+							class="textbox__entry"
 							id="mce-COMPANY"
 						/>
 					</label>
         </div>
         <div class="mc-field-group">
-          <label>
+          <label class="textbox">
 						Website
 						<input
 							type="url"
 							value=""
 							name="CWEBSITE"
-							class=" url"
+							class="textbox__entry"
 							id="mce-CWEBSITE"
 						/>
 					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label>
+          <label class="textbox">
 						Public Liability Value
-						<input type="number" name="PLV" class="" value="" id="mce-PLV" />
+						<input type="number" name="PLV" class="textbox__entry" value="" id="mce-PLV" />
 					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label>
+          <label class="textbox">
 						Employers Liability Value
-						<input type="number" name="ELV" class="" value="" id="mce-ELV" />
+						<input type="number" name="ELV" class="textbox__entry" value="" id="mce-ELV" />
 					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label>
+          <label class="textbox">
 						Professional Indemnity Value
-						<input type="number" name="PIV" class="" value="" id="mce-PIV" />
+						<input type="number" name="PIV" class="textbox__entry" value="" id="mce-PIV" />
 					</label>
         </div>
         <div class="mc-field-group">
-          <label>
+          <label class="textbox">
 						Trade
-						<input type="text" value="" name="TRADE" class="" id="mce-TRADE" />
+						<input type="text" value="" name="TRADE" class="textbox__entry" id="mce-TRADE" />
 					</label>
         </div>
         <p>
@@ -223,6 +223,31 @@ export default class MailchimpForm extends Vue {
 		box-shadow: 0 0 1rem var(--color-grey-500);
 	}
 }
+
+.textbox {
+	display: flex;
+	text-align: left;
+	flex-direction: column;
+
+	&__entry {
+		border: 1px solid var(--color-grey-500);
+		border-radius: 0.1875rem;
+		color: var(--color-grey-900);
+		display: block;
+		height: 2.5rem;
+		margin-top: 0.1875rem;
+		padding: 0 0.75rem;
+		width: 100%;
+
+		&:hover {
+			border-color: var(--color-grey-600);
+		}
+
+		&:focus {
+			border-color: var(--color-grey-900);
+		}
+	}
+}
 </style>
 
 <style scoped>
@@ -234,177 +259,5 @@ export default class MailchimpForm extends Vue {
   border: none;
   min-height: 0;
   padding-bottom: 0;
-}
-
-
-/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
-#mc_embed_signup input {
-  border: 1px solid #abb0b2;
-  border-radius: 3px;
-}
-
-#mc_embed_signup input:focus {
-  border-color: #333;
-}
-
-
-#mc_embed_signup .mc-field-group {
-  clear: left;
-  min-height: 50px;
-  padding-bottom: 3%;
-  position: relative;
-  width: 96%;
-}
-
-#mc_embed_signup .size1of2 {
-  clear: none;
-  display: inline-block;
-  float: left;
-  margin-right: 4%;
-  width: 46%;
-}
-
-#mc_embed_signup .mc-field-group label {
-  display: block;
-  margin-bottom: 3px;
-}
-
-#mc_embed_signup .mc-field-group input {
-  display: block;
-  padding: 8px 0;
-  text-indent: 2%;
-  width: 100%;
-}
-
-#mc_embed_signup .mc-field-group select {
-  display: inline-block;
-  margin-bottom: 2px;
-  padding: 5px 0;
-  width: 99%;
-}
-
-#mc_embed_signup .datefield,
-#mc_embed_signup .phonefield-us {
-  padding: 5px 0;
-}
-
-#mc_embed_signup .datefield input,
-#mc_embed_signup .phonefield-us input {
-  display: inline;
-  letter-spacing: 1px;
-  margin: 0 2px;
-  padding: 5px 0 2px;
-  text-align: center;
-  width: 60px;
-}
-
-#mc_embed_signup .phonefield-us .phonearea input,
-#mc_embed_signup .phonefield-us .phonedetail1 input {
-  width: 40px;
-}
-
-#mc_embed_signup .datefield .monthfield input,
-#mc_embed_signup .datefield .dayfield input {
-  width: 30px;
-}
-
-#mc_embed_signup .datefield label,
-#mc_embed_signup .phonefield-us label {
-  display: none;
-}
-
-#mc_embed_signup .mc-field-group.input-group ul {
-  list-style: none;
-  margin: 0;
-  padding: 5px 0;
-}
-
-#mc_embed_signup .mc-field-group.input-group ul li {
-  display: block;
-  margin: 0;
-  padding: 3px 0;
-}
-
-#mc_embed_signup .mc-field-group.input-group label {
-  display: inline;
-}
-
-#mc_embed_signup .mc-field-group.input-group input {
-  border: none;
-  display: inline;
-  width: auto;
-}
-
-
-#mc_embed_signup div#mce-responses {
-  clear: both;
-  float: left;
-  margin: 0 5%;
-  overflow: hidden;
-  padding: 0 0.5em;
-  top: -1.4em;
-  width: 90%;
-}
-
-#mc_embed_signup div.response {
-  float: left;
-  font-weight: bold;
-  margin: 1em 0;
-  padding: 1em 0.5em 0.5em 0;
-  top: -1.5em;
-  width: 80%;
-  z-index: 1;
-}
-
-#mc_embed_signup #mce-error-response {
-  display: none;
-}
-
-#mc_embed_signup #mce-success-response {
-  color: var(--color-green);
-  display: none;
-}
-
-#mc_embed_signup label.error {
-  display: block;
-  float: none;
-  margin-left: 1.05em;
-  padding: 0.5em 0;
-  text-align: left;
-  width: auto;
-}
-
-#mc-embedded-subscribe {
-  clear: both;
-  display: block;
-  margin: 1em 0 1em 5%;
-  width: auto;
-}
-
-#mc_embed_signup #num-subscribers {
-  font-size: 1.1em;
-}
-
-#mc_embed_signup #num-subscribers span {
-  border: 1px solid #ccc;
-  font-weight: bold;
-  margin-right: 0.5em;
-  padding: 0.5em;
-}
-
-#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 3px;
-  color: #e85c41;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: normal;
-  margin: 2px 0 1em;
-  padding: 5px 10px;
-  z-index: 1;
-}
-
-#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
-  border: 2px solid #e85c41;
 }
 </style>
