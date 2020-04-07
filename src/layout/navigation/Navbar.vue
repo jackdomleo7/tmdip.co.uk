@@ -65,11 +65,11 @@ export default class Navbar extends Vue {
       text: "Services",
       subList: [
         {
-          text: 'Interior Fit-outs',
-          link: '/interior-fit-outs'
+          text: "Interior Fit-outs",
+          link: "/interior-fit-outs"
         },
         {
-          text: 'Timber Homes',
+          text: "Timber Homes",
           link: "/timber-homes"
         }
       ]
