@@ -188,6 +188,25 @@ export default class MailchimpForm extends Vue {
 		top: 0.3125rem;
 	}
 }
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-blue);
+  border: 0 none;
+	border-radius: 0.25rem;
+	color: var(--color-grey-75);
+	cursor: pointer;
+	height: 2rem;
+  padding: 0 1.375rem;
+	transition: all 0.23s ease-in-out 0s;
+	
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 1rem var(--color-grey-500);
+	}
+}
 </style>
 
 <style scoped>
@@ -210,33 +229,6 @@ export default class MailchimpForm extends Vue {
 
 #mc_embed_signup input:focus {
   border-color: #333;
-}
-
-
-#mc_embed_signup .button {
-  background-color: #aaa;
-  border: 0 none;
-  border-radius: 4px;
-  clear: both;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: normal;
-  height: 32px;
-  line-height: 32px;
-  margin: 0 5px 10px 0;
-  padding: 0 22px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.23s ease-in-out 0s;
-  vertical-align: top;
-  white-space: nowrap;
-  width: auto;
-}
-
-#mc_embed_signup .button:hover {
-  background-color: #777;
 }
 
 
@@ -303,10 +295,6 @@ export default class MailchimpForm extends Vue {
 #mc_embed_signup .datefield label,
 #mc_embed_signup .phonefield-us label {
   display: none;
-}
-
-#mc_embed_signup .clear {
-  clear: both;
 }
 
 #mc_embed_signup .mc-field-group.input-group ul {
