@@ -10,11 +10,11 @@
       target="_blank"
       novalidate
     >
-      <div id="mc_embed_signup_scroll">
-        <div class="form__legend">
-          <small><span class="form__required">*</span> Indicates required</small>
-        </div>
-        <div class="mc-field-group">
+			<div class="form__legend">
+				<small><span class="form__required">*</span> Indicates required</small>
+			</div>
+      <div id="mc_embed_signup_scroll" class="form__fields">
+        <div class="form__field form__field--half form__field--new-line">
           <label class="textbox">
 						<span>Email Address <span class="form__required">*</span></span>
 						<input
@@ -26,19 +26,19 @@
 						/>
           </label>
         </div>
-        <div class="mc-field-group">
+        <div class="form__field form__field--half">
           <label class="textbox">
 						Name
 						<input type="text" value="" name="NAME" class="textbox__entry" id="mce-NAME" />
 					</label>
         </div>
-        <div class="mc-field-group size1of2">
+        <div class="form__field form__field--half">
           <label class="textbox">
 						Phone Number
 						<input type="text" name="PHONE" class="textbox__entry" value="" id="mce-PHONE" />
 					</label>
         </div>
-        <div class="mc-field-group">
+        <div class="form__field form__field--half">
           <label class="textbox">
 						Company Name
 						<input
@@ -50,7 +50,7 @@
 						/>
 					</label>
         </div>
-        <div class="mc-field-group">
+        <div class="form__field form__field--half">
           <label class="textbox">
 						Website
 						<input
@@ -62,25 +62,25 @@
 						/>
 					</label>
         </div>
-        <div class="mc-field-group size1of2">
+        <div class="form__field form__field--third">
           <label class="textbox">
 						Public Liability Value
 						<input type="number" name="PLV" class="textbox__entry" value="" id="mce-PLV" />
 					</label>
         </div>
-        <div class="mc-field-group size1of2">
+        <div class="form__field form__field--third">
           <label class="textbox">
 						Employers Liability Value
 						<input type="number" name="ELV" class="textbox__entry" value="" id="mce-ELV" />
 					</label>
         </div>
-        <div class="mc-field-group size1of2">
+        <div class="form__field form__field--third">
           <label class="textbox">
 						Professional Indemnity Value
 						<input type="number" name="PIV" class="textbox__entry" value="" id="mce-PIV" />
 					</label>
         </div>
-        <div class="mc-field-group">
+        <div class="form__field">
           <label class="textbox">
 						Trade
 						<input type="text" value="" name="TRADE" class="textbox__entry" id="mce-TRADE" />
@@ -97,7 +97,7 @@
         </p>
         <div
           id="mergeRow-gdpr"
-          class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group"
+          class="mergeRow gdpr-mergeRow content__gdprBlock"
         >
           <div class="content__gdpr">
             <label>Marketing Permissions</label>
@@ -106,7 +106,7 @@
               form to be in touch with you and to provide updates and marketing.
             </p>
             <fieldset
-              class="mc_fieldset gdprRequired mc-field-group"
+              class="mc_fieldset gdprRequired"
               name="interestgroup_field"
             >
               <label class="checkbox subfield" for="gdpr_12847"
@@ -193,8 +193,14 @@ export default class MailchimpForm extends Vue {
 .form {
 	padding: 0.625rem 1.5rem;
 
+	@media (max-width: 45.5625em) {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
 	&__legend {
 		text-align: right;
+		display: block;
 	}
 
 	&__required {
@@ -202,6 +208,33 @@ export default class MailchimpForm extends Vue {
 		font-size: 150%;
 		position: relative;
 		top: 0.3125rem;
+	}
+
+	&__fields {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__field {
+		width: 100%;
+		padding: 0 1rem;
+
+		@media (max-width: 45.5625em) {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+
+		&--half {
+			width: 50%;
+
+			&.form__field--new-line {
+				margin-right: 50%;
+			}
+		}
+
+		&--third {
+			width: 33.3333%;
+		}
 	}
 }
 
@@ -228,6 +261,8 @@ export default class MailchimpForm extends Vue {
 	display: flex;
 	text-align: left;
 	flex-direction: column;
+	position: relative;
+	font-size: 0.75rem;
 
 	&__entry {
 		border: 1px solid var(--color-grey-500);
@@ -238,6 +273,7 @@ export default class MailchimpForm extends Vue {
 		margin-top: 0.1875rem;
 		padding: 0 0.75rem;
 		width: 100%;
+		font-size: 0.875rem;
 
 		&:hover {
 			border-color: var(--color-grey-600);
@@ -246,6 +282,11 @@ export default class MailchimpForm extends Vue {
 		&:focus {
 			border-color: var(--color-grey-900);
 		}
+	}
+
+	.form__required {
+		position: absolute;
+		top: -0.3125rem;
 	}
 }
 </style>
