@@ -62,12 +62,21 @@ export default class Navbar extends Vue {
       link: { name: Routes.Home }
     },
     {
-      text: "Interior fit outs",
-      link: "/interior-fit-outs"
+      text: "Services",
+      subList: [
+        {
+          text: 'Interior Fit-outs',
+          link: '/interior-fit-outs'
+        },
+        {
+          text: 'Timber Homes',
+          link: "/timber-homes"
+        }
+      ]
     },
     {
-      text: "Timber homes",
-      link: "/timber-homes"
+      text: "Sub-contractors",
+      link: "/sub-contractors"
     },
     {
       text: "Policies",
