@@ -15,60 +15,76 @@
           <small><span class="form__required">*</span> Indicates required</small>
         </div>
         <div class="mc-field-group">
-          <label for="mce-EMAIL"
-            >Email Address <span class="form__required">*</span>
+          <label>
+						Email Address <span class="form__required">*</span>
+						<input
+							type="email"
+							value=""
+							name="EMAIL"
+							class="required email"
+							id="mce-EMAIL"
+						/>
           </label>
-          <input
-            type="email"
-            value=""
-            name="EMAIL"
-            class="required email"
-            id="mce-EMAIL"
-          />
         </div>
         <div class="mc-field-group">
-          <label for="mce-NAME">Name </label>
-          <input type="text" value="" name="NAME" class="" id="mce-NAME" />
+          <label>
+						Name
+						<input type="text" value="" name="NAME" class="" id="mce-NAME" />
+					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label for="mce-PHONE">Phone Number </label>
-          <input type="text" name="PHONE" class="" value="" id="mce-PHONE" />
+          <label>
+						Phone Number
+						<input type="text" name="PHONE" class="" value="" id="mce-PHONE" />
+					</label>
         </div>
         <div class="mc-field-group">
-          <label for="mce-COMPANY">Company Name </label>
-          <input
-            type="text"
-            value=""
-            name="COMPANY"
-            class=""
-            id="mce-COMPANY"
-          />
+          <label>
+						Company Name
+						<input
+							type="text"
+							value=""
+							name="COMPANY"
+							class=""
+							id="mce-COMPANY"
+						/>
+					</label>
         </div>
         <div class="mc-field-group">
-          <label for="mce-CWEBSITE">Website </label>
-          <input
-            type="url"
-            value=""
-            name="CWEBSITE"
-            class=" url"
-            id="mce-CWEBSITE"
-          />
+          <label>
+						Website
+						<input
+							type="url"
+							value=""
+							name="CWEBSITE"
+							class=" url"
+							id="mce-CWEBSITE"
+						/>
+					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label for="mce-PLV">Public Liability Value </label>
-          <input type="number" name="PLV" class="" value="" id="mce-PLV" />
+          <label>
+						Public Liability Value
+						<input type="number" name="PLV" class="" value="" id="mce-PLV" />
+					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label for="mce-ELV">Employers Liability Value </label>
-          <input type="number" name="ELV" class="" value="" id="mce-ELV" />
+          <label>
+						Employers Liability Value
+						<input type="number" name="ELV" class="" value="" id="mce-ELV" />
+					</label>
         </div>
         <div class="mc-field-group size1of2">
-          <label for="mce-PIV">Professional Indemnity Value </label>
-          <input type="number" name="PIV" class="" value="" id="mce-PIV" />
+          <label>
+						Professional Indemnity Value
+						<input type="number" name="PIV" class="" value="" id="mce-PIV" />
+					</label>
         </div>
         <div class="mc-field-group">
-          <label for="mce-TRADE">Trade </label>
-          <input type="text" value="" name="TRADE" class="" id="mce-TRADE" />
+          <label>
+						Trade
+						<input type="text" value="" name="TRADE" class="" id="mce-TRADE" />
+					</label>
         </div>
         <p>
           Powered by
