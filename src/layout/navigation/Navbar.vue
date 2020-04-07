@@ -76,7 +76,7 @@ export default class Navbar extends Vue {
     },
     {
       text: "Sub-contractors",
-      link: "/sub-contractors"
+      link: { name: Routes.SubContractors }
     },
     {
       text: "Policies",
