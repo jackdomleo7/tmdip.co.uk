@@ -132,7 +132,7 @@
         <li>
           Comply with requirements under the
           <site-link
-            typr="external"
+            type="external"
             link="https://www.legislation.gov.uk/uksi/2008/314/contents/made"
             >Site Waste Management Plan Regulations
             <time datetime="2008">2008</time></site-link
