@@ -14,7 +14,7 @@
         :icon="isMobileNavDisplayed ? 'close' : 'hamburger'"
       />
     </button>
-    <navbar :show-mobile-nav="isMobileNavDisplayed" />
+    <navbar :show-mobile-nav="isMobileNavDisplayed" @nav-item-click="isMobileNavDisplayed = false" />
   </div>
 </template>
 

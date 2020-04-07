@@ -5,6 +5,7 @@
         v-for="(navItem, index) in navList"
         :key="index"
         class="navbar__navitem"
+        @click="navItem.subList == null ? navItemClick() : null"
       >
         <router-link
           v-if="navItem.link"
@@ -21,6 +22,7 @@
               v-for="(subItem, index) in navItem.subList"
               :key="index"
               class="navbar__subitem"
+              @click="navItemClick"
             >
               <router-link class="navbar__link" :to="subItem.link">
                 {{ subItem.text }}
@@ -34,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Emit, Prop, Vue } from "vue-property-decorator";
 import { Routes } from "@/router";
 
 interface NavList {
@@ -97,6 +99,9 @@ export default class Navbar extends Vue {
   private isCurrentRoute(to: string): boolean {
     return this.$route.path === to;
   }
+
+  @Emit()
+  public navItemClick(){}
 }
 </script>
 
