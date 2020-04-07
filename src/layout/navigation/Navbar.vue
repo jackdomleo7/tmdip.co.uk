@@ -101,7 +101,7 @@ export default class Navbar extends Vue {
   }
 
   @Emit()
-  public navItemClick(){}
+  public navItemClick() {}
 }
 </script>
 
