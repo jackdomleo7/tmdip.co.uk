@@ -6,18 +6,17 @@
       method="post"
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
-      class="validate"
+      class="validate form"
       target="_blank"
       novalidate
     >
       <div id="mc_embed_signup_scroll">
-        <h2>Subscribe</h2>
-        <div class="indicates-required">
-          <span class="asterisk">*</span> indicates required
+        <div class="form__legend">
+          <small><span class="form__required">*</span> Indicates required</small>
         </div>
         <div class="mc-field-group">
           <label for="mce-EMAIL"
-            >Email Address <span class="asterisk">*</span>
+            >Email Address <span class="form__required">*</span>
           </label>
           <input
             type="email"
@@ -87,7 +86,7 @@
           <div class="content__gdpr">
             <label>Marketing Permissions</label>
             <p>
-              TMD Interior Projects will use the information you provide on this
+              {{ companyNameWithLtd }} will use the information you provide on this
               form to be in touch with you and to provide updates and marketing.
             </p>
             <fieldset
@@ -102,7 +101,7 @@
                   value="Y"
                   class="av-checkbox gdpr"
                 /><span
-                  >I agree to let TMD Interior Projects send me newsletters and
+                  >I agree to let {{ companyNameWithLtd }} send me newsletters and
                   promotional emails</span
                 >
               </label>
@@ -137,8 +136,7 @@
           ></div>
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style=" left: -5000px;
-  position: absolute;" aria-hidden="true">
+        <div style=" left: -5000px; position: absolute;" aria-hidden="true">
           <input
             type="text"
             name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
@@ -146,15 +144,13 @@
             value=""
           />
         </div>
-        <div class="clear">
-          <input
-            type="submit"
-            value="Subscribe"
-            name="subscribe"
-            id="mc-embedded-subscribe"
-            class="button"
-          />
-        </div>
+        <input
+					type="submit"
+					value="Subscribe"
+					name="subscribe"
+					id="mc-embedded-subscribe"
+					class="button"
+				/>
       </div>
     </form>
   </div>
@@ -178,22 +174,25 @@ export default class MailchimpForm extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#mc_embed_signup {
-  clear: left;
-}
+.form {
+	padding: 0.625rem 1.5rem;
 
-#mc-embedded-subscribe-form input[type = "checkbox"] {
-  display: inline;
-  margin-right: 10px;
-  width: auto;
-}
+	&__legend {
+		text-align: right;
+	}
 
+	&__required {
+		color: var(--color-brand-orange);
+		font-size: 150%;
+		position: relative;
+		top: 0.3125rem;
+	}
+}
+</style>
+
+<style scoped>
 #mergeRow-gdpr {
   margin-top: 20px;
-}
-
-#mergeRow-gdpr fieldset label {
-  font-weight: normal;
 }
 
 #mc-embedded-subscribe-form .mc_fieldset {
@@ -202,39 +201,17 @@ export default class MailchimpForm extends Vue {
   padding-bottom: 0;
 }
 
+
 /* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
-#mc_embed_signup form {
-  display: block;
-  padding: 10px 0 10px 3%;
-  position: relative;
-  text-align: left;
-}
-
-#mc_embed_signup h2 {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin: 15px 0;
-  padding: 0;
-}
-
 #mc_embed_signup input {
   border: 1px solid #abb0b2;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
-}
-
-#mc_embed_signup input[type = "checkbox"] {
-  -webkit-appearance: checkbox;
-}
-
-#mc_embed_signup input[type = "radio"] {
-  -webkit-appearance: radio;
 }
 
 #mc_embed_signup input:focus {
   border-color: #333;
 }
+
 
 #mc_embed_signup .button {
   background-color: #aaa;
@@ -262,13 +239,6 @@ export default class MailchimpForm extends Vue {
   background-color: #777;
 }
 
-#mc_embed_signup .small-meta {
-  font-size: 11px;
-}
-
-#mc_embed_signup .nowrap {
-  white-space: nowrap;
-}
 
 #mc_embed_signup .mc-field-group {
   clear: left;
@@ -284,10 +254,6 @@ export default class MailchimpForm extends Vue {
   float: left;
   margin-right: 4%;
   width: 46%;
-}
-
-* html #mc_embed_signup .size1of2 {
-  margin-right: 2%; /* Fix for IE6 double margins. */
 }
 
 #mc_embed_signup .mc-field-group label {
@@ -339,20 +305,6 @@ export default class MailchimpForm extends Vue {
   display: none;
 }
 
-#mc_embed_signup .indicates-required {
-  font-size: 11px;
-  margin-right: 4%;
-  text-align: right;
-}
-
-#mc_embed_signup .asterisk {
-  color: var(--color-brand-orange);
-  font-size: 150%;
-  font-weight: normal;
-  position: relative;
-  top: 5px;
-}
-
 #mc_embed_signup .clear {
   clear: both;
 }
@@ -378,6 +330,7 @@ export default class MailchimpForm extends Vue {
   display: inline;
   width: auto;
 }
+
 
 #mc_embed_signup div#mce-responses {
   clear: both;
@@ -437,8 +390,6 @@ export default class MailchimpForm extends Vue {
 
 #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
   background-color: rgba(255, 255, 255, 0.85);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   color: #e85c41;
   display: inline-block;
