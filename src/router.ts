@@ -38,7 +38,7 @@ export default class Router implements RouterOptions {
     {
       path: "/sub-contractors",
       name: Routes.SubContractors,
-      component: () => import("@/views/SubContractors.vue"),
+      component: () => import("@/views/SubContractors/SubContractors.vue"),
       meta: {
         title: "Sub-contractors"
       }
