@@ -218,10 +218,11 @@ export default class MailchimpForm extends Vue {
 	&__field {
 		width: 100%;
 		padding: 0 1rem;
+		margin: 1rem 0;
 
 		@media (max-width: 45.5625em) {
 			width: 100% !important;
-			margin: 0 !important;
+			margin: 0.5rem 0 !important;
 		}
 
 		&--half {
