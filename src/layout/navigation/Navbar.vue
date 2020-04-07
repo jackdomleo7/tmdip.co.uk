@@ -233,6 +233,22 @@ export default class Navbar extends Vue {
       }
     }
 
+    &__dropdown {
+      &:focus-within {
+        .navbar__sublist {
+          display: block;
+        }
+      }
+
+      .navbar__link {
+        &:focus {
+          ~ .navbar__sublist {
+            display: block;
+          }
+        }
+      }
+    }
+
     &__subitem {
       padding: 0.5rem 0;
     }
