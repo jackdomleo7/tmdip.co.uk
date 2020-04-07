@@ -97,7 +97,7 @@
         </p>
         <div
           id="mergeRow-gdpr"
-          class="mergeRow gdpr-mergeRow content__gdprBlock"
+          class="form__gdpr"
         >
           <div class="content__gdpr">
             <label>Marketing Permissions</label>
@@ -106,7 +106,7 @@
               form to be in touch with you and to provide updates and marketing.
             </p>
             <fieldset
-              class="mc_fieldset gdprRequired"
+              class="form__fieldset"
               name="interestgroup_field"
             >
               <label class="checkbox subfield" for="gdpr_12847"
@@ -210,6 +210,10 @@ export default class MailchimpForm extends Vue {
 		top: 0.3125rem;
 	}
 
+	&__gdpr {
+		padding-top: 1.25rem;
+	}
+
 	&__fields {
 		display: flex;
 		flex-wrap: wrap;
@@ -236,6 +240,10 @@ export default class MailchimpForm extends Vue {
 		&--third {
 			width: 33.3333%;
 		}
+	}
+
+	&__fieldset {
+		border: none;
 	}
 }
 
@@ -289,17 +297,5 @@ export default class MailchimpForm extends Vue {
 		position: absolute;
 		top: -0.3125rem;
 	}
-}
-</style>
-
-<style scoped>
-#mergeRow-gdpr {
-  margin-top: 20px;
-}
-
-#mc-embedded-subscribe-form .mc_fieldset {
-  border: none;
-  min-height: 0;
-  padding-bottom: 0;
 }
 </style>
