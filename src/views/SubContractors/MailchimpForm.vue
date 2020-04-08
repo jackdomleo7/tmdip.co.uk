@@ -115,8 +115,10 @@
                   id="gdpr_12847"
                   name="gdpr[12847]"
                   value="Y"
-                  class="av-checkbox gdpr"
-                /><span
+                  class="checkbox__input"
+                />
+								<span class="checkbox__checkmark"></span>
+								<span
                   >I agree to let {{ companyNameWithLtd }} send me newsletters and
                   promotional emails</span
                 >
@@ -296,6 +298,68 @@ export default class MailchimpForm extends Vue {
 	.form__required {
 		position: absolute;
 		top: -0.3125rem;
+	}
+}
+</style>
+
+<style lang="scss" scoped>
+.checkbox {
+	display: flex;
+	align-items: center;
+  position: relative;
+	cursor: pointer;
+
+	&:hover {
+		.checkbox__input {
+			~ .checkbox__checkmark {
+				background-color: var(--color-grey-400);
+			}
+		}
+	}
+	
+	&__input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+		&:checked,
+		&:checked:hover {
+			~ .checkbox__checkmark {
+				background-color: var(--color-base);
+
+				&::after {
+					display: block;
+				}
+			}
+		}
+
+		&:focus {
+			~ .checkbox__checkmark {
+				border: 1px solid var(--color-base);
+			}
+		}
+	}
+
+	&__checkmark {
+		min-height: 1.5625rem;
+		min-width: 1.5625rem;
+		background-color: var(--color-grey-200);
+		margin-right: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::after {
+			content: "";
+			display: none;
+			width: 5px;
+			height: 10px;
+			border: solid var(--color-grey-50);
+			border-width: 0 3px 3px 0;
+			transform: rotate(45deg);
+		}
 	}
 }
 </style>
