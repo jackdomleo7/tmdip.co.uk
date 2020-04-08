@@ -100,6 +100,18 @@ export default class Router implements RouterOptions {
       path: "/environmental-policy",
       redirect: Routes.EnvironmentalPolicy
     },
+    {
+      path: "/subscribe",
+      redirect: Routes.SubContractors
+    },
+    {
+      path: "/jobs",
+      redirect: Routes.SubContractors
+    },
+    {
+      path: "/careers",
+      redirect: Routes.SubContractors
+    },
     // Catch all
     {
       path: "*",
