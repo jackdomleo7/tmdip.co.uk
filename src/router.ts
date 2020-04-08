@@ -12,6 +12,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 // Named routes to be used when programmatically navigating
 export class Routes {
   public static readonly Home: string = "home";
+  public static readonly SubContractors: string = "sub-contractors";
   public static readonly ModernSlaveryAct: string = "modern-slavery-act";
   public static readonly HealthAndSafety: string = "health-and-safety";
   public static readonly PrivacyPolicy: string = "privacy-policy";
@@ -32,6 +33,14 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Home.vue"),
       meta: {
         title: "Home"
+      }
+    },
+    {
+      path: "/sub-contractors",
+      name: Routes.SubContractors,
+      component: () => import("@/views/SubContractors/SubContractors.vue"),
+      meta: {
+        title: "Sub-contractors"
       }
     },
     {
@@ -90,6 +99,18 @@ export default class Router implements RouterOptions {
     {
       path: "/environmental-policy",
       redirect: Routes.EnvironmentalPolicy
+    },
+    {
+      path: "/subscribe",
+      redirect: Routes.SubContractors
+    },
+    {
+      path: "/jobs",
+      redirect: Routes.SubContractors
+    },
+    {
+      path: "/careers",
+      redirect: Routes.SubContractors
     },
     // Catch all
     {
