@@ -10,19 +10,20 @@
       target="_blank"
       novalidate
     >
-      <div class="form__legend">
-        <small><span class="form__required">*</span> Indicates required</small>
-      </div>
+      <p class="form__legend" aria-hidden="true" id="required-legend">
+        <small><span class="form__required" aria-hidden="true">*</span> Indicates required</small>
+      </p>
       <div id="mc_embed_signup_scroll" class="form__fields">
         <div class="form__field form__field--half form__field--new-line">
           <label class="textbox">
-            <span>Email Address <span class="form__required">*</span></span>
+            <span>Email Address <span class="form__required" aria-hidden="true">*</span></span>
             <input
               type="email"
               value=""
               name="EMAIL"
               class="textbox__entry"
               id="mce-EMAIL"
+							aria-describedby="required-legend"
             />
           </label>
         </div>
