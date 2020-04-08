@@ -27,9 +27,11 @@
     </p>
     <p>
       <small>
-        {{ companyNameWithLtd }} recommends that sub contractor companies have the same value insurance as we do.<br/>
-        Public Liability £10 million &amp; Employers Liability £10 million.<br/>
-        Self employed fitters require Public Liability £5 million &amp; CIS Unique Tax Reference Number.
+        {{ companyNameWithLtd }} recommends that sub contractor companies have
+        the same value insurance as we do.<br />
+        Public Liability £10 million &amp; Employers Liability £10 million.<br />
+        Self employed fitters require Public Liability £5 million &amp; CIS
+        Unique Tax Reference Number.
       </small>
     </p>
     <p>
