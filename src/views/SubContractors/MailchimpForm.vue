@@ -10,105 +10,136 @@
       target="_blank"
       novalidate
     >
-			<div class="form__legend">
-				<small><span class="form__required">*</span> Indicates required</small>
-			</div>
+      <div class="form__legend">
+        <small><span class="form__required">*</span> Indicates required</small>
+      </div>
       <div id="mc_embed_signup_scroll" class="form__fields">
         <div class="form__field form__field--half form__field--new-line">
           <label class="textbox">
-						<span>Email Address <span class="form__required">*</span></span>
-						<input
-							type="email"
-							value=""
-							name="EMAIL"
-							class="textbox__entry"
-							id="mce-EMAIL"
-						/>
+            <span>Email Address <span class="form__required">*</span></span>
+            <input
+              type="email"
+              value=""
+              name="EMAIL"
+              class="textbox__entry"
+              id="mce-EMAIL"
+            />
           </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
-						Name
-						<input type="text" value="" name="NAME" class="textbox__entry" id="mce-NAME" />
-					</label>
+            Name
+            <input
+              type="text"
+              value=""
+              name="NAME"
+              class="textbox__entry"
+              id="mce-NAME"
+            />
+          </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
-						Phone Number
-						<input type="text" name="PHONE" class="textbox__entry" value="" id="mce-PHONE" />
-					</label>
+            Phone Number
+            <input
+              type="text"
+              name="PHONE"
+              class="textbox__entry"
+              value=""
+              id="mce-PHONE"
+            />
+          </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
-						Company Name
-						<input
-							type="text"
-							value=""
-							name="COMPANY"
-							class="textbox__entry"
-							id="mce-COMPANY"
-						/>
-					</label>
+            Company Name
+            <input
+              type="text"
+              value=""
+              name="COMPANY"
+              class="textbox__entry"
+              id="mce-COMPANY"
+            />
+          </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
-						Website
-						<input
-							type="url"
-							value=""
-							name="CWEBSITE"
-							class="textbox__entry"
-							id="mce-CWEBSITE"
-						/>
-					</label>
+            Website
+            <input
+              type="url"
+              value=""
+              name="CWEBSITE"
+              class="textbox__entry"
+              id="mce-CWEBSITE"
+            />
+          </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
-						Public Liability Value
-						<input type="number" name="PLV" class="textbox__entry" value="" id="mce-PLV" />
-					</label>
+            Public Liability Value
+            <input
+              type="number"
+              name="PLV"
+              class="textbox__entry"
+              value=""
+              id="mce-PLV"
+            />
+          </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
-						Employers Liability Value
-						<input type="number" name="ELV" class="textbox__entry" value="" id="mce-ELV" />
-					</label>
+            Employers Liability Value
+            <input
+              type="number"
+              name="ELV"
+              class="textbox__entry"
+              value=""
+              id="mce-ELV"
+            />
+          </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
-						Professional Indemnity Value
-						<input type="number" name="PIV" class="textbox__entry" value="" id="mce-PIV" />
-					</label>
+            Professional Indemnity Value
+            <input
+              type="number"
+              name="PIV"
+              class="textbox__entry"
+              value=""
+              id="mce-PIV"
+            />
+          </label>
         </div>
         <div class="form__field">
           <label class="textbox">
-						Trade
-						<input type="text" value="" name="TRADE" class="textbox__entry" id="mce-TRADE" />
-					</label>
+            Trade
+            <input
+              type="text"
+              value=""
+              name="TRADE"
+              class="textbox__entry"
+              id="mce-TRADE"
+            />
+          </label>
         </div>
         <p>
           Powered by
           <site-link
-						type="external"
+            type="external"
             link="http://eepurl.com/gkX3jv"
-            title="MailChimp - email marketing made easy and fun"
-            >MailChimp</site-link
+            title="Mailchimp - email marketing made easy and fun"
+            >Mailchimp</site-link
           >
         </p>
-        <div
-          id="mergeRow-gdpr"
-          class="form__gdpr"
-        >
+        <div id="mergeRow-gdpr" class="form__gdpr">
           <div class="content__gdpr">
             <label>Marketing Permissions</label>
             <p>
-              {{ companyNameWithLtd }} will use the information you provide on this
-              form to be in touch with you and to provide updates and marketing.
+              {{ companyNameWithLtd }} will use the information you provide on
+              this form to be in touch with you and to provide updates and
+              marketing.
             </p>
-            <fieldset
-              class="form__fieldset"
-              name="interestgroup_field"
-            >
+            <fieldset class="form__fieldset" name="interestgroup_field">
               <label class="checkbox subfield" for="gdpr_12847"
                 ><input
                   type="checkbox"
@@ -117,10 +148,10 @@
                   value="Y"
                   class="checkbox__input"
                 />
-								<span class="checkbox__checkmark"></span>
-								<span
-                  >I agree to let {{ companyNameWithLtd }} send me newsletters and
-                  promotional emails</span
+                <span class="checkbox__checkmark"></span>
+                <span
+                  >I agree to let {{ companyNameWithLtd }} send me newsletters
+                  and promotional emails</span
                 >
               </label>
             </fieldset>
@@ -154,7 +185,8 @@
           ></div>
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style=" left: -5000px; position: absolute;" aria-hidden="true">
+        <div style=" left: -5000px;
+  position: absolute;" aria-hidden="true">
           <input
             type="text"
             name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
@@ -163,12 +195,12 @@
           />
         </div>
         <input
-					type="submit"
-					value="Subscribe"
-					name="subscribe"
-					id="mc-embedded-subscribe"
-					class="button"
-				/>
+          type="submit"
+          value="Subscribe"
+          name="subscribe"
+          id="mc-embedded-subscribe"
+          class="button"
+        />
       </div>
     </form>
   </div>
@@ -193,173 +225,173 @@ export default class MailchimpForm extends Vue {
 
 <style lang="scss" scoped>
 .form {
-	padding: 0.625rem 1.5rem;
+  padding: 0.625rem 1.5rem;
 
-	@media (max-width: 45.5625em) {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-	}
+  @media (max-width: 45.5625em) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 
-	&__legend {
-		text-align: right;
-		display: block;
-	}
+  &__legend {
+    display: block;
+    text-align: right;
+  }
 
-	&__required {
-		color: var(--color-brand-orange);
-		font-size: 150%;
-		position: relative;
-		top: 0.3125rem;
-	}
+  &__required {
+    color: var(--color-brand-orange);
+    font-size: 150%;
+    position: relative;
+    top: 0.3125rem;
+  }
 
-	&__gdpr {
-		padding-top: 1.25rem;
-	}
+  &__gdpr {
+    padding-top: 1.25rem;
+  }
 
-	&__fields {
-		display: flex;
-		flex-wrap: wrap;
-	}
+  &__fields {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-	&__field {
-		width: 100%;
-		padding: 0 1rem;
-		margin: 1rem 0;
+  &__field {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    width: 100%;
 
-		@media (max-width: 45.5625em) {
-			width: 100% !important;
-			margin: 0.5rem 0 !important;
-		}
+    @media (max-width: 45.5625em) {
+      margin: 0.5rem 0 !important;
+      width: 100% !important;
+    }
 
-		&--half {
-			width: 50%;
+    &--half {
+      width: 50%;
 
-			&.form__field--new-line {
-				margin-right: 50%;
-			}
-		}
+      &.form__field--new-line {
+        margin-right: 50%;
+      }
+    }
 
-		&--third {
-			width: 33.3333%;
-		}
-	}
+    &--third {
+      width: 33.3333%;
+    }
+  }
 
-	&__fieldset {
-		border: none;
-	}
+  &__fieldset {
+    border: none;
+  }
 }
 
 .button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--color-blue);
+  align-items: center;
+  background-color: var(--color-blue);
   border: 0 none;
-	border-radius: 0.25rem;
-	color: var(--color-grey-75);
-	cursor: pointer;
-	height: 2rem;
+  border-radius: 0.25rem;
+  color: var(--color-grey-75);
+  cursor: pointer;
+  display: inline-flex;
+  height: 2rem;
+  justify-content: center;
   padding: 0 1.375rem;
-	transition: all 0.23s ease-in-out 0s;
-	
-	&:hover,
-	&:focus {
-		box-shadow: 0 0 1rem var(--color-grey-500);
-	}
+  transition: all 0.23s ease-in-out 0s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1rem var(--color-grey-500);
+  }
 }
 
 .textbox {
-	display: flex;
-	text-align: left;
-	flex-direction: column;
-	position: relative;
-	font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  position: relative;
+  text-align: left;
 
-	&__entry {
-		border: 1px solid var(--color-grey-500);
-		border-radius: 0.1875rem;
-		color: var(--color-grey-900);
-		display: block;
-		height: 2.5rem;
-		margin-top: 0.1875rem;
-		padding: 0 0.75rem;
-		width: 100%;
-		font-size: 0.875rem;
+  &__entry {
+    border: 1px solid var(--color-grey-500);
+    border-radius: 0.1875rem;
+    color: var(--color-grey-900);
+    display: block;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    margin-top: 0.1875rem;
+    padding: 0 0.75rem;
+    width: 100%;
 
-		&:hover {
-			border-color: var(--color-grey-600);
-		}
+    &:hover {
+      border-color: var(--color-grey-600);
+    }
 
-		&:focus {
-			border-color: var(--color-grey-900);
-		}
-	}
+    &:focus {
+      border-color: var(--color-grey-900);
+    }
+  }
 
-	.form__required {
-		position: absolute;
-		top: -0.3125rem;
-	}
+  .form__required {
+    position: absolute;
+    top: -0.3125rem;
+  }
 }
 </style>
 
 <style lang="scss" scoped>
 .checkbox {
-	display: flex;
-	align-items: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
   position: relative;
-	cursor: pointer;
 
-	&:hover {
-		.checkbox__input {
-			~ .checkbox__checkmark {
-				background-color: var(--color-grey-400);
-			}
-		}
-	}
-	
-	&__input {
-		position: absolute;
-		opacity: 0;
-		cursor: pointer;
-		height: 0;
-		width: 0;
+  &:hover {
+    .checkbox__input {
+      ~ .checkbox__checkmark {
+        background-color: var(--color-grey-400);
+      }
+    }
+  }
 
-		&:checked,
-		&:checked:hover {
-			~ .checkbox__checkmark {
-				background-color: var(--color-base);
+  &__input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
 
-				&::after {
-					display: block;
-				}
-			}
-		}
+    &:checked,
+    &:checked:hover {
+      ~ .checkbox__checkmark {
+        background-color: var(--color-base);
 
-		&:focus {
-			~ .checkbox__checkmark {
-				border: 1px solid var(--color-base);
-			}
-		}
-	}
+        &::after {
+          display: block;
+        }
+      }
+    }
 
-	&__checkmark {
-		min-height: 1.5625rem;
-		min-width: 1.5625rem;
-		background-color: var(--color-grey-200);
-		margin-right: 0.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+    &:focus {
+      ~ .checkbox__checkmark {
+        border: 1px solid var(--color-base);
+      }
+    }
+  }
 
-		&::after {
-			content: "";
-			display: none;
-			width: 5px;
-			height: 10px;
-			border: solid var(--color-grey-50);
-			border-width: 0 3px 3px 0;
-			transform: rotate(45deg);
-		}
-	}
+  &__checkmark {
+    align-items: center;
+    background-color: var(--color-grey-200);
+    display: flex;
+    justify-content: center;
+    margin-right: 0.5rem;
+    min-height: 1.5625rem;
+    min-width: 1.5625rem;
+
+    &::after {
+      border: solid var(--color-grey-50);
+      border-width: 0 3px 3px 0;
+      content: "";
+      display: none;
+      height: 10px;
+      transform: rotate(45deg);
+      width: 5px;
+    }
+  }
 }
 </style>
