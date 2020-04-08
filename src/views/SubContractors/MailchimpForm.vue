@@ -11,19 +11,25 @@
       novalidate
     >
       <p class="form__legend" aria-hidden="true" id="required-legend">
-        <small><span class="form__required" aria-hidden="true">*</span> Indicates required</small>
+        <small
+          ><span class="form__required" aria-hidden="true">*</span> Indicates
+          required</small
+        >
       </p>
       <div id="mc_embed_signup_scroll" class="form__fields">
         <div class="form__field form__field--half form__field--new-line">
           <label class="textbox">
-            <span>Email Address <span class="form__required" aria-hidden="true">*</span></span>
+            <span
+              >Email Address
+              <span class="form__required" aria-hidden="true">*</span></span
+            >
             <input
               type="email"
               value=""
               name="EMAIL"
               class="textbox__entry"
               id="mce-EMAIL"
-							aria-describedby="required-legend"
+              aria-describedby="required-legend"
             />
           </label>
         </div>
@@ -186,8 +192,11 @@
           ></div>
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style=" left: -5000px;
-  position: absolute;" aria-hidden="true">
+        <div
+          style=" left: -5000px;
+  position: absolute;"
+          aria-hidden="true"
+        >
           <input
             type="text"
             name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
