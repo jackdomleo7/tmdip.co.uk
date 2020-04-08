@@ -26,6 +26,13 @@
       opportunity possible.
     </p>
     <p>
+      <small>
+        {{ companyNameWithLtd }} recommends that sub contractor companies have the same value insurance as we do.<br/>
+        Public Liability £10 million &amp; Employers Liability £10 million.<br/>
+        Self employed fitters require Public Liability £5 million &amp; CIS Unique Tax Reference Number.
+      </small>
+    </p>
+    <p>
       <small
         >For more information on the information we collect, please read our
         <site-link type="internal" :link="{ name: Routes.PrivacyPolicy }"
@@ -57,6 +64,10 @@ export default class SubContractors extends Vue {
 
   private get companyEmail(): string {
     return CompanyInfo.companyEmail;
+  }
+
+  private get companyNameWithLtd(): string {
+    return CompanyInfo.companyNameWithLtd;
   }
 }
 </script>
