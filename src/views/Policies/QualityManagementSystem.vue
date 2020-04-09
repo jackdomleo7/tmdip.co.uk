@@ -1,7 +1,8 @@
 <template>
   <page-content header="Quality Management System">
     <article>
-      {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO 14001.
+      {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO
+      14001.
       <div class="certificates">
         <figure>
           <img src="@/assets/iso9001.jpg" alt="ISO 9001 certificate" />

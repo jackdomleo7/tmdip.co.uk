@@ -17,7 +17,8 @@ export class Routes {
   public static readonly HealthAndSafety: string = "health-and-safety";
   public static readonly PrivacyPolicy: string = "privacy-policy";
   public static readonly EnvironmentalPolicy: string = "environmental-policy";
-  public static readonly QualityManagementSystem: string = "quality-management-system";
+  public static readonly QualityManagementSystem: string =
+    "quality-management-system";
   public static readonly PageNotFound: string = "page-not-found";
 }
 
