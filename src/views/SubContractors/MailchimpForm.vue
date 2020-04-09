@@ -12,7 +12,8 @@
     >
       <p class="form__legend" aria-hidden="true" id="required-legend">
         <small>
-          <span class="form__required" aria-hidden="true">*</span> Indicates required
+          <span class="form__required" aria-hidden="true">*</span> Indicates
+          required
         </small>
       </p>
       <div id="mc_embed_signup_scroll" class="form__fields">
@@ -286,10 +287,10 @@ export default class MailchimpForm extends Vue {
   }
 
   &__fieldset {
+    align-items: center;
     border: none;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 }
 
