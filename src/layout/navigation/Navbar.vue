@@ -120,8 +120,6 @@ export default class Navbar extends Vue {
     background-color: var(--color-grey-300);
     display: inline-block !important;
     font-size: 1rem;
-    position: sticky;
-    top: 0;
     width: 100%;
 
     &__list {
