@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navigation">
     <button
       class="navbar__toggler"
       :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
@@ -58,6 +58,14 @@ export default class Navigation extends Vue {
     color: var(--color-grey-50);
     height: 2rem;
     width: 2rem;
+  }
+}
+
+.navigation {
+  @media (min-width: 45.625em) {
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 }
 </style>
