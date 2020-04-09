@@ -11,10 +11,9 @@
       novalidate
     >
       <p class="form__legend" aria-hidden="true" id="required-legend">
-        <small
-          ><span class="form__required" aria-hidden="true">*</span> Indicates
-          required</small
-        >
+        <small>
+          <span class="form__required" aria-hidden="true">*</span> Indicates required
+        </small>
       </p>
       <div id="mc_embed_signup_scroll" class="form__fields">
         <div class="form__field form__field--half form__field--new-line">
@@ -147,8 +146,8 @@
               marketing.
             </p>
             <fieldset class="form__fieldset" name="interestgroup_field">
-              <label class="checkbox subfield" for="gdpr_12847"
-                ><input
+              <label class="checkbox">
+                <input
                   type="checkbox"
                   id="gdpr_12847"
                   name="gdpr[12847]"
@@ -156,10 +155,10 @@
                   class="checkbox__input"
                 />
                 <span class="checkbox__checkmark"></span>
-                <span
-                  >I agree to let {{ companyNameWithLtd }} send me newsletters
-                  and promotional emails</span
-                >
+                <span>
+                  I agree to let {{ companyNameWithLtd }} send me newsletters
+                  and promotional emails
+                </span>
               </label>
             </fieldset>
             <p>
@@ -288,6 +287,9 @@ export default class MailchimpForm extends Vue {
 
   &__fieldset {
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -342,9 +344,7 @@ export default class MailchimpForm extends Vue {
     top: -0.3125rem;
   }
 }
-</style>
 
-<style lang="scss" scoped>
 .checkbox {
   align-items: center;
   cursor: pointer;
@@ -379,7 +379,7 @@ export default class MailchimpForm extends Vue {
 
     &:focus {
       ~ .checkbox__checkmark {
-        border: 1px solid var(--color-base);
+        border-color: var(--color-base);
       }
     }
   }
@@ -387,6 +387,7 @@ export default class MailchimpForm extends Vue {
   &__checkmark {
     align-items: center;
     background-color: var(--color-grey-200);
+    border: 1px solid transparent;
     display: flex;
     justify-content: center;
     margin-right: 0.5rem;
