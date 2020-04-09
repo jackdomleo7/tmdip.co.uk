@@ -17,6 +17,8 @@ export class Routes {
   public static readonly HealthAndSafety: string = "health-and-safety";
   public static readonly PrivacyPolicy: string = "privacy-policy";
   public static readonly EnvironmentalPolicy: string = "environmental-policy";
+  public static readonly QualityManagementSystem: string =
+    "quality-management-system";
   public static readonly PageNotFound: string = "page-not-found";
 }
 
@@ -75,6 +77,14 @@ export default class Router implements RouterOptions {
         title: "Environmental Policy"
       }
     },
+    {
+      path: "/policies/quality-management-system",
+      name: Routes.QualityManagementSystem,
+      component: () => import("@/views/Policies/QualityManagementSystem.vue"),
+      meta: {
+        title: "Quality Management System"
+      }
+    },
     // Redirects
     {
       path: "/modern-slavery-act",
@@ -99,6 +109,14 @@ export default class Router implements RouterOptions {
     {
       path: "/environmental-policy",
       redirect: Routes.EnvironmentalPolicy
+    },
+    {
+      path: "/qms",
+      redirect: Routes.QualityManagementSystem
+    },
+    {
+      path: "/iso",
+      redirect: Routes.QualityManagementSystem
     },
     {
       path: "/subscribe",

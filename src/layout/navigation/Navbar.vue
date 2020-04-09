@@ -95,7 +95,7 @@ export default class Navbar extends Vue {
         },
         {
           text: "Quality Managemnet System",
-          link: "#"
+          link: { name: Routes.QualityManagementSystem }
         },
         {
           text: "Privacy Policy",
