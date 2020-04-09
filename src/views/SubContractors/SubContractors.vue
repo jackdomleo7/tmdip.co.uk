@@ -26,6 +26,10 @@
       opportunity possible.
     </p>
     <p>
+      We believe in building strong relations, therefore we never send spam and
+      we will never share any data we hold with any third party.
+    </p>
+    <p>
       <small>
         {{ companyNameWithLtd }} recommends that sub contractor companies have
         the same value insurance as we do.<br />
