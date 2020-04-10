@@ -4,20 +4,12 @@
       {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO
       14001.
       <div class="certificates">
-        <figure class="certificates__figure">
-          <site-link type="file" link="/img/iso9001.jpg" title="View image" class="certificates__link">
-            <img src="/img/iso9001.jpg" alt="ISO 9001 certificate" />
+        <figure v-for="certificate in QmsCertificates" :key="certificate.type" class="certificates__figure">
+          <site-link type="file" :link="'/img/iso' + certificate.type + '.jpg'" title="View image" class="certificates__link">
+            <img :src="'/img/iso' + certificate.type + '.jpg'" :alt="'ISO ' + certificate.type + ' certificate'" />
           </site-link>
           <figcaption>
-            <site-link type="file" link="/assets/iso9001.pdf" title="View certificate">ISO 9001 certificate</site-link>
-          </figcaption>
-        </figure>
-        <figure class="certificates__figure">
-          <site-link type="file" link="/img/iso14001.jpg" title="View image" class="certificates__link">
-            <img src="/img/iso14001.jpg" alt="ISO 14001 certificate" />
-          </site-link>
-          <figcaption>
-            <site-link type="file" link="/assets/iso14001.pdf" title="View certificate">ISO 14001 certificate</site-link>
+            <site-link type="file" :link="'/assets/iso' + certificate.type + '.pdf'" title="View certificate">ISO {{ certificate.type }} certificate</site-link>
           </figcaption>
         </figure>
       </div>
@@ -31,10 +23,23 @@ import { PageContent } from "@/layout";
 import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
+interface QmsCertificate {
+  type: number;
+}
+
 @Component({
   components: { PageContent, SiteLink }
 })
 export default class QualityManagementSystem extends Vue {
+  private QmsCertificates: QmsCertificate[] = [
+    {
+      type: 9001,
+    },
+    {
+      type: 14001,
+    }
+  ]
+
   private get companyNameWithLtd(): string {
     return CompanyInfo.companyNameWithLtd;
   }
