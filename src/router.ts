@@ -87,6 +87,18 @@ export default class Router implements RouterOptions {
     },
     // Redirects
     {
+      path: "/policies",
+      redirect: { name: Routes.Home }
+    },
+    {
+      path: "/services",
+      redirect: { name: Routes.Home }
+    },
+    {
+      path: "/home",
+      redirect: { name: Routes.Home }
+    },
+    {
       path: "/modern-slavery-act",
       redirect: { name: Routes.ModernSlaveryAct }
     },
