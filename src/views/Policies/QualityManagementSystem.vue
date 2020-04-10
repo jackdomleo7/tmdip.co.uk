@@ -4,16 +4,16 @@
       {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO
       14001.
       <div class="certificates">
-        <figure>
-          <site-link type="file" link="/img/iso9001.jpg" title="View image">
+        <figure class="certificates__figure">
+          <site-link type="file" link="/img/iso9001.jpg" title="View image" class="certificates__link">
             <img src="/img/iso9001.jpg" alt="ISO 9001 certificate" />
           </site-link>
           <figcaption>
             <site-link type="file" link="/assets/iso9001.pdf" title="View certificate">ISO 9001 certificate</site-link>
           </figcaption>
         </figure>
-        <figure>
-          <site-link type="file" link="/img/iso14001.jpg" title="View image">
+        <figure class="certificates__figure">
+          <site-link type="file" link="/img/iso14001.jpg" title="View image" class="certificates__link">
             <img src="/img/iso14001.jpg" alt="ISO 14001 certificate" />
           </site-link>
           <figcaption>
@@ -49,6 +49,18 @@ export default class QualityManagementSystem extends Vue {
 
   @media (min-width: 45.625em) {
     flex-direction: row;
+
+    .certificates__figure {
+      margin: 2rem 3rem;
+    }
+  }
+
+  &__figure {
+    margin: 1rem 1.5rem;
+  }
+
+  &__link {
+    display: block;
   }
 }
 </style>
