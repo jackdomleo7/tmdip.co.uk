@@ -26,7 +26,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class SiteLink extends Vue {
   @Prop({
     validator: (value: string) =>
-      ["email", "external", "file", "internal", "social", "tel"].includes(value),
+      ["email", "external", "file", "internal", "social", "tel"].includes(
+        value
+      ),
     required: true
   })
   private readonly type!: string;
