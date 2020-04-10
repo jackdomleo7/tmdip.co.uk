@@ -5,15 +5,19 @@
       14001.
       <div class="certificates">
         <figure>
-          <img src="@/assets/iso9001.jpg" alt="ISO 9001 certificate" />
+          <site-link type="file" link="/img/iso9001.jpg" title="View image">
+            <img src="/img/iso9001.jpg" alt="ISO 9001 certificate" />
+          </site-link>
           <figcaption>
-            ISO 9001
+            <site-link type="file" link="/assets/iso9001.pdf" title="View certificate">ISO 9001 certificate</site-link>
           </figcaption>
         </figure>
         <figure>
-          <img src="@/assets/iso14001.jpg" alt="ISO 14001 certificate" />
+          <site-link type="file" link="/img/iso14001.jpg" title="View image">
+            <img src="/img/iso14001.jpg" alt="ISO 14001 certificate" />
+          </site-link>
           <figcaption>
-            ISO 14001
+            <site-link type="file" link="/assets/iso14001.pdf" title="View certificate">ISO 14001 certificate</site-link>
           </figcaption>
         </figure>
       </div>
