@@ -2,14 +2,37 @@
   <page-content header="Quality Management System">
     <article>
       {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO
-      14001. Confirm our verification on <site-link type="external" link="https://www.qmsuk.com/verification">www.qmsuk.com/verification</site-link> using our below certification numbers.
+      14001. Confirm our verification on
+      <site-link type="external" link="https://www.qmsuk.com/verification"
+        >www.qmsuk.com/verification</site-link
+      >
+      using our below certification numbers.
       <div class="certificates">
-        <figure v-for="certificate in QmsCertificates" :key="certificate.type" class="certificates__figure">
-          <site-link type="file" :link="'/img/iso' + certificate.type + '.jpg'" title="View image" class="certificates__link">
-            <img :src="'/img/iso' + certificate.type + '.jpg'" :alt="'ISO ' + certificate.type + ' certificate'" />
+        <figure
+          v-for="certificate in QmsCertificates"
+          :key="certificate.type"
+          class="certificates__figure"
+        >
+          <site-link
+            type="file"
+            :link="'/img/iso' + certificate.type + '.jpg'"
+            title="View image"
+            class="certificates__link"
+          >
+            <img
+              :src="'/img/iso' + certificate.type + '.jpg'"
+              :alt="'ISO ' + certificate.type + ' certificate'"
+            />
           </site-link>
           <figcaption>
-            <site-link type="file" :link="'/assets/iso' + certificate.type + '.pdf'" title="View certificate">ISO {{ certificate.type }} certificate</site-link> - number <span class="certificates__number">{{ certificate.number }}</span>
+            <site-link
+              type="file"
+              :link="'/assets/iso' + certificate.type + '.pdf'"
+              title="View certificate"
+              >ISO {{ certificate.type }} certificate</site-link
+            >
+            - number
+            <span class="certificates__number">{{ certificate.number }}</span>
           </figcaption>
         </figure>
       </div>
@@ -41,7 +64,7 @@ export default class QualityManagementSystem extends Vue {
       type: 14001,
       number: 313452019
     }
-  ]
+  ];
 
   private get companyNameWithLtd(): string {
     return CompanyInfo.companyNameWithLtd;
