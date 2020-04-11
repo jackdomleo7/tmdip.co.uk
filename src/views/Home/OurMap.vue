@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import L, { LayerGroup } from 'leaflet';
+import { Component, Vue } from "vue-property-decorator";
+import L from "leaflet";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component
@@ -18,16 +18,16 @@ export default class OurMap extends Vue {
   }
 
   private initMap(): void {
-    this.map = L.map('map', {
+    this.map = L.map("map", {
       maxZoom: 19,
       minZoom: 2,
-      worldCopyJump: true,
+      worldCopyJump: true
     }).fitWorld();
 
     L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
       {
-        attribution: `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>`,
+        attribution: `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>`
       }
     ).addTo(this.map);
 
@@ -35,28 +35,29 @@ export default class OurMap extends Vue {
 
     this.map.setView([53.0070932, -1.1522853], 10);
 
-    document.querySelector('.map .leaflet-control-attribution.leaflet-control a')!.setAttribute('target', '_blank');
+    document
+      .querySelector(".map .leaflet-control-attribution.leaflet-control a")!
+      .setAttribute("target", "_blank");
   }
 
   private placeMarker() {
     L.marker([53.0070932, -1.1522853], {
       icon: this.getIcon(),
-      title: 'Nottingham, East Midlands, UK',
-    })
-      .addTo(this.map);
+      title: "Nottingham, East Midlands, UK"
+    }).addTo(this.map);
   }
 
   private getIcon() {
     return L.divIcon({
       html: `<img src="/img/map-icon.png" alt="${CompanyInfo.companyName}" /><span hidden>${CompanyInfo.companyName}</span>`,
-      className: 'map__divicon',
+      className: "map__divicon"
     });
   }
 }
 </script>
 
 <style lang="scss">
-@import '~leaflet/dist/leaflet.css';
+@import "~leaflet/dist/leaflet.css";
 
 .map {
   $divicon-height: 50px;
@@ -76,12 +77,12 @@ export default class OurMap extends Vue {
       align-items: center;
       background-color: var(--color-grey-700);
       border-radius: 0.5rem;
-      padding: 0.25rem;
       display: flex;
       height: $divicon-height !important; // Overrides Leaflet's iconSize
       justify-content: center;
       margin-left: -($divicon-width / 2) !important; // Overrides Leaflet's iconAnchor
       margin-top: -($divicon-height + $divicon-pointer-height - 2px) !important; // Overrides Leaflet's iconAnchor
+      padding: 0.25rem;
       width: $divicon-width !important; // Overrides Leaflet's iconSize
 
       &::before {
@@ -90,7 +91,7 @@ export default class OurMap extends Vue {
         border-bottom: 0;
         border-top: $divicon-pointer-height solid var(--color-grey-700);
         bottom: 0;
-        content: '';
+        content: "";
         height: 0;
         left: ($divicon-width / 2);
         margin-bottom: -10px;
@@ -106,9 +107,11 @@ export default class OurMap extends Vue {
         background-color: var(--color-grey-600);
         border-radius: 50%;
         bottom: -($divicon-pointer-height - ($shadow-height / 2)); // Positions pinpoint in middle of shadow vertically
-        content: '';
+        content: "";
         height: $shadow-height;
-        left: (($divicon-width - $shadow-width) / 2); // Positions pinpoint in middle of shadow horizontally
+        left: (
+          ($divicon-width - $shadow-width) / 2
+        ); // Positions pinpoint in middle of shadow horizontally
         position: absolute;
         width: $shadow-width;
       }
