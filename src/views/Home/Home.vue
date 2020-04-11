@@ -1,5 +1,5 @@
 <template>
-  <page-content header="Ideas to Reality">
+  <page-content header="We Turn Your Designs into Reality">
     <p class="home__intro">
       Based in Nottingham, East Midlands, we are ideally located to work nationally across the UK on a wide variety of projects. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants, we can cover them all. Our fully skilled team provide quality workmanship guaranteed on every project.<br/>
       <strong>For a free consultation, contact the team today.</strong>
@@ -18,6 +18,24 @@
       </p>
       <our-map></our-map>
     </article>
+    <section class="extra">
+      <div class="extra__row">
+        <site-link type="external" link="https://www.safecontractor.com/">
+          <img src="/img/safecontractor.png" alt="Safe Contractor Approved logo" />
+          <span hidden>Safe Contractor Approved</span>
+        </site-link>
+      </div>
+      <div class="extra__row">
+        <site-link type="internal" :link="{ name: Routes.QualityManagementSystem }">
+          <img src="/img/qms9001.png" alt="QMS ISO 9001" />
+          <span hidden>QMS ISO 9001</span>
+        </site-link>
+        <site-link type="internal" :link="{ name: Routes.QualityManagementSystem }">
+          <img src="/img/qms14001.png" alt="QMS ISO 14001" />
+          <span hidden>QMS ISO 14001</span>
+        </site-link>
+      </div>
+    </section>
   </page-content>
 </template>
 
@@ -76,6 +94,34 @@ export default class PageNotFound extends Vue {
 
   &__title {
     font-size: 2rem;
+  }
+}
+
+.extra {
+  margin-top: 7rem;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0.5rem 0;
+
+    @media (min-width: 45.625em) {
+      flex-direction: row;
+    }
+
+    * {
+      margin: 0.5rem 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 </style>
