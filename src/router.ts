@@ -34,7 +34,7 @@ export default class Router implements RouterOptions {
       name: Routes.Home,
       component: () => import("@/views/Home/Home.vue"),
       meta: {
-        title: "Home"
+        title: "Shop fitting, Interior fit-outs, Timber homes"
       }
     },
     {
