@@ -54,16 +54,20 @@ export default class PageNotFound extends Vue {
   private Routes: Routes = Routes;
   private readonly carouselItems: object[] = [
     {
-      image: '/img/item1.jpg',
-      caption: 'Item 1'
+      image: '/img/carousel/smiler.jpg',
+      caption: 'The Smiler - Alton Towers'
     },
     {
-      image: '/img/item2.jpg',
-      caption: 'Item 2'
+      image: '/img//carousel/smokehouse.jpg',
+      caption: 'Smokehouse, London'
     },
     {
-      image: '/img/item3.jpg',
-      caption: 'Item 3'
+      image: '/img/carousel/selfridges.jpg',
+      caption: 'Selfridges, Birmingham'
+    },
+    {
+      image: '/img/carousel/bauer.jpg',
+      caption: 'BAUER - Ice Locker'
     }
   ]
 

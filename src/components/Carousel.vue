@@ -15,7 +15,7 @@
       </button>
     </div>
     <div class="carousel__indicators">
-      <button v-for="(item, index) in items" :key="index" class="carousel__indicator" :class="index === currentSlide ? 'carousel__indicator--current' : null" @click="setSlide(index)" title="View">
+      <button v-for="(item, index) in items" :key="index" class="carousel__indicator" :class="index === currentSlide ? 'carousel__indicator--current' : null" @click="setSlide(index)" :title="'View ' + item.caption">
         <span hidden>View</span>
       </button>
     </div>
