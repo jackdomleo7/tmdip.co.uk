@@ -27,6 +27,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import Icon from "./Icon.vue";
 
 interface CarouselItem {
+  // Ensure image sizes have 16:9 aspect ratio
   image: string;
   caption: string;
 }
