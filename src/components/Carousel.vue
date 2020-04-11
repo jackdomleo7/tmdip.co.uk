@@ -1,35 +1,39 @@
 <template>
   <section class="carousel">
     <div class="carousel__slides">
-
-      <!-- Full-width images with number and caption text -->
       <figure v-for="(item, index) in items" :key="index" class="carousel__slide fade" :class="index === currentSlide ? 'carousel__slide--show' : null">
-        <img :src="item.image">
+        <img :src="item.image" :alt="item.caption">
         <figcaption class="carousel__caption">{{ item.caption }}</figcaption>
       </figure>
-
-      <!-- Next and previous buttons -->
-      <button class="carousel__toggle carousel__toggle--previous" @click="previousSlide()">&#10094;</button>
-      <button class="carousel__toggle carousel__toggle--next" @click="nextSlide()">&#10095;</button>
+      <button class="carousel__toggle carousel__toggle--previous" @click="previousSlide()" title="Previous">
+        <icon icon="chevron-left" />
+        <span hidden>Previous</span>
+      </button>
+      <button class="carousel__toggle carousel__toggle--next" @click="nextSlide()" title="Next">
+        <span hidden>Next</span>
+        <icon icon="chevron-right" />
+      </button>
     </div>
-    <br/>
-
-    <!-- The dots/circles -->
     <div class="carousel__indicators">
-      <span v-for="(item, index) in items" :key="index" class="carousel__indicator" :class="index === currentSlide ? 'carousel__indicator--current' : null" @click="setSlide(index)"></span>
+      <button v-for="(item, index) in items" :key="index" class="carousel__indicator" :class="index === currentSlide ? 'carousel__indicator--current' : null" @click="setSlide(index)" title="View">
+        <span hidden>View</span>
+      </button>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import Icon from "./Icon.vue";
 
 interface CarouselItem {
   image: string;
   caption: string;
 }
 
-@Component
+@Component({
+  components: { Icon }
+})
 export default class Carousel extends Vue {
   private currentSlide: number = 0;
 
@@ -67,7 +71,7 @@ export default class Carousel extends Vue {
 }
 
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: 0.4}
   to {opacity: 1}
 }
 
@@ -86,10 +90,9 @@ export default class Carousel extends Vue {
   &__slide {
     display: none;
     width: 100%;
-    max-height: 30rem;
+    max-height: 35rem;
     overflow: hidden;
     align-items: center;
-    justify-content: center;
     margin: 0;
 
     &--show {
@@ -98,55 +101,65 @@ export default class Carousel extends Vue {
   }
 
   &__caption {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
+    color: var(--color-grey-75);
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
     position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+    bottom: 8%;
+    font-weight: 700;
+    background-color: var(--color-grey-800);
+
+    @media (min-width: 45.625em) {
+      font-size: 1rem;;
+    }
   }
 
   &__toggle {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    width: 3rem;
+    height: 4rem;
+    padding: 1rem;
+    color: var(--color-grey-50);
+    transition: 600ms all ease;
     user-select: none;
+    color: var(--color-grey-50);
+    background-color: transparent;
+    border: none;
+    transform: translateY(-50%);
 
-    &:hover {
-      background-color: rgba(0,0,0,0.8);
+    &:hover,
+    &:focus  {
+      background-color: var(--color-grey-800);
     }
 
     &--next {
       right: 0;
-      border-radius: 3px 0 0 3px;
     }
   }
 
   &__indicators {
-    text-align: center;
+    margin-top: 0.4rem;
   }
 
   &__indicator {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0.125rem;
+    background-color: var(--color-grey-400);
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: 600ms background-color ease;
+    border: none;
+
+    &:hover {
+      background-color: var(--color-grey-600);
+    }
 
     &--current {
-      background-color: #717171;
+      background-color: var(--color-grey-800);
     }
   }
 }
