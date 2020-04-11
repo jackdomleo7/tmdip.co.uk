@@ -1,5 +1,5 @@
 <template>
-  <section class="carousel">
+  <section class="carousel" @mouseenter="stopAutoplay()" @mouseleave="autoplay()">
     <div class="carousel__slides">
       <figure v-for="(item, index) in items" :key="index" class="carousel__slide fade" :class="index === currentSlide ? 'carousel__slide--show' : null">
         <img :src="item.image" :alt="item.caption">
@@ -36,9 +36,14 @@ interface CarouselItem {
 })
 export default class Carousel extends Vue {
   private currentSlide: number = 0;
+  private timeout: number = 0;
 
   @Prop({ type: Array, required: true })
   private readonly items!: CarouselItem[];
+
+  private mounted() {
+    this.autoplay();
+  }
 
   private nextSlide(): void {
     if (this.currentSlide + 1 === this.items.length) {
@@ -60,6 +65,19 @@ export default class Carousel extends Vue {
 
   private setSlide(index: number): void {
     this.currentSlide = index;
+  }
+
+  private autoplay() {
+    this.timeout = setTimeout(() => {
+      this.nextSlide();
+      this.autoplay();
+    }, 5000);
+  }
+
+  private stopAutoplay() {
+    if (this.timeout) {
+      window.clearTimeout(this.timeout);
+    }
   }
 }
 </script>
