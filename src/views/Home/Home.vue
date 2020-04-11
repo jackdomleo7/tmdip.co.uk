@@ -16,6 +16,7 @@
       <p>
         Located centrally in the UK in Nottinghamshire, we are in an ideal location to reach any part of the UK with very little fuss. Only a few miles from Junction 26 of the M1, makes travel and deliveries relatively easy and efficient.
       </p>
+      <our-map></our-map>
     </article>
   </page-content>
 </template>
@@ -26,9 +27,10 @@ import { Routes } from "@/router";
 import { PageContent } from "@/layout";
 import { SiteLink, Carousel } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
+import OurMap from "./OurMap.vue";
 
 @Component({
-  components: { Carousel, PageContent, SiteLink }
+  components: { Carousel, OurMap, PageContent, SiteLink }
 })
 export default class PageNotFound extends Vue {
   private Routes: Routes = Routes;
