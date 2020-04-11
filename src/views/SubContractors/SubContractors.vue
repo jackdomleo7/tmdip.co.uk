@@ -77,5 +77,3 @@ export default class SubContractors extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
