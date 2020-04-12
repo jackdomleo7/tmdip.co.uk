@@ -22,7 +22,7 @@ export default class CompanyInfo {
     return {
       url: this._websiteDomain.replace("https://", ""),
       secureUrl: this._websiteDomain
-    }
+    };
   }
 
   public static get companyName(): string {
