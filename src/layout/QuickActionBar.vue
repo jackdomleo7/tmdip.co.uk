@@ -52,6 +52,7 @@ export default class QuickActionBar extends Vue {
   overflow: hidden;
   position: sticky;
   width: 100vw;
+  z-index: 1001;
 
   &__link {
     height: 100%;

@@ -65,7 +65,7 @@ export default class Navigation extends Vue {
   @media (min-width: 45.625em) {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1001;
   }
 }
 </style>
