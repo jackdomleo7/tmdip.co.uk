@@ -109,6 +109,10 @@ export default class Carousel extends Vue {
 .fade {
   animation-duration: 1.5s;
   animation-name: fade;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
 }
 
 @keyframes fade {
@@ -173,6 +177,10 @@ export default class Carousel extends Vue {
     user-select: none;
     width: 3rem;
 
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
     &:hover,
     &:focus {
       background-color: var(--color-grey-800);
@@ -197,6 +205,10 @@ export default class Carousel extends Vue {
     margin: 0 0.125rem;
     transition: 600ms background-color ease;
     width: 1rem;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
 
     &:hover {
       background-color: var(--color-grey-600);
