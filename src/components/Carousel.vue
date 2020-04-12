@@ -110,9 +110,9 @@ export default class Carousel extends Vue {
   animation-duration: 1.5s;
   animation-name: fade;
 
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @keyframes fade {
