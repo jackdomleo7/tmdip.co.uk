@@ -124,12 +124,12 @@ export default class FooterBar extends Vue {
     margin: 1rem 0;
     text-align: center;
 
-    @media (min-width: 45.625em) {
+    @media (min-width: $scale-desktop) {
       margin: 2rem 0;
     }
 
     &:not( :first-of-type ) {
-      @media (min-width: 45.625em) {
+      @media (min-width: $scale-desktop) {
         flex-direction: row;
       }
     }
@@ -140,7 +140,7 @@ export default class FooterBar extends Vue {
     }
 
     > *:last-child {
-      @media (min-width: 45.625em) {
+      @media (min-width: $scale-desktop) {
         text-align: right;
       }
     }

@@ -66,7 +66,7 @@ export default class OurMap extends Vue {
   height: 20rem;
   width: 100%;
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     height: 30rem;
   }
 

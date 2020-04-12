@@ -468,7 +468,7 @@ ol,
 ul {
   padding-left: 1.5rem;
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     padding-left: 2.5rem;
   }
 }
