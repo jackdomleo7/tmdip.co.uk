@@ -34,7 +34,7 @@ export default class Router implements RouterOptions {
       name: Routes.Home,
       component: () => import("@/views/Home/Home.vue"),
       meta: {
-        title: "Shop fitting, Interior fit-outs, Timber homes"
+        title: ""
       }
     },
     {
@@ -175,11 +175,11 @@ export default class Router implements RouterOptions {
     /* eslint-disable-next-line */
     next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
   ) {
-    // Set <title>
+    const baseDocumentTitle = "Shop fitting, Interior fit-outs, Timber homes | " + CompanyInfo.companyName;
     if (to.meta.title) {
-      document.title = to.meta.title + " | " + CompanyInfo.companyName;
+      document.title = to.meta.title + " | " + baseDocumentTitle;
     } else {
-      document.title = CompanyInfo.companyName;
+      document.title = baseDocumentTitle;
     }
     // TODO: Uncomment and refactor below for meta data for SEO
     // if (to.meta.description) {
