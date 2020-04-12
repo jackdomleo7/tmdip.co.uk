@@ -12,6 +12,7 @@ import CompanyInfo from "@/helpers/companyInfo";
 @Component
 export default class OurMap extends Vue {
   private map!: L.Map;
+  private readonly coordinates: L.LatLngExpression = [53.007079, -1.150114];
 
   private mounted() {
     this.initMap();
@@ -19,7 +20,7 @@ export default class OurMap extends Vue {
 
   private initMap(): void {
     this.map = L.map("map", {
-      maxZoom: 19,
+      maxZoom: 18,
       minZoom: 2,
       worldCopyJump: true
     }).fitWorld();
@@ -33,7 +34,7 @@ export default class OurMap extends Vue {
 
     this.placeMarker();
 
-    this.map.setView([53.0070932, -1.1522853], 10);
+    this.map.setView(this.coordinates, 10);
 
     document
       .querySelector(".map .leaflet-control-attribution.leaflet-control a")!
@@ -41,7 +42,7 @@ export default class OurMap extends Vue {
   }
 
   private placeMarker() {
-    L.marker([53.0070932, -1.1522853], {
+    L.marker(this.coordinates, {
       icon: this.getIcon(),
       title: "Nottingham, East Midlands, UK"
     }).addTo(this.map);
