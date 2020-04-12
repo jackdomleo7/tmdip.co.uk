@@ -35,7 +35,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Home/Home.vue"),
       meta: {
         title: "",
-        description: "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants.",
+        description:
+          "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants.",
         keywords: []
       }
     },
@@ -46,7 +47,12 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Sub-contractors",
         description: `Subscribe to be a sub-contractor of ${CompanyInfo.companyName} and work with us on future projects.`,
-        keywords: ["sub-contractors", "subcontractors", "contractors", "subscribe"]
+        keywords: [
+          "sub-contractors",
+          "subcontractors",
+          "contractors",
+          "subscribe"
+        ]
       }
     },
     {
@@ -56,7 +62,12 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Modern Slavery Act",
         description: `${CompanyInfo.companyName} continually works to prevent slavery and human trafficking in our supply chains or in any part of our business.`,
-        keywords: ["slavery", "trafficking", "human trafficking", "Modern Slavery Act 2015"]
+        keywords: [
+          "slavery",
+          "trafficking",
+          "human trafficking",
+          "Modern Slavery Act 2015"
+        ]
       }
     },
     {
@@ -66,7 +77,15 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Health and Safety",
         description: `${CompanyInfo.companyName} strives for a safe and healthy working environment for all employees, contractors and members of the public.`,
-        keywords: ["health and safety", "health & safety", "health", "safety", "health safety", "Health & Safety at Work Act 1974", "welfare"]
+        keywords: [
+          "health and safety",
+          "health & safety",
+          "health",
+          "safety",
+          "health safety",
+          "Health & Safety at Work Act 1974",
+          "welfare"
+        ]
       }
     },
     {
@@ -75,8 +94,18 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/PrivacyPolicy.vue"),
       meta: {
         title: "Privacy Policy",
-        description: "This Privacy Notice describes how we collect and process your personal information through our website and the lifetime of a project.",
-        keywords: ["privacy", "policy", "privacy policy", "data", "gdpr", "process", "personal", "collect"]
+        description:
+          "This Privacy Notice describes how we collect and process your personal information through our website and the lifetime of a project.",
+        keywords: [
+          "privacy",
+          "policy",
+          "privacy policy",
+          "data",
+          "gdpr",
+          "process",
+          "personal",
+          "collect"
+        ]
       }
     },
     {
@@ -86,7 +115,17 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Environmental Policy",
         description: `${CompanyInfo.companyName} recognises that its services may have an impact on the environment and is committed to reducing such impact.`,
-        keywords: ["environmental policy", "environment", "green", "eco", "friendly", "eco-friendly", "eco friendly", "ems", "environmental management system"]
+        keywords: [
+          "environmental policy",
+          "environment",
+          "green",
+          "eco",
+          "friendly",
+          "eco-friendly",
+          "eco friendly",
+          "ems",
+          "environmental management system"
+        ]
       }
     },
     {
@@ -96,7 +135,17 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Quality Management System",
         description: `${CompanyInfo.companyName} is proud to be certified for the ISO 9001 and ISO 14001.`,
-        keywords: ["qms", "quality management system", "iso", "9001", "14001", "iso 9001", "iso 14001", "quality", "qa"]
+        keywords: [
+          "qms",
+          "quality management system",
+          "iso",
+          "9001",
+          "14001",
+          "iso 9001",
+          "iso 14001",
+          "quality",
+          "qa"
+        ]
       }
     },
     // Redirects
@@ -167,7 +216,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/PageNotFound.vue"),
       meta: {
         title: "Page Not Found",
-        description: "We're sorry, but we were unable to find this page. If it keeps happening, please contact us."
+        description:
+          "We're sorry, but we were unable to find this page. If it keeps happening, please contact us."
       }
     }
   ];
@@ -195,7 +245,9 @@ export default class Router implements RouterOptions {
     next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
   ) {
     // Document title
-    const baseDocumentTitle = "Shop fitting, Interior fit-outs, Timber homes | " + CompanyInfo.companyName;
+    const baseDocumentTitle =
+      "Shop fitting, Interior fit-outs, Timber homes | " +
+      CompanyInfo.companyName;
     if (to.meta.title) {
       document.title = to.meta.title + " | " + baseDocumentTitle;
     } else {
@@ -207,30 +259,49 @@ export default class Router implements RouterOptions {
     document.querySelector('meta[property="og:description"]')?.remove();
     document.querySelector('meta[property="twitter:description"]')?.remove();
     if (to.meta.description) {
-      let descTag = document.createElement('meta');
-      descTag.setAttribute('name', 'description');
-      descTag.setAttribute('content', to.meta.description);
+      const descTag = document.createElement("meta");
+      descTag.setAttribute("name", "description");
+      descTag.setAttribute("content", to.meta.description);
       document.head.appendChild(descTag);
-      let ogTag = document.createElement('meta');
-      ogTag.setAttribute('property', 'og:description');
-      ogTag.setAttribute('content', to.meta.description);
+      const ogTag = document.createElement("meta");
+      ogTag.setAttribute("property", "og:description");
+      ogTag.setAttribute("content", to.meta.description);
       document.head.appendChild(ogTag);
-      let twitterTag = document.createElement('meta');
-      twitterTag.setAttribute('property', 'twitter:description');
-      twitterTag.setAttribute('content', to.meta.description);
+      const twitterTag = document.createElement("meta");
+      twitterTag.setAttribute("property", "twitter:description");
+      twitterTag.setAttribute("content", to.meta.description);
       document.head.appendChild(twitterTag);
     }
 
     // Document keywords
     document.querySelector('meta[name="keywords"]')?.remove();
-    const baseKeywords = [CompanyInfo.companyName, CompanyInfo.companyEmail, CompanyInfo.companyTelNumber.tel, CompanyInfo.companyTelNumber.telPretty, "TMD", "TMDIP", "Nottingham", "East Midlands", "UK", "shop fitting", "interior", "interior fit-out", "interior design", "timber homes", "hmo", "Tony Domleo", "Antony Domleo", "Domleo"];
+    const baseKeywords = [
+      CompanyInfo.companyName,
+      CompanyInfo.companyEmail,
+      CompanyInfo.companyTelNumber.tel,
+      CompanyInfo.companyTelNumber.telPretty,
+      "TMD",
+      "TMDIP",
+      "Nottingham",
+      "East Midlands",
+      "UK",
+      "shop fitting",
+      "interior",
+      "interior fit-out",
+      "interior design",
+      "timber homes",
+      "hmo",
+      "Tony Domleo",
+      "Antony Domleo",
+      "Domleo"
+    ];
     if (to.meta.keywords) {
-      let keywords = baseKeywords;
+      const keywords = baseKeywords;
       keywords.push(...to.meta.keywords);
-      let keywordsString = keywords.join(", ");
-      let keywordTag = document.createElement('meta');
-      keywordTag.setAttribute('name', 'keywords');
-      keywordTag.setAttribute('content', keywordsString);
+      const keywordsString = keywords.join(", ");
+      const keywordTag = document.createElement("meta");
+      keywordTag.setAttribute("name", "keywords");
+      keywordTag.setAttribute("content", keywordsString);
       document.head.appendChild(keywordTag);
     }
 
