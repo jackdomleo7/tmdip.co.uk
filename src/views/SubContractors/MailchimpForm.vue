@@ -237,7 +237,7 @@ export default class MailchimpForm extends Vue {
 .form {
   padding: 0.625rem 1.5rem;
 
-  @media (max-width: 45.5625em) {
+  @media (max-width: $scale-desktop) {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
@@ -268,7 +268,7 @@ export default class MailchimpForm extends Vue {
     padding: 0 1rem;
     width: 100%;
 
-    @media (max-width: 45.5625em) {
+    @media (max-width: $scale-mobile) {
       margin: 0.5rem 0 !important;
       width: 100% !important;
     }

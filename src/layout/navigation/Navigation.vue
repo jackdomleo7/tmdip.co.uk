@@ -46,7 +46,7 @@ export default class Navigation extends Vue {
   top: 1rem;
   z-index: 999;
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     display: none !important;
   }
 
@@ -62,10 +62,10 @@ export default class Navigation extends Vue {
 }
 
 .navigation {
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1001;
   }
 }
 </style>
