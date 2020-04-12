@@ -35,7 +35,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Home/Home.vue"),
       meta: {
         title: "",
-        description: "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants."
+        description: "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants.",
+        keywords: []
       }
     },
     {
@@ -44,7 +45,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/SubContractors/SubContractors.vue"),
       meta: {
         title: "Sub-contractors",
-        description: `Subscribe to be a sub-contractor of ${CompanyInfo.companyName} and work with us on future projects.`
+        description: `Subscribe to be a sub-contractor of ${CompanyInfo.companyName} and work with us on future projects.`,
+        keywords: ["sub-contractors", "subcontractors", "contractors", "subscribe"]
       }
     },
     {
@@ -53,7 +55,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/ModernSlaveryAct.vue"),
       meta: {
         title: "Modern Slavery Act",
-        description: `${CompanyInfo.companyName} continually works to prevent slavery and human trafficking in our supply chains or in any part of our business.`
+        description: `${CompanyInfo.companyName} continually works to prevent slavery and human trafficking in our supply chains or in any part of our business.`,
+        keywords: ["slavery", "trafficking", "human trafficking", "Modern Slavery Act 2015"]
       }
     },
     {
@@ -62,7 +65,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/HealthAndSafety.vue"),
       meta: {
         title: "Health and Safety",
-        description: `${CompanyInfo.companyName} strives for a safe and healthy working environment for all employees, contractors and members of the public.`
+        description: `${CompanyInfo.companyName} strives for a safe and healthy working environment for all employees, contractors and members of the public.`,
+        keywords: ["health and safety", "health & safety", "health", "safety", "health safety", "Health & Safety at Work Act 1974", "welfare"]
       }
     },
     {
@@ -71,7 +75,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/PrivacyPolicy.vue"),
       meta: {
         title: "Privacy Policy",
-        description: "This Privacy Notice describes how we collect and process your personal information through our website and the lifetime of a project."
+        description: "This Privacy Notice describes how we collect and process your personal information through our website and the lifetime of a project.",
+        keywords: ["privacy", "policy", "privacy policy", "data", "gdpr", "process", "personal", "collect"]
       }
     },
     {
@@ -80,7 +85,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/EnvironmentalPolicy.vue"),
       meta: {
         title: "Environmental Policy",
-        description: `${CompanyInfo.companyName} recognises that its services may have an impact on the environment and is committed to reducing such impact.`
+        description: `${CompanyInfo.companyName} recognises that its services may have an impact on the environment and is committed to reducing such impact.`,
+        keywords: ["environmental policy", "environment", "green", "eco", "friendly", "eco-friendly", "eco friendly", "ems", "environmental management system"]
       }
     },
     {
@@ -89,7 +95,8 @@ export default class Router implements RouterOptions {
       component: () => import("@/views/Policies/QualityManagementSystem.vue"),
       meta: {
         title: "Quality Management System",
-        description: `${CompanyInfo.companyName} is proud to be certified for the ISO 9001 and ISO 14001.`
+        description: `${CompanyInfo.companyName} is proud to be certified for the ISO 9001 and ISO 14001.`,
+        keywords: ["qms", "quality management system", "iso", "9001", "14001", "iso 9001", "iso 14001", "quality", "qa"]
       }
     },
     // Redirects
@@ -127,6 +134,10 @@ export default class Router implements RouterOptions {
     },
     {
       path: "/environmental-policy",
+      redirect: Routes.EnvironmentalPolicy
+    },
+    {
+      path: "/ems",
       redirect: Routes.EnvironmentalPolicy
     },
     {
@@ -208,6 +219,19 @@ export default class Router implements RouterOptions {
       twitterTag.setAttribute('property', 'twitter:description');
       twitterTag.setAttribute('content', to.meta.description);
       document.head.appendChild(twitterTag);
+    }
+
+    // Document keywords
+    document.querySelector('meta[name="keywords"]')?.remove();
+    const baseKeywords = [CompanyInfo.companyName, CompanyInfo.companyEmail, CompanyInfo.companyTelNumber.tel, CompanyInfo.companyTelNumber.telPretty, "TMD", "TMDIP", "Nottingham", "East Midlands", "UK", "shop fitting", "interior", "interior fit-out", "interior design", "timber homes", "hmo", "Tony Domleo", "Antony Domleo", "Domleo"];
+    if (to.meta.keywords) {
+      let keywords = baseKeywords;
+      keywords.push(...to.meta.keywords);
+      let keywordsString = keywords.join(", ");
+      let keywordTag = document.createElement('meta');
+      keywordTag.setAttribute('name', 'keywords');
+      keywordTag.setAttribute('content', keywordsString);
+      document.head.appendChild(keywordTag);
     }
 
     next();
