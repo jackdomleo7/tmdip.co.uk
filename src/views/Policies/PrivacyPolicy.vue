@@ -6,7 +6,7 @@
         you and that you care about how your personal data is used. We respect
         and value the privacy of everyone who visits this website,
         <site-link type="internal" :link="{ name: Routes.Home }">{{
-          companyWebsiteDomain
+          companyWebsiteDomain.url
         }}</site-link>
         and as described in Parts 5 and 6, below, we do not collect personal
         data about you unless you contact us. Any personal data we do collect
@@ -407,7 +407,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { Routes } from "@/router";
 import { PageContent } from "@/layout";
 import { SiteLink } from "@/components";
-import CompanyInfo, { TelNumber } from "@/helpers/companyInfo";
+import CompanyInfo, { TelNumber, WebDomain } from "@/helpers/companyInfo";
 
 @Component({
   components: { PageContent, SiteLink }
@@ -435,7 +435,7 @@ export default class PrivacyPolicy extends Vue {
     return CompanyInfo.companyEmail;
   }
 
-  private get companyWebsiteDomain(): string {
+  private get companyWebsiteDomain(): WebDomain {
     return CompanyInfo.companyWebsiteDomain;
   }
 
