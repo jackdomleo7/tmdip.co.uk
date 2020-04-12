@@ -63,8 +63,12 @@ export default class OurMap extends Vue {
   $divicon-height: 50px;
   $divicon-width: 50px;
   $divicon-pointer-height: 14px;
-  height: 30rem;
+  height: 20rem;
   width: 100%;
+
+  @media (min-width: $scale-desktop) {
+    height: 30rem;
+  }
 
   .map {
     // Adds specificity since scoped doesn't work with Leaflet.js

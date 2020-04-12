@@ -52,6 +52,7 @@ export default class QuickActionBar extends Vue {
   overflow: hidden;
   position: sticky;
   width: 100vw;
+  z-index: 1001;
 
   &__link {
     height: 100%;
@@ -71,7 +72,7 @@ export default class QuickActionBar extends Vue {
     }
   }
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     display: none;
   }
 }

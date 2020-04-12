@@ -78,7 +78,7 @@ export default class QualityManagementSystem extends Vue {
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     flex-direction: row;
 
     .certificates__figure {
