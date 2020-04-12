@@ -154,7 +154,7 @@ export default class Carousel extends Vue {
     padding: 0.5rem 0.75rem;
     position: absolute;
 
-    @media (min-width: 45.625em) {
+    @media (min-width: $scale-desktop) {
       font-size: 1rem;
     }
   }

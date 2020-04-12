@@ -72,7 +72,7 @@ export default class QuickActionBar extends Vue {
     }
   }
 
-  @media (min-width: 45.625em) {
+  @media (min-width: $scale-desktop) {
     display: none;
   }
 }

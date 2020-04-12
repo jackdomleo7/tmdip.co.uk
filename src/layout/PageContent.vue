@@ -27,7 +27,7 @@ export default class PageContent extends Vue {
     font-weight: 700;
     margin-bottom: 3rem;
 
-    @media (min-width: 45.625em) {
+    @media (min-width: $scale-desktop) {
       font-size: 2.2rem;
     }
   }

@@ -33,8 +33,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import "./scss/main";
-
 .app {
   display: flex;
   flex-direction: column;

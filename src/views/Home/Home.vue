@@ -164,7 +164,7 @@ export default class PageNotFound extends Vue {
     justify-content: space-around;
     margin: 0.5rem 0;
 
-    @media (min-width: 45.625em) {
+    @media (min-width: $scale-desktop) {
       flex-direction: row;
     }
 
