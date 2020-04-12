@@ -3,7 +3,7 @@
     <article>
       <p>
         {{ companyNameWithLtd }} recognises that slavery and human trafficking
-        remains a hidden blight on our global society. The aim of our Company is
+        remains a hidden blight on our global society. The aim of our company is
         to identify our responsibility by alerting staff to the risks, however
         small, in our business and in the wider supply chain. Staff are expected
         and encouraged to report concerns to management, where they are expected
