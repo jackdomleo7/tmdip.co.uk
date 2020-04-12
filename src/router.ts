@@ -34,7 +34,8 @@ export default class Router implements RouterOptions {
       name: Routes.Home,
       component: () => import("@/views/Home/Home.vue"),
       meta: {
-        title: ""
+        title: "",
+        description: "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants."
       }
     },
     {
@@ -42,7 +43,8 @@ export default class Router implements RouterOptions {
       name: Routes.SubContractors,
       component: () => import("@/views/SubContractors/SubContractors.vue"),
       meta: {
-        title: "Sub-contractors"
+        title: "Sub-contractors",
+        description: `Subscribe to be a sub-contractor of ${CompanyInfo.companyName} and work with us on future projects.`
       }
     },
     {
@@ -50,7 +52,8 @@ export default class Router implements RouterOptions {
       name: Routes.ModernSlaveryAct,
       component: () => import("@/views/Policies/ModernSlaveryAct.vue"),
       meta: {
-        title: "Modern Slavery Act"
+        title: "Modern Slavery Act",
+        description: `${CompanyInfo.companyName} continually works to prevent slavery and human trafficking in our supply chains or in any part of our business.`
       }
     },
     {
@@ -58,7 +61,8 @@ export default class Router implements RouterOptions {
       name: Routes.HealthAndSafety,
       component: () => import("@/views/Policies/HealthAndSafety.vue"),
       meta: {
-        title: "Health and Safety"
+        title: "Health and Safety",
+        description: `${CompanyInfo.companyName} strives for a safe and healthy working environment for all employees, contractors and members of the public.`
       }
     },
     {
@@ -66,7 +70,8 @@ export default class Router implements RouterOptions {
       name: Routes.PrivacyPolicy,
       component: () => import("@/views/Policies/PrivacyPolicy.vue"),
       meta: {
-        title: "Privacy Policy"
+        title: "Privacy Policy",
+        description: "This Privacy Notice describes how we collect and process your personal information through our website and the lifetime of a project."
       }
     },
     {
@@ -74,7 +79,8 @@ export default class Router implements RouterOptions {
       name: Routes.EnvironmentalPolicy,
       component: () => import("@/views/Policies/EnvironmentalPolicy.vue"),
       meta: {
-        title: "Environmental Policy"
+        title: "Environmental Policy",
+        description: `${CompanyInfo.companyName} recognises that its services may have an impact on the environment and is committed to reducing such impact.`
       }
     },
     {
@@ -82,7 +88,8 @@ export default class Router implements RouterOptions {
       name: Routes.QualityManagementSystem,
       component: () => import("@/views/Policies/QualityManagementSystem.vue"),
       meta: {
-        title: "Quality Management System"
+        title: "Quality Management System",
+        description: `${CompanyInfo.companyName} is proud to be certified for the ISO 9001 and ISO 14001.`
       }
     },
     // Redirects
@@ -148,7 +155,8 @@ export default class Router implements RouterOptions {
       name: Routes.PageNotFound,
       component: () => import("@/views/PageNotFound.vue"),
       meta: {
-        title: "Page Not Found"
+        title: "Page Not Found",
+        description: "We're sorry, but we were unable to find this page. If it keeps happening, please contact us."
       }
     }
   ];
@@ -175,19 +183,32 @@ export default class Router implements RouterOptions {
     /* eslint-disable-next-line */
     next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
   ) {
+    // Document title
     const baseDocumentTitle = "Shop fitting, Interior fit-outs, Timber homes | " + CompanyInfo.companyName;
     if (to.meta.title) {
       document.title = to.meta.title + " | " + baseDocumentTitle;
     } else {
       document.title = baseDocumentTitle;
     }
-    // TODO: Uncomment and refactor below for meta data for SEO
-    // if (to.meta.description) {
-    //   let tag = document.createElement('meta');
-    //   tag.setAttribute('name', 'description');
-    //   tag.setAttribute('content', to.meta.description);
-    //   document.head.appendChild(tag);
-    // }
+
+    // Document description
+    document.querySelector('meta[name="description"]')?.remove();
+    document.querySelector('meta[property="og:description"]')?.remove();
+    document.querySelector('meta[property="twitter:description"]')?.remove();
+    if (to.meta.description) {
+      let descTag = document.createElement('meta');
+      descTag.setAttribute('name', 'description');
+      descTag.setAttribute('content', to.meta.description);
+      document.head.appendChild(descTag);
+      let ogTag = document.createElement('meta');
+      ogTag.setAttribute('property', 'og:description');
+      ogTag.setAttribute('content', to.meta.description);
+      document.head.appendChild(ogTag);
+      let twitterTag = document.createElement('meta');
+      twitterTag.setAttribute('property', 'twitter:description');
+      twitterTag.setAttribute('content', to.meta.description);
+      document.head.appendChild(twitterTag);
+    }
 
     next();
   }
