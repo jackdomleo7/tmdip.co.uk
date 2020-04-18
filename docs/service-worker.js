@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.93beab852c5077c3cba24359ddac148f.js"
+  "/precache-manifest.3a98b0e41d86c0b599ba1ef8144cccca.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "tmdip"});
