@@ -10,6 +10,8 @@
 
 <script lang="ts">
 import "normalize.css";
+import "cooltipz-css";
+
 import { Component, Vue } from "vue-property-decorator";
 import { Jumbo, Navigation, FooterBar, QuickActionBar } from "@/layout";
 
