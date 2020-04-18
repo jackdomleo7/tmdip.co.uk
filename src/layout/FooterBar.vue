@@ -7,7 +7,8 @@
           :key="index"
           class="footer__social"
           type="social"
-          :title="socialLink.platform"
+          data-cooltipz-dir="top"
+          :aria-label="socialLink.platform"
           :link="socialLink.link"
         >
           <icon :icon="socialLink.platform" />
