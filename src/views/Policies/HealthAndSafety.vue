@@ -83,7 +83,7 @@ import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: { PageContent, SiteLink }
+  components: { PageContent, SiteLink },
 })
 export default class HealthAndSafety extends Vue {
   private get companyNameWithLtd(): string {

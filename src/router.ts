@@ -5,7 +5,7 @@ import {
   Route,
   RouteConfig,
   RouterMode,
-  RouterOptions
+  RouterOptions,
 } from "vue-router/types/router";
 import CompanyInfo from "@/helpers/companyInfo";
 
@@ -37,8 +37,8 @@ export default class Router implements RouterOptions {
         title: "",
         description:
           "Experts in retail, interior fit-outs and timber homes. From building new bespoke houses to HMOs, from shops to offices and pubs to restaurants.",
-        keywords: []
-      }
+        keywords: [],
+      },
     },
     {
       path: "/sub-contractors",
@@ -51,9 +51,9 @@ export default class Router implements RouterOptions {
           "sub-contractors",
           "subcontractors",
           "contractors",
-          "subscribe"
-        ]
-      }
+          "subscribe",
+        ],
+      },
     },
     {
       path: "/policies/modern-slavery-act",
@@ -66,9 +66,9 @@ export default class Router implements RouterOptions {
           "slavery",
           "trafficking",
           "human trafficking",
-          "Modern Slavery Act 2015"
-        ]
-      }
+          "Modern Slavery Act 2015",
+        ],
+      },
     },
     {
       path: "/policies/health-and-safety",
@@ -84,9 +84,9 @@ export default class Router implements RouterOptions {
           "safety",
           "health safety",
           "Health & Safety at Work Act 1974",
-          "welfare"
-        ]
-      }
+          "welfare",
+        ],
+      },
     },
     {
       path: "/policies/privacy-policy",
@@ -104,9 +104,9 @@ export default class Router implements RouterOptions {
           "gdpr",
           "process",
           "personal",
-          "collect"
-        ]
-      }
+          "collect",
+        ],
+      },
     },
     {
       path: "/policies/environmental-policy",
@@ -124,9 +124,9 @@ export default class Router implements RouterOptions {
           "eco-friendly",
           "eco friendly",
           "ems",
-          "environmental management system"
-        ]
-      }
+          "environmental management system",
+        ],
+      },
     },
     {
       path: "/policies/quality-management-system",
@@ -144,70 +144,70 @@ export default class Router implements RouterOptions {
           "iso 9001",
           "iso 14001",
           "quality",
-          "qa"
-        ]
-      }
+          "qa",
+        ],
+      },
     },
     // Redirects
     {
       path: "/policies",
-      redirect: { name: Routes.Home }
+      redirect: { name: Routes.Home },
     },
     {
       path: "/services",
-      redirect: { name: Routes.Home }
+      redirect: { name: Routes.Home },
     },
     {
       path: "/home",
-      redirect: { name: Routes.Home }
+      redirect: { name: Routes.Home },
     },
     {
       path: "/modern-slavery-act",
-      redirect: { name: Routes.ModernSlaveryAct }
+      redirect: { name: Routes.ModernSlaveryAct },
     },
     {
       path: "/health-safety",
-      redirect: { name: Routes.HealthAndSafety }
+      redirect: { name: Routes.HealthAndSafety },
     },
     {
       path: "/health-and-safety",
-      redirect: { name: Routes.HealthAndSafety }
+      redirect: { name: Routes.HealthAndSafety },
     },
     {
       path: "/privacy-policy",
-      redirect: Routes.PrivacyPolicy
+      redirect: Routes.PrivacyPolicy,
     },
     {
       path: "/ico",
-      redirect: Routes.PrivacyPolicy
+      redirect: Routes.PrivacyPolicy,
     },
     {
       path: "/environmental-policy",
-      redirect: Routes.EnvironmentalPolicy
+      redirect: Routes.EnvironmentalPolicy,
     },
     {
       path: "/ems",
-      redirect: Routes.EnvironmentalPolicy
+      redirect: Routes.EnvironmentalPolicy,
     },
     {
       path: "/qms",
-      redirect: Routes.QualityManagementSystem
+      redirect: Routes.QualityManagementSystem,
     },
     {
       path: "/iso",
-      redirect: Routes.QualityManagementSystem
+      redirect: Routes.QualityManagementSystem,
     },
     {
       path: "/subscribe",
-      redirect: Routes.SubContractors
+      redirect: Routes.SubContractors,
     },
     {
       path: "/jobs",
-      redirect: Routes.SubContractors
+      redirect: Routes.SubContractors,
     },
     {
       path: "/careers",
-      redirect: Routes.SubContractors
+      redirect: Routes.SubContractors,
     },
     // Catch all
     {
@@ -217,9 +217,9 @@ export default class Router implements RouterOptions {
       meta: {
         title: "Page Not Found",
         description:
-          "We're sorry, but we were unable to find this page. If it keeps happening, please contact us."
-      }
-    }
+          "We're sorry, but we were unable to find this page. If it keeps happening, please contact us.",
+      },
+    },
   ];
 
   public mode: RouterMode = "history";
@@ -293,7 +293,7 @@ export default class Router implements RouterOptions {
       "hmo",
       "Tony Domleo",
       "Antony Domleo",
-      "Domleo"
+      "Domleo",
     ];
     if (to.meta.keywords) {
       const keywords = baseKeywords;

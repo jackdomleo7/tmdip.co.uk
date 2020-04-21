@@ -27,7 +27,7 @@ import { Icon, SiteLink } from "@/components";
 import CompanyInfo, { TelNumber } from "@/helpers/companyInfo";
 
 @Component({
-  components: { Icon, SiteLink }
+  components: { Icon, SiteLink },
 })
 export default class QuickActionBar extends Vue {
   private get companyTelNumber(): TelNumber {

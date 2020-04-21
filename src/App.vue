@@ -16,7 +16,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { Jumbo, Navigation, FooterBar, QuickActionBar } from "@/layout";
 
 @Component({
-  components: { Jumbo, Navigation, FooterBar, QuickActionBar }
+  components: { Jumbo, Navigation, FooterBar, QuickActionBar },
 })
 export default class App extends Vue {
   private mounted() {

@@ -29,7 +29,7 @@ export default class SiteLink extends Vue {
       ["email", "external", "file", "internal", "social", "tel"].includes(
         value
       ),
-    required: true
+    required: true,
   })
   private readonly type!: string;
 

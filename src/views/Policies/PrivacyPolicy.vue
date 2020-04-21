@@ -410,7 +410,7 @@ import { SiteLink } from "@/components";
 import CompanyInfo, { TelNumber, WebDomain } from "@/helpers/companyInfo";
 
 @Component({
-  components: { PageContent, SiteLink }
+  components: { PageContent, SiteLink },
 })
 export default class PrivacyPolicy extends Vue {
   private Routes: Routes = Routes;

@@ -28,7 +28,7 @@ import Navbar from "./Navbar.vue";
 import { Icon } from "@/components";
 
 @Component({
-  components: { Icon, Navbar }
+  components: { Icon, Navbar },
 })
 export default class Navigation extends Vue {
   private isMobileNavDisplayed = false;
