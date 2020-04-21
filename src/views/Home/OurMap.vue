@@ -22,13 +22,13 @@ export default class OurMap extends Vue {
     this.map = L.map("map", {
       maxZoom: 18,
       minZoom: 2,
-      worldCopyJump: true
+      worldCopyJump: true,
     }).fitWorld();
 
     L.tileLayer(
       "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
       {
-        attribution: `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>`
+        attribution: `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>`,
       }
     ).addTo(this.map);
 
@@ -44,14 +44,14 @@ export default class OurMap extends Vue {
   private placeMarker() {
     L.marker(this.coordinates, {
       icon: this.getIcon(),
-      title: "Nottingham, East Midlands, UK"
+      title: "Nottingham, East Midlands, UK",
     }).addTo(this.map);
   }
 
   private getIcon() {
     return L.divIcon({
       html: `<img src="/img/map-icon.png" alt="${CompanyInfo.companyName}" /><span hidden>${CompanyInfo.companyName}</span>`,
-      className: "map__divicon"
+      className: "map__divicon",
     });
   }
 }

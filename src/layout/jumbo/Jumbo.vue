@@ -23,7 +23,7 @@ import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: { SiteLink }
+  components: { SiteLink },
 })
 export default class Jumbo extends Vue {
   private Routes: Routes = Routes;

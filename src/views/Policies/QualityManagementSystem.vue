@@ -52,18 +52,18 @@ interface QmsCertificate {
 }
 
 @Component({
-  components: { PageContent, SiteLink }
+  components: { PageContent, SiteLink },
 })
 export default class QualityManagementSystem extends Vue {
   private QmsCertificates: QmsCertificate[] = [
     {
       type: 9001,
-      number: 308762018
+      number: 308762018,
     },
     {
       type: 14001,
-      number: 313452019
-    }
+      number: 313452019,
+    },
   ];
 
   private get companyNameWithLtd(): string {
