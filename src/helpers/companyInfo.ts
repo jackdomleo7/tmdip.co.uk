@@ -21,7 +21,7 @@ export default class CompanyInfo {
   public static get companyWebsiteDomain(): WebDomain {
     return {
       url: this._websiteDomain.replace("https://", ""),
-      secureUrl: this._websiteDomain
+      secureUrl: this._websiteDomain,
     };
   }
 

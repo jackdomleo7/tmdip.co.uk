@@ -59,22 +59,22 @@ interface FooterSocialLink {
 }
 
 @Component({
-  components: { Icon, SiteLink }
+  components: { Icon, SiteLink },
 })
 export default class FooterBar extends Vue {
   private readonly footerSocialLinks: FooterSocialLink[] = [
     {
       platform: "LinkedIn",
-      link: "https://www.linkedin.com/company/tmdip"
+      link: "https://www.linkedin.com/company/tmdip",
     },
     {
       platform: "Facebook",
-      link: "https://www.facebook.com/TMD-Interior-Projects-615787538843133"
+      link: "https://www.facebook.com/TMD-Interior-Projects-615787538843133",
     },
     {
       platform: "Instagram",
-      link: "https://www.instagram.com/TMD_Interior_Projects"
-    }
+      link: "https://www.instagram.com/TMD_Interior_Projects",
+    },
   ];
 
   private get companyName(): string {

@@ -126,27 +126,27 @@ import CompanyInfo from "@/helpers/companyInfo";
 import OurMap from "./OurMap.vue";
 
 @Component({
-  components: { Carousel, OurMap, PageContent, SiteLink }
+  components: { Carousel, OurMap, PageContent, SiteLink },
 })
 export default class PageNotFound extends Vue {
   private Routes: Routes = Routes;
   private readonly carouselItems: object[] = [
     {
       image: "/img/carousel/smiler.jpg",
-      caption: "The Smiler - Alton Towers"
+      caption: "The Smiler - Alton Towers",
     },
     {
       image: "/img//carousel/smokehouse.jpg",
-      caption: "Smokehouse, London"
+      caption: "Smokehouse, London",
     },
     {
       image: "/img/carousel/selfridges.jpg",
-      caption: "Selfridges, Birmingham"
+      caption: "Selfridges, Birmingham",
     },
     {
       image: "/img/carousel/bauer.jpg",
-      caption: "BAUER - Ice Locker"
-    }
+      caption: "BAUER - Ice Locker",
+    },
   ];
 
   private get path(): string {

@@ -57,7 +57,7 @@ interface CarouselItem {
 }
 
 @Component({
-  components: { Icon }
+  components: { Icon },
 })
 export default class Carousel extends Vue {
   private currentSlide = 0;

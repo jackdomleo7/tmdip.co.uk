@@ -59,7 +59,7 @@ import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: { MailchimpForm, PageContent, SiteLink }
+  components: { MailchimpForm, PageContent, SiteLink },
 })
 export default class SubContractors extends Vue {
   private Routes: Routes = Routes;

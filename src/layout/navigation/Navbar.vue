@@ -59,37 +59,37 @@ export default class Navbar extends Vue {
   private readonly navList: NavList[] = [
     {
       text: "Home",
-      link: { name: Routes.Home }
+      link: { name: Routes.Home },
     },
     {
       text: "Sub-contractors",
-      link: { name: Routes.SubContractors }
+      link: { name: Routes.SubContractors },
     },
     {
       text: "Policies",
       subList: [
         {
           text: "Modern Slavery Act",
-          link: { name: Routes.ModernSlaveryAct }
+          link: { name: Routes.ModernSlaveryAct },
         },
         {
           text: "Health & Safety",
-          link: { name: Routes.HealthAndSafety }
+          link: { name: Routes.HealthAndSafety },
         },
         {
           text: "Environmental Policy",
-          link: { name: Routes.EnvironmentalPolicy }
+          link: { name: Routes.EnvironmentalPolicy },
         },
         {
           text: "Quality Managemnet System",
-          link: { name: Routes.QualityManagementSystem }
+          link: { name: Routes.QualityManagementSystem },
         },
         {
           text: "Privacy Policy",
-          link: { name: Routes.PrivacyPolicy }
-        }
-      ]
-    }
+          link: { name: Routes.PrivacyPolicy },
+        },
+      ],
+    },
   ];
 
   private isCurrentRoute(to: string): boolean {

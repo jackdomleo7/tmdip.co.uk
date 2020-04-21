@@ -192,11 +192,8 @@
           ></div>
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div
-          style=" left: -5000px;
-  position: absolute;"
-          aria-hidden="true"
-        >
+        <div style="left: -5000px;
+  position: absolute;" aria-hidden="true">
           <input
             type="text"
             name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
@@ -224,7 +221,7 @@ import { SiteLink } from "@/components";
 import CompanyInfo from "@/helpers/companyInfo";
 
 @Component({
-  components: { SiteLink }
+  components: { SiteLink },
 })
 export default class MailchimpForm extends Vue {
   private get companyNameWithLtd(): string {
