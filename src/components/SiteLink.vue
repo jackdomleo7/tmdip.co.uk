@@ -9,7 +9,7 @@
       (type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') +
       link +
       (type === 'external'
-        ? (link.includes('?') ? '&' : '?') + 'ref=tmdip.co.uk'
+        ? (link.includes('?') ? '&' : '?') + 'ref=' + companyWebsiteDomain.urlStripped
         : '')
     "
     :target="type === 'external' ? '_blank' : null"
@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import ComponyInfo, { WebDomain } from "@/helpers/companyInfo";
 
 @Component
 export default class SiteLink extends Vue {
@@ -39,6 +40,10 @@ export default class SiteLink extends Vue {
 
   @Prop({ type: [Object, String], required: true })
   private readonly link!: object | string;
+
+  private get companyWebsiteDomain(): WebDomain {
+    return ComponyInfo.companyWebsiteDomain;
+  }
 }
 </script>
 

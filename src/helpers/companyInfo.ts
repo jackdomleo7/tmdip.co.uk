@@ -6,6 +6,7 @@ export interface TelNumber {
 export interface WebDomain {
   url: string;
   secureUrl: string;
+  urlStripped: string;
 }
 
 export default class CompanyInfo {
@@ -22,6 +23,7 @@ export default class CompanyInfo {
     return {
       url: this._websiteDomain.replace("https://", ""),
       secureUrl: this._websiteDomain,
+      urlStripped: this._websiteDomain.replace("https://www.", ""),
     };
   }
 
