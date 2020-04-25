@@ -9,7 +9,9 @@
       (type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') +
       link +
       (type === 'external'
-        ? (link.includes('?') ? '&' : '?') + 'ref=' + companyWebsiteDomain.urlStripped
+        ? (link.includes('?') ? '&' : '?') +
+          'ref=' +
+          companyWebsiteDomain.urlStripped
         : '')
     "
     :target="type === 'external' ? '_blank' : null"
