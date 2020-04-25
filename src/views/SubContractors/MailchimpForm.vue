@@ -173,7 +173,7 @@
               We use Mailchimp as our marketing platform. By clicking below to
               subscribe, you acknowledge that your information will be
               transferred to Mailchimp for processing.
-              <site-link type="external" link="https://mailchimp.com/legal/"
+              <site-link type="external" link="https://mailchimp.com/legal"
                 >Learn more about Mailchimp's privacy practices here.</site-link
               >
             </p>

@@ -5,8 +5,8 @@
   <a
     v-else
     class="link"
-    :href="(type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link"
-    :target="type === 'external' || type === 'social' ? '_blank' : null"
+    :href="(type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') + link + (type === 'external' ? (link.includes('?') ? '&' : '?') + 'ref=tmdip.co.uk' : '')"
+    :target="type === 'external' ? '_blank' : null"
     :rel="
       type === 'external' || type === 'email'
         ? 'nofollow noreferrer'
@@ -26,7 +26,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class SiteLink extends Vue {
   @Prop({
     validator: (value: string) =>
-      ["email", "external", "file", "internal", "social", "tel"].includes(
+      ["email", "external", "file", "internal", "tel"].includes(
         value
       ),
     required: true,

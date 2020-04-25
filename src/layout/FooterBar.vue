@@ -6,7 +6,7 @@
           v-for="(socialLink, index) in footerSocialLinks"
           :key="index"
           class="footer__social"
-          type="social"
+          type="external"
           data-cooltipz-dir="top"
           :aria-label="socialLink.platform"
           :link="socialLink.link"

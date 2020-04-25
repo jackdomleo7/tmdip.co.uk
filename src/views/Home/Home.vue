@@ -89,7 +89,7 @@
     </article>
     <section class="extra">
       <div class="extra__row">
-        <site-link type="external" link="https://www.safecontractor.com/">
+        <site-link type="external" link="https://www.safecontractor.com">
           <img
             src="/img/safecontractor.png"
             alt="Safe Contractor Approved logo"
