@@ -43,6 +43,7 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
+    'normalize.css',
   ],
   plugins: [
   ],
@@ -51,7 +52,6 @@ export default {
   ],
   modules: [
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
   ]
 }
