@@ -55,7 +55,8 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/svg-sprite',
+    'nuxt-leaflet'
   ],
   build: {
     postcss: {

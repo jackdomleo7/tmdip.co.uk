@@ -85,7 +85,7 @@
         miles from Junction 26 of the M1, makes travel and deliveries relatively
         easy and efficient.
       </p>
-      <!-- <the-map /> -->
+      <the-map />
     </article>
     <section class="extra">
       <div class="extra__row">
@@ -119,11 +119,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { PageTemplate, SiteLink, Carousel } from "@/components";
+import { PageTemplate, SiteLink, Carousel, TheMap } from "@/components";
 import CompanyInfo from "@/middleware/companyInfo";
 
 @Component({
-  components: { Carousel, PageTemplate, SiteLink },
+  components: { Carousel, PageTemplate, SiteLink, TheMap },
 })
 export default class Index extends Vue {
   private readonly carouselItems: object[] = [
