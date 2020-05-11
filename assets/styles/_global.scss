@@ -1,0 +1,55 @@
+::selection {
+  background-color: var(--color-blue);
+  color: var(--color-grey-50);
+  text-shadow: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-grey-50);
+  color: var(--color-grey-800);
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 0.875rem;
+
+  @media (min-width: 45.625em) {
+    font-size: 1rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-grey-900);
+  font-weight: 700;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
