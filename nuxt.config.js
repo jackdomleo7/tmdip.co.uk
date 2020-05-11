@@ -44,6 +44,7 @@ export default {
   loading: { color: '#fff' },
   css: [
     'normalize.css',
+    'node_modules/cooltipz-css/src/cooltipz',
   ],
   plugins: [
   ],
@@ -53,5 +54,13 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-  ]
+  ],
+  build: {
+    postcss: {
+      plugins: {
+        autoprefixer: {},
+        cssnano: {}
+      }
+    }  
+  }
 }
