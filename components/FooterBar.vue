@@ -11,7 +11,7 @@
           :aria-label="socialLink.platform"
           :link="socialLink.link"
         >
-          <!-- <icon :icon="socialLink.platform" /> -->
+          <svg-icon :name="socialLink.platform" />
           <span hidden>{{ socialLink.platform }}</span>
         </site-link>
       </div>

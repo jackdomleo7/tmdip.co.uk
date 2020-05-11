@@ -6,7 +6,7 @@
       :link="companyEmail"
       :title="'Email us today at ' + companyEmail"
     >
-      <!-- <icon class="qab__icon qab__icon--email" icon="email" /> -->
+      <svg-icon class="qab__icon qab__icon--email" name="email" />
       <span hidden>Email us today at {{ companyEmail }}</span>
     </site-link>
     <site-link
@@ -15,7 +15,7 @@
       :link="companyTelNumber.tel"
       :title="'Call us today ' + companyTelNumber.telPretty"
     >
-      <!-- <icon class="qab__icon qab__icon--tel" icon="phone" /> -->
+      <svg-icon class="qab__icon qab__icon--tel" name="phone" />
       <span hidden>Call us today on {{ companyTelNumber.telPretty }}</span>
     </site-link>
   </section>
