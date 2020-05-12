@@ -56,8 +56,13 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/svg-sprite',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    '@nuxtjs/sitemap' // Ensure this is always last in array
   ],
+  sitemap: {
+    hostname: 'https://www.tmdip.co.uk',
+    exclude: ['/_icons']
+  },
   build: {
     postcss: {
       plugins: {
