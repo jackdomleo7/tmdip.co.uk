@@ -1,12 +1,17 @@
 <template>
   <page-template>
     <div class="not-found">
-      <h3 class="not-found__header">{{ error.statusCode === 404 ? '404 | Page Not Found' : 'An Error Occured' }}</h3>
+      <h3 class="not-found__header">
+        {{ error.statusCode === 404 ? '404 | Page Not Found' : 'An Error Occured' }}
+      </h3>
       <p>
         Please use our navigation or go to our
-        <site-link type="internal" link="/"
-          >Home page</site-link
+        <site-link
+          type="internal"
+          link="/"
         >
+          Home page
+        </site-link>
         and try again.
       </p>
     </div>
@@ -14,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink },
@@ -29,11 +34,11 @@ import CompanyInfo from "@/middleware/companyInfo";
 export default class Error extends Vue {
   @Prop() private readonly error!: string;
 
-  private get path(): string {
+  private get path (): string {
     return this.$route.path;
   }
 
-  private get companyEmail(): string {
+  private get companyEmail (): string {
     return CompanyInfo.companyEmail;
   }
 }

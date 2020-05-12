@@ -9,11 +9,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Hero, Navigation, FooterBar, QuickActionBar } from "@/components";
+import { Component, Vue } from 'vue-property-decorator';
+import { Hero, Navigation, FooterBar, QuickActionBar } from '@/components';
 
 @Component({
-  components: { Hero, Navigation, FooterBar, QuickActionBar },
+  components: { Hero, Navigation, FooterBar, QuickActionBar }
 })
 export default class Default extends Vue {}
 </script>

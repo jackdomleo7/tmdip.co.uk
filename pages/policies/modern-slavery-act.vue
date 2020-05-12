@@ -53,9 +53,10 @@
         <site-link
           type="external"
           link="https://www.legislation.gov.uk/ukpga/2015/30/contents/enacted"
-          >Section 54 of the Modern Slavery Act
-          <time datetime="2015">2015</time></site-link
         >
+          Section 54 of the Modern Slavery Act
+          <time datetime="2015">2015</time>
+        </site-link>
         and constitutes our company slavery and human trafficking statement.
       </p>
     </article>
@@ -63,9 +64,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink },
@@ -76,7 +77,7 @@ import CompanyInfo from "@/middleware/companyInfo";
   }
 })
 export default class ModernSlaveryAct extends Vue {
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

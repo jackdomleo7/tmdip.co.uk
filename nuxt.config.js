@@ -50,7 +50,7 @@ export default {
   plugins: [
   ],
   buildModules: [
-    '@nuxt/typescript-build',
+    '@nuxt/typescript-build'
   ],
   modules: [
     '@nuxtjs/pwa',
@@ -69,10 +69,10 @@ export default {
         autoprefixer: {},
         cssnano: {}
       }
-    }  
+    }
   },
   generate: {
     dir: 'docs'
   },
   publicPath: '/'
-}
+};

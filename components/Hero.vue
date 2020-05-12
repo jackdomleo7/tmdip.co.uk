@@ -5,10 +5,12 @@
       link="/"
       type="internal"
     >
-      <img src="@/static/img/nav-logo.png" alt="TMD logo" />
+      <img src="@/static/img/nav-logo.png" alt="TMD logo">
     </site-link>
     <div class="hero__text">
-      <h1 class="hero__text--header">{{ companyName }}</h1>
+      <h1 class="hero__text--header">
+        {{ companyName }}
+      </h1>
       <h2 class="hero__text--sub">
         Shops. Pubs. Restaurants. Offices. New Builds. HMOs.
       </h2>
@@ -17,15 +19,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import SiteLink from "./SiteLink.vue";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import SiteLink from './SiteLink.vue';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
-  components: { SiteLink },
+  components: { SiteLink }
 })
 export default class Hero extends Vue {
-  private get companyName(): string {
+  private get companyName (): string {
     return CompanyInfo.companyName;
   }
 }

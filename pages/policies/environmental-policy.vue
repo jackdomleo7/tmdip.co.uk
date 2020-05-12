@@ -8,27 +8,31 @@
             <site-link
               type="external"
               link="https://www.legislation.gov.uk/ukpga/1990/43/contents"
-              >The Environmental Protection Act
-              <time datetime="1990">1990</time></site-link
-            ><br />
+            >
+              The Environmental Protection Act
+              <time datetime="1990">1990</time>
+            </site-link><br>
             <site-link
               type="external"
               link="https://www.legislation.gov.uk/uksi/2007/3454/contents/made"
-              >The Waste Electrical and Electronic Equipment Regulations
-              <time datetime="2007">2007</time></site-link
-            ><br />
+            >
+              The Waste Electrical and Electronic Equipment Regulations
+              <time datetime="2007">2007</time>
+            </site-link><br>
             <site-link
               type="external"
               link="https://www.legislation.gov.uk/ukpga/1974/37/contents"
-              >The Health and Safety at Work Act
-              <time datetime="1974">1974</time></site-link
-            ><br />
+            >
+              The Health and Safety at Work Act
+              <time datetime="1974">1974</time>
+            </site-link><br>
             <site-link
               type="external"
               link="https://www.legislation.gov.uk/uksi/2012/632/contents/made"
-              >The Control of Asbestos Regulations
-              <time datetime="2012">2012</time></site-link
-            ><br />
+            >
+              The Control of Asbestos Regulations
+              <time datetime="2012">2012</time>
+            </site-link><br>
           </p>
         </li>
         <li>
@@ -134,9 +138,10 @@
           <site-link
             type="external"
             link="https://www.legislation.gov.uk/uksi/2008/314/contents/made"
-            >Site Waste Management Plan Regulations
-            <time datetime="2008">2008</time></site-link
-          >, by developing and maintaining SWMP’s for the duration of projects,
+          >
+            Site Waste Management Plan Regulations
+            <time datetime="2008">2008</time>
+          </site-link>, by developing and maintaining SWMP’s for the duration of projects,
           in excess of £300,000. In addition, to use the information to learn
           how to become more efficient on future projects.
         </li>
@@ -254,9 +259,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink },
@@ -267,7 +272,7 @@ import CompanyInfo from "@/middleware/companyInfo";
   }
 })
 export default class EnvironmentalPolicy extends Vue {
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

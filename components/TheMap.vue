@@ -1,7 +1,7 @@
 <template>
   <section id="map-wrap" class="map">
     <no-ssr placeholder="Loading map...">
-      <l-map :zoom=6 :center="coordinates" class="map__map" world-copy-jump>
+      <l-map :zoom="6" :center="coordinates" class="map__map" world-copy-jump>
         <l-tile-layer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" :attribution="attribution" />
         <l-marker :lat-lng="coordinates">
           <l-popup content="Nottingham, East Midlands, UK" />
@@ -12,14 +12,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 import L from 'leaflet';
-import CompanyInfo from "@/middleware/companyInfo";
 
 @Component
 export default class TheMap extends Vue {
   private readonly coordinates: L.LatLngExpression = [53.007079, -1.150114];
-  private readonly attribution: string = `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>`;
+  private readonly attribution: string = '&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer nofollow">OpenStreetMap</a> contributors &copy;<a href="https://carto.com/attributions" target="_blank" rel="noreferrer nofollow">CARTO</a>';
 }
 </script>
 

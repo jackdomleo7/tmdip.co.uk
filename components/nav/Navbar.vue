@@ -4,6 +4,8 @@
       <li
         v-for="(navItem, index) in navList"
         :key="index"
+        :aria-setsize="navList.length"
+        :aria-posinset="index + 1"
         class="navbar__navitem"
         @click="navItem.subList == null ? navItemClick() : null"
       >
@@ -19,8 +21,10 @@
           <span class="navbar__link" tabindex="0">{{ navItem.text }}</span>
           <ul class="navbar__sublist">
             <li
-              v-for="(subItem, index) in navItem.subList"
-              :key="index"
+              v-for="(subItem, subindex) in navItem.subList"
+              :key="subindex"
+              :aria-setsize="navItem.subList.length"
+              :aria-posinset="subindex + 1"
               class="navbar__subitem"
               @click="navItemClick"
             >
@@ -36,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue } from "vue-property-decorator";
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
 interface NavList {
   text: string;
@@ -56,46 +60,46 @@ export default class Navbar extends Vue {
 
   private readonly navList: NavList[] = [
     {
-      text: "Home",
-      link: '/',
+      text: 'Home',
+      link: '/'
     },
     {
-      text: "Sub-contractors",
-      link: '/sub-contractors',
+      text: 'Sub-contractors',
+      link: '/sub-contractors'
     },
     {
-      text: "Policies",
+      text: 'Policies',
       subList: [
         {
-          text: "Modern Slavery Act",
-          link: '/policies/modern-slavery-act',
+          text: 'Modern Slavery Act',
+          link: '/policies/modern-slavery-act'
         },
         {
-          text: "Health & Safety",
-          link: '/policies/health-and-safety',
+          text: 'Health & Safety',
+          link: '/policies/health-and-safety'
         },
         {
-          text: "Environmental Policy",
-          link: '/policies/environmental-policy',
+          text: 'Environmental Policy',
+          link: '/policies/environmental-policy'
         },
         {
-          text: "Quality Managemnet System",
-          link: '/policies/quality-management-system',
+          text: 'Quality Managemnet System',
+          link: '/policies/quality-management-system'
         },
         {
-          text: "Privacy Policy",
-          link: '/policies/privacy-policy',
-        },
-      ],
-    },
+          text: 'Privacy Policy',
+          link: '/policies/privacy-policy'
+        }
+      ]
+    }
   ];
 
-  private isCurrentRoute(to: string): boolean {
+  private isCurrentRoute (to: string): boolean {
     return this.$route.path === to;
   }
 
   @Emit()
-  public navItemClick() {}
+  public navItemClick () {}
 }
 </script>
 

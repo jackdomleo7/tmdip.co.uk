@@ -3,9 +3,12 @@
     <article>
       {{ companyNameWithLtd }} is proud to be certified for the ISO 9001 and ISO
       14001. Confirm our verification on
-      <site-link type="external" link="https://www.qmsuk.com/verification"
-        >www.qmsuk.com/verification</site-link
+      <site-link
+        type="external"
+        link="https://www.qmsuk.com/verification"
       >
+        www.qmsuk.com/verification
+      </site-link>
       using our below certification numbers.
       <div class="certificates">
         <figure
@@ -22,15 +25,16 @@
             <img
               :src="'/img/iso' + certificate.type + '.jpg'"
               :alt="'ISO ' + certificate.type + ' certificate'"
-            />
+            >
           </site-link>
           <figcaption>
             <site-link
               type="file"
               :link="'/assets/iso' + certificate.type + '.pdf'"
               title="View certificate"
-              >ISO {{ certificate.type }} certificate</site-link
             >
+              ISO {{ certificate.type }} certificate
+            </site-link>
             - number
             <span class="certificates__number">{{ certificate.number }}</span>
           </figcaption>
@@ -41,9 +45,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 interface QmsCertificate {
   type: number;
@@ -62,15 +66,15 @@ export default class QualityManagementSystem extends Vue {
   private QmsCertificates: QmsCertificate[] = [
     {
       type: 9001,
-      number: 308762018,
+      number: 308762018
     },
     {
       type: 14001,
-      number: 313452019,
-    },
+      number: 313452019
+    }
   ];
 
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

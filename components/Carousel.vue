@@ -11,21 +11,23 @@
         class="carousel__slide fade"
         :class="index === currentSlide ? 'carousel__slide--show' : null"
       >
-        <img :src="'/img/carousel/' + item.image" :alt="item.caption" />
-        <figcaption class="carousel__caption">{{ item.caption }}</figcaption>
+        <img :src="'/img/carousel/' + item.image" :alt="item.caption">
+        <figcaption class="carousel__caption">
+          {{ item.caption }}
+        </figcaption>
       </figure>
       <button
         class="carousel__toggle carousel__toggle--previous"
-        @click="previousSlide()"
         title="Previous"
+        @click="previousSlide()"
       >
         <svg-icon name="chevron-left" />
         <span hidden>Previous</span>
       </button>
       <button
         class="carousel__toggle carousel__toggle--next"
-        @click="nextSlide()"
         title="Next"
+        @click="nextSlide()"
       >
         <span hidden>Next</span>
         <svg-icon name="chevron-right" />
@@ -37,8 +39,8 @@
         :key="index"
         class="carousel__indicator"
         :class="index === currentSlide ? 'carousel__indicator--current' : null"
-        @click="setSlide(index)"
         :title="'View ' + item.caption"
+        @click="setSlide(index)"
       >
         <span hidden>View</span>
       </button>
@@ -47,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 interface CarouselItem {
   // Ensure image sizes have 16:9 aspect ratio
@@ -63,11 +65,11 @@ export default class Carousel extends Vue {
   @Prop({ type: Array, required: true })
   private readonly items!: CarouselItem[];
 
-  private mounted() {
+  private mounted () {
     this.autoplay();
   }
 
-  private nextSlide(): void {
+  private nextSlide (): void {
     if (this.currentSlide + 1 === this.items.length) {
       this.currentSlide = 0;
     } else {
@@ -75,7 +77,7 @@ export default class Carousel extends Vue {
     }
   }
 
-  private previousSlide(): void {
+  private previousSlide (): void {
     if (this.currentSlide === 0) {
       this.currentSlide = this.items.length - 1;
     } else {
@@ -83,18 +85,18 @@ export default class Carousel extends Vue {
     }
   }
 
-  private setSlide(index: number): void {
+  private setSlide (index: number): void {
     this.currentSlide = index;
   }
 
-  private autoplay(): void {
+  private autoplay (): void {
     this.timeout = setTimeout(() => {
       this.nextSlide();
       this.autoplay();
     }, 5000);
   }
 
-  private stopAutoplay(): void {
+  private stopAutoplay (): void {
     if (this.timeout) {
       window.clearTimeout(this.timeout);
     }

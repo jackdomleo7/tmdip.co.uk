@@ -22,19 +22,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink } from "@/components";
-import CompanyInfo, { TelNumber } from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink } from '@/components';
+import CompanyInfo, { TelNumber } from '@/middleware/companyInfo';
 
 @Component({
-  components: { SiteLink },
+  components: { SiteLink }
 })
 export default class QuickActionBar extends Vue {
-  private get companyTelNumber(): TelNumber {
+  private get companyTelNumber (): TelNumber {
     return CompanyInfo.companyTelNumber;
   }
 
-  private get companyEmail(): string {
+  private get companyEmail (): string {
     return CompanyInfo.companyEmail;
   }
 }

@@ -46,9 +46,10 @@
           <site-link
             type="external"
             link="https://www.legislation.gov.uk/ukpga/1974/37/contents"
-            >Health and Safety at Work Act
-            <time datetime="1974">1974</time></site-link
-          >.
+          >
+            Health and Safety at Work Act
+            <time datetime="1974">1974</time>
+          </site-link>.
         </li>
         <li>
           Whilst the final responsibility for matters of Health and Safety rests
@@ -77,9 +78,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink },
@@ -90,11 +91,11 @@ import CompanyInfo from "@/middleware/companyInfo";
   }
 })
 export default class HealthAndSafety extends Vue {
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 
-  private get companySafeContractorAccreditation(): string {
+  private get companySafeContractorAccreditation (): string {
     return CompanyInfo.companySafeContractorAccreditation;
   }
 }

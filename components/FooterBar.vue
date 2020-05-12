@@ -20,7 +20,7 @@
           class="footer__logo"
           src="/img/footer-logo.png"
           :alt="companyName + ' logo'"
-        />
+        >
         <p>
           <site-link type="tel" :link="companyTelNumber.tel">
             {{ companyTelNumber.telPretty }}
@@ -29,18 +29,19 @@
             style="display: block;"
             type="email"
             :link="companyEmail"
-            >{{ companyEmail }}</site-link
           >
+            {{ companyEmail }}
+          </site-link>
         </p>
       </div>
       <div class="footer__row">
         <p>
           &copy;<time :datetime="year">{{ year }}</time>
-          {{ companyNameWithLtd }}.<br />All rights reserved.
+          {{ companyNameWithLtd }}.<br>All rights reserved.
         </p>
         <p>
           Company Registration: {{ companyRegistration }}
-          <br />
+          <br>
           VAT Number: {{ companyVatNumber }}
         </p>
       </div>
@@ -49,9 +50,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink } from "@/components";
-import CompanyInfo, { TelNumber } from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink } from '@/components';
+import CompanyInfo, { TelNumber } from '@/middleware/companyInfo';
 
 interface FooterSocialLink {
   platform: string;
@@ -59,49 +60,49 @@ interface FooterSocialLink {
 }
 
 @Component({
-  components: { SiteLink },
+  components: { SiteLink }
 })
 export default class FooterBar extends Vue {
   private readonly footerSocialLinks: FooterSocialLink[] = [
     {
-      platform: "LinkedIn",
-      link: "https://www.linkedin.com/company/tmdip",
+      platform: 'LinkedIn',
+      link: 'https://www.linkedin.com/company/tmdip'
     },
     {
-      platform: "Facebook",
-      link: "https://www.facebook.com/TMD-Interior-Projects-615787538843133",
+      platform: 'Facebook',
+      link: 'https://www.facebook.com/TMD-Interior-Projects-615787538843133'
     },
     {
-      platform: "Instagram",
-      link: "https://www.instagram.com/TMD_Interior_Projects",
-    },
+      platform: 'Instagram',
+      link: 'https://www.instagram.com/TMD_Interior_Projects'
+    }
   ];
 
-  private get companyName(): string {
+  private get companyName (): string {
     return CompanyInfo.companyName;
   }
 
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 
-  private get companyRegistration(): string {
+  private get companyRegistration (): string {
     return CompanyInfo.companyRegistration;
   }
 
-  private get companyVatNumber(): string {
+  private get companyVatNumber (): string {
     return CompanyInfo.companyVatNumber;
   }
 
-  private get companyTelNumber(): TelNumber {
+  private get companyTelNumber (): TelNumber {
     return CompanyInfo.companyTelNumber;
   }
 
-  private get companyEmail(): string {
+  private get companyEmail (): string {
     return CompanyInfo.companyEmail;
   }
 
-  private get year(): number {
+  private get year (): number {
     return new Date().getFullYear();
   }
 }

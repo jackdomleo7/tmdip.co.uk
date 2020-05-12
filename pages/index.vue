@@ -5,12 +5,14 @@
       nationally across the UK on a wide variety of projects. From building new
       bespoke houses to HMOs, from shops to offices and pubs to restaurants, we
       can cover them all. Our fully skilled team provide quality workmanship
-      guaranteed on every project.<br />
+      guaranteed on every project.<br>
       <strong>For a free consultation, contact the team today.</strong>
     </p>
-    <carousel class="home__carousel" :items="carouselItems"></carousel>
+    <carousel class="home__carousel" :items="carouselItems" />
     <article class="about">
-      <h3 class="about__title">Services</h3>
+      <h3 class="about__title">
+        Services
+      </h3>
       <p>
         {{ companyName }} can currently provide the following services to our
         clients (all of which include a free consultation and thorough quoting):
@@ -65,7 +67,9 @@
       </p>
     </article>
     <article class="about">
-      <h3 class="about__title">About us</h3>
+      <h3 class="about__title">
+        About us
+      </h3>
       <p>
         With over 30 years’ experience, {{ companyName }} has earned its
         reputation as a client focused company in the UK. We pride ourselves
@@ -93,7 +97,7 @@
           <img
             src="/img/safecontractor.png"
             alt="Safe Contractor Approved logo"
-          />
+          >
           <span hidden>Safe Contractor Approved</span>
         </site-link>
       </div>
@@ -102,14 +106,14 @@
           type="internal"
           link="/policies/quality-management-system"
         >
-          <img src="/img/qms9001.png" alt="QMS ISO 9001" />
+          <img src="/img/qms9001.png" alt="QMS ISO 9001">
           <span hidden>QMS ISO 9001</span>
         </site-link>
         <site-link
           type="internal"
           link="/policies/quality-management-system"
         >
-          <img src="/img/qms14001.png" alt="QMS ISO 14001" />
+          <img src="/img/qms14001.png" alt="QMS ISO 14001">
           <span hidden>QMS ISO 14001</span>
         </site-link>
       </div>
@@ -118,9 +122,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { PageTemplate, SiteLink, Carousel, TheMap } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { PageTemplate, SiteLink, Carousel, TheMap } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { Carousel, PageTemplate, SiteLink, TheMap },
@@ -133,28 +137,28 @@ import CompanyInfo from "@/middleware/companyInfo";
 export default class Index extends Vue {
   private readonly carouselItems: object[] = [
     {
-      image: "smiler.jpg",
-      caption: "The Smiler - Alton Towers",
+      image: 'smiler.jpg',
+      caption: 'The Smiler - Alton Towers'
     },
     {
-      image: "smokehouse.jpg",
-      caption: "Smokehouse, London",
+      image: 'smokehouse.jpg',
+      caption: 'Smokehouse, London'
     },
     {
-      image: "selfridges.jpg",
-      caption: "Selfridges, Birmingham",
+      image: 'selfridges.jpg',
+      caption: 'Selfridges, Birmingham'
     },
     {
-      image: "bauer.jpg",
-      caption: "BAUER - Ice Locker",
-    },
+      image: 'bauer.jpg',
+      caption: 'BAUER - Ice Locker'
+    }
   ];
 
-  private get companyName(): string {
+  private get companyName (): string {
     return CompanyInfo.companyName;
   }
 
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

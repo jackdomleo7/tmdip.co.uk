@@ -3,8 +3,8 @@
     <button
       class="navbar__toggler"
       :class="isMobileNavDisplayed ? 'navbar__toggler--fixed' : null"
-      @click="isMobileNavDisplayed = !isMobileNavDisplayed"
       :title="(isMobileNavDisplayed ? 'Hide' : 'Show') + ' navigation'"
+      @click="isMobileNavDisplayed = !isMobileNavDisplayed"
     >
       <span hidden>{{
         (isMobileNavDisplayed ? "Hide" : "Show") + " navigation"
@@ -19,12 +19,12 @@
 </template>
 
 <script lang="ts">
-import "normalize.css";
-import { Component, Vue } from "vue-property-decorator";
-import Navbar from "./Navbar.vue";
+import 'normalize.css';
+import { Component, Vue } from 'vue-property-decorator';
+import Navbar from './Navbar.vue';
 
 @Component({
-  components: { Navbar },
+  components: { Navbar }
 })
 export default class Navigation extends Vue {
   private isMobileNavDisplayed = false;

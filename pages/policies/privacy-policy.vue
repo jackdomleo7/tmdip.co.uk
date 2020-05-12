@@ -5,9 +5,11 @@
         {{ companyNameWithLtd }} understands that your privacy is important to
         you and that you care about how your personal data is used. We respect
         and value the privacy of everyone who visits this website,
-        <site-link type="internal" link="/">{{
-          companyWebsiteDomain.url
-        }}</site-link>
+        <site-link type="internal" link="/">
+          {{
+            companyWebsiteDomain.url
+          }}
+        </site-link>
         and as described in Parts 5 and 6, below, we do not collect personal
         data about you unless you contact us. Any personal data we do collect
         will only be used as permitted by law.
@@ -20,7 +22,7 @@
       </p>
       <ol>
         <li>
-          Information about us:<br />
+          Information about us:<br>
           <ul>
             <li>
               Our site is owned and operated by {{ companyNameWithLtd }}, a
@@ -37,21 +39,28 @@
             </li>
             <li>
               Email address:
-              <site-link type="email" :link="companyEmail">{{
-                companyEmail
-              }}</site-link>
+              <site-link type="email" :link="companyEmail">
+                {{
+                  companyEmail
+                }}
+              </site-link>
             </li>
             <li>
               Telephone number:
-              <site-link type="tel" :link="companyTelNumber.tel">{{
-                companyTelNumber.telPretty
-              }}</site-link>
+              <site-link type="tel" :link="companyTelNumber.tel">
+                {{
+                  companyTelNumber.telPretty
+                }}
+              </site-link>
             </li>
             <li>
               We are regulated by and are a member of
-              <site-link type="external" link="https://ico.org.uk/"
-                >ICO (Information Commissioners Office)</site-link
+              <site-link
+                type="external"
+                link="https://ico.org.uk/"
               >
+                ICO (Information Commissioners Office)
+              </site-link>
             </li>
           </ul>
         </li>
@@ -69,16 +78,20 @@
           What is personal data?
           <p>
             Personal data is defined by the
-            <site-link type="external" link="https://gdpr-info.eu/"
-              >General Data Protection Regulation (EU Regulation
-              <time datetime="2016">2016</time>/679)</site-link
+            <site-link
+              type="external"
+              link="https://gdpr-info.eu/"
             >
+              General Data Protection Regulation (EU Regulation
+              <time datetime="2016">2016</time>/679)
+            </site-link>
             and the
             <site-link
               type="external"
               link="http://www.legislation.gov.uk/ukpga/2018/12/contents/enacted"
-              >Data Protection Act <time datetime="2018">2018</time></site-link
             >
+              Data Protection Act <time datetime="2018">2018</time>
+            </site-link>
             as ‘any information relating to an identifiable person who can be
             directly or indirectly identified in particular by reference to an
             identifier’.
@@ -140,13 +153,13 @@
           <p>
             For more information about our use of your personal data or
             exercising your rights as outlined above, please contact us using
-            the details provided in Part 10.<br />
+            the details provided in Part 10.<br>
             It is important that your personal data is kept accurate and
             up-to-date. If any of the personal data we hold about you changes,
-            please keep us informed as long as we have that data.<br />
+            please keep us informed as long as we have that data.<br>
             Further information about your rights can also be obtained from the
             Information Commissioner’s Office or your local Citizens Advice
-            Bureau.<br />
+            Bureau.<br>
             If you have any cause for complaint about our use of your personal
             data, you have the right to lodge a complaint with the Information
             Commissioner’s Office. We would welcome the opportunity to resolve
@@ -236,7 +249,7 @@
               data may be protected if they are part of the EU-US Privacy
               Shield. This requires that third party to provide data protection
               to standards similar to those in Europe. More information is
-              available from the European Commission.<br />
+              available from the European Commission.<br>
               Please contact us using the details below in Part 10 for further
               information about the particular data protection mechanism[s] used
               by us when transferring your personal data to a third country.
@@ -281,7 +294,7 @@
             in legal proceedings or complying with legal obligations, a court
             order, or the instructions of a government authority.
           </p>
-          <br />
+          <br>
           <p>
             If any of your personal data is transferred to a third party, as
             described above, we will take steps to ensure that your personal
@@ -353,15 +366,19 @@
           <ul>
             <li>
               Email address:
-              <site-link type="email" :link="companyEmail">{{
-                companyEmail
-              }}</site-link>
+              <site-link type="email" :link="companyEmail">
+                {{
+                  companyEmail
+                }}
+              </site-link>
             </li>
             <li>
               Telephone number:
-              <site-link type="tel" :link="companyTelNumber.tel">{{
-                companyTelNumber.telPretty
-              }}</site-link>
+              <site-link type="tel" :link="companyTelNumber.tel">
+                {{
+                  companyTelNumber.telPretty
+                }}
+              </site-link>
             </li>
             <li>
               Registered / main trading / postal address: 28 Melksham Road,
@@ -375,9 +392,12 @@
           <p>
             {{ companyNameWithLtd }} takes data protection &amp; usage seriously
             and we registered with the ICO. To view this please visit
-            <site-link type="external" link="https://ico.org.uk/register"
-              >ico.org.uk/register</site-link
-            >.
+            <site-link
+              type="external"
+              link="https://ico.org.uk/register"
+            >
+              ico.org.uk/register
+            </site-link>.
           </p>
         </li>
         <li>
@@ -403,9 +423,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate } from "@/components";
-import CompanyInfo, { TelNumber, WebDomain } from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate } from '@/components';
+import CompanyInfo, { TelNumber, WebDomain } from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink },
@@ -416,31 +436,31 @@ import CompanyInfo, { TelNumber, WebDomain } from "@/middleware/companyInfo";
   }
 })
 export default class PrivacyPolicy extends Vue {
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 
-  private get companyRegistration(): string {
+  private get companyRegistration (): string {
     return CompanyInfo.companyRegistration;
   }
 
-  private get companyVatNumber(): string {
+  private get companyVatNumber (): string {
     return CompanyInfo.companyVatNumber;
   }
 
-  private get companyTelNumber(): TelNumber {
+  private get companyTelNumber (): TelNumber {
     return CompanyInfo.companyTelNumber;
   }
 
-  private get companyEmail(): string {
+  private get companyEmail (): string {
     return CompanyInfo.companyEmail;
   }
 
-  private get companyWebsiteDomain(): WebDomain {
+  private get companyWebsiteDomain (): WebDomain {
     return CompanyInfo.companyWebsiteDomain;
   }
 
-  private get companyIcoCertificateNumber(): string {
+  private get companyIcoCertificateNumber (): string {
     return CompanyInfo.companyIcoCertificateNumber;
   }
 }

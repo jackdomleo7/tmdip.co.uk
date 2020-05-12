@@ -1,12 +1,14 @@
 <template>
   <main class="main">
-    <h3 v-if="header" class="main__header">{{ header }}</h3>
+    <h3 v-if="header" class="main__header">
+      {{ header }}
+    </h3>
     <slot />
   </main>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class PageTemplate extends Vue {

@@ -2,15 +2,15 @@
   <!-- Begin Mailchimp Signup Form -->
   <div id="mc_embed_signup">
     <form
+      id="mc-embedded-subscribe-form"
       action="https://tmdip.us20.list-manage.com/subscribe/post?u=8ce2b42d4c9d2c368b0f812d1&amp;id=77f72d1c71"
       method="post"
-      id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
       class="validate form"
       target="_blank"
       novalidate
     >
-      <p class="form__legend" aria-hidden="true" id="required-legend">
+      <p id="required-legend" class="form__legend" aria-hidden="true">
         <small>
           <span class="form__required" aria-hidden="true">*</span> Indicates
           required
@@ -19,114 +19,112 @@
       <div id="mc_embed_signup_scroll" class="form__fields">
         <div class="form__field form__field--half form__field--new-line">
           <label class="textbox">
-            <span
-              >Email Address
-              <span class="form__required" aria-hidden="true">*</span></span
-            >
+            <span>Email Address
+              <span class="form__required" aria-hidden="true">*</span></span>
             <input
+              id="mce-EMAIL"
               type="email"
               value=""
               name="EMAIL"
               class="textbox__entry"
-              id="mce-EMAIL"
               aria-describedby="required-legend"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
             Name
             <input
+              id="mce-NAME"
               type="text"
               value=""
               name="NAME"
               class="textbox__entry"
-              id="mce-NAME"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
             Phone Number
             <input
+              id="mce-PHONE"
               type="text"
               name="PHONE"
               class="textbox__entry"
               value=""
-              id="mce-PHONE"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
             Company Name
             <input
+              id="mce-COMPANY"
               type="text"
               value=""
               name="COMPANY"
               class="textbox__entry"
-              id="mce-COMPANY"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--half">
           <label class="textbox">
             Website
             <input
+              id="mce-CWEBSITE"
               type="url"
               value=""
               name="CWEBSITE"
               class="textbox__entry"
-              id="mce-CWEBSITE"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
             Public Liability Value
             <input
+              id="mce-PLV"
               type="number"
               name="PLV"
               class="textbox__entry"
               value=""
-              id="mce-PLV"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
             Employers Liability Value
             <input
+              id="mce-ELV"
               type="number"
               name="ELV"
               class="textbox__entry"
               value=""
-              id="mce-ELV"
-            />
+            >
           </label>
         </div>
         <div class="form__field form__field--third">
           <label class="textbox">
             Professional Indemnity Value
             <input
+              id="mce-PIV"
               type="number"
               name="PIV"
               class="textbox__entry"
               value=""
-              id="mce-PIV"
-            />
+            >
           </label>
         </div>
         <div class="form__field">
           <label class="textbox">
             Trade
             <input
+              id="mce-TRADE"
               type="text"
               value=""
               name="TRADE"
               class="textbox__entry"
-              id="mce-TRADE"
-            />
+            >
           </label>
         </div>
         <p>
@@ -135,8 +133,9 @@
             type="external"
             link="http://eepurl.com/gkX3jv"
             title="Mailchimp - email marketing made easy and fun"
-            >Mailchimp</site-link
           >
+            Mailchimp
+          </site-link>
         </p>
         <div id="mergeRow-gdpr" class="form__gdpr">
           <div class="content__gdpr">
@@ -149,13 +148,13 @@
             <fieldset class="form__fieldset" name="interestgroup_field">
               <label class="checkbox">
                 <input
-                  type="checkbox"
                   id="gdpr_12847"
+                  type="checkbox"
                   name="gdpr[12847]"
                   value="Y"
                   class="checkbox__input"
-                />
-                <span class="checkbox__checkmark"></span>
+                >
+                <span class="checkbox__checkmark" />
                 <span>
                   I agree to let {{ companyNameWithLtd }} send me newsletters
                   and promotional emails
@@ -173,23 +172,26 @@
               We use Mailchimp as our marketing platform. By clicking below to
               subscribe, you acknowledge that your information will be
               transferred to Mailchimp for processing.
-              <site-link type="external" link="https://mailchimp.com/legal"
-                >Learn more about Mailchimp's privacy practices here.</site-link
+              <site-link
+                type="external"
+                link="https://mailchimp.com/legal"
               >
+                Learn more about Mailchimp's privacy practices here.
+              </site-link>
             </p>
           </div>
         </div>
         <div id="mce-responses" class="clear">
           <div
-            class="response"
             id="mce-error-response"
-            style="display: none;"
-          ></div>
-          <div
             class="response"
-            id="mce-success-response"
             style="display: none;"
-          ></div>
+          />
+          <div
+            id="mce-success-response"
+            class="response"
+            style="display: none;"
+          />
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="left: -5000px;position: absolute;" aria-hidden="true">
@@ -198,15 +200,15 @@
             name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
             tabindex="-1"
             value=""
-          />
+          >
         </div>
         <input
+          id="mc-embedded-subscribe"
           type="submit"
           value="Subscribe"
           name="subscribe"
-          id="mc-embedded-subscribe"
           class="button"
-        />
+        >
       </div>
     </form>
   </div>
@@ -215,15 +217,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
-  components: { SiteLink },
+  components: { SiteLink }
 })
 export default class SubContractorForm extends Vue {
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

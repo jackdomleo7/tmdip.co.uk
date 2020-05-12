@@ -32,28 +32,27 @@
     <p>
       <small>
         {{ companyNameWithLtd }} recommends that sub contractor companies have
-        the same value insurance as we do.<br />
-        Public Liability £10 million &amp; Employers Liability £10 million.<br />
+        the same value insurance as we do.<br>
+        Public Liability £10 million &amp; Employers Liability £10 million.<br>
         Self employed fitters require Public Liability £5 million &amp; CIS
         Unique Tax Reference Number.
       </small>
     </p>
     <p>
-      <small
-        >For more information on the information we collect, please read our
-        <site-link type="internal" link="/policies/privacy-policy"
-          >privacy policy</site-link
-        >.</small
-      >
+      <small>For more information on the information we collect, please read our
+        <site-link
+          type="internal"
+          link="/policies/privacy-policy"
+        >privacy policy</site-link>.</small>
     </p>
     <sub-contractor-form />
   </page-template>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SiteLink, PageTemplate, SubContractorForm } from "@/components";
-import CompanyInfo from "@/middleware/companyInfo";
+import { Component, Vue } from 'vue-property-decorator';
+import { SiteLink, PageTemplate, SubContractorForm } from '@/components';
+import CompanyInfo from '@/middleware/companyInfo';
 
 @Component({
   components: { PageTemplate, SiteLink, SubContractorForm },
@@ -64,11 +63,11 @@ import CompanyInfo from "@/middleware/companyInfo";
   }
 })
 export default class SubContractors extends Vue {
-  private get companyEmail(): string {
+  private get companyEmail (): string {
     return CompanyInfo.companyEmail;
   }
 
-  private get companyNameWithLtd(): string {
+  private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
 }

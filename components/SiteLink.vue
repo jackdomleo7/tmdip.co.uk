@@ -7,20 +7,20 @@
     class="link"
     :href="
       (type === 'email' ? 'mailto:' : type === 'tel' ? 'tel:' : '') +
-      link +
-      (type === 'external'
-        ? (link.includes('?') ? '&' : '?') +
-          'ref=' +
-          companyWebsiteDomain.url
-        : '')
+        link +
+        (type === 'external'
+          ? (link.includes('?') ? '&' : '?') +
+            'ref=' +
+            companyWebsiteDomain.url
+          : '')
     "
     :target="type === 'external' ? '_blank' : null"
     :rel="
       type === 'external' || type === 'email'
         ? 'nofollow noreferrer'
         : type === 'tel' || type === 'file'
-        ? 'noopener noreferrer'
-        : null
+          ? 'noopener noreferrer'
+          : null
     "
   >
     <slot />
@@ -28,22 +28,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import ComponyInfo, { WebDomain } from "@/middleware/companyInfo";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import ComponyInfo, { WebDomain } from '@/middleware/companyInfo';
 
 @Component
 export default class SiteLink extends Vue {
   @Prop({
     validator: (value: string) =>
-      ["email", "external", "file", "internal", "tel"].includes(value),
-    required: true,
+      ['email', 'external', 'file', 'internal', 'tel'].includes(value),
+    required: true
   })
   private readonly type!: string;
 
   @Prop({ type: [Object, String], required: true })
   private readonly link!: object | string;
 
-  private get companyWebsiteDomain(): WebDomain {
+  private get companyWebsiteDomain (): WebDomain {
     return ComponyInfo.companyWebsiteDomain;
   }
 }
