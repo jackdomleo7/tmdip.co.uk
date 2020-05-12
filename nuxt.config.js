@@ -65,5 +65,9 @@ export default {
         cssnano: {}
       }
     }  
-  }
+  },
+  generate: {
+    dir: 'docs'
+  },
+  publicPath: '/'
 }
