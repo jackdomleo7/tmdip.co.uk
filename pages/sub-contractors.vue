@@ -57,6 +57,11 @@ import CompanyInfo from "@/middleware/companyInfo";
 
 @Component({
   components: { PageTemplate, SiteLink, SubContractorForm },
+  head () {
+    return {
+      title: 'Sub-contractors'
+    };
+  }
 })
 export default class SubContractors extends Vue {
   private get companyEmail(): string {
