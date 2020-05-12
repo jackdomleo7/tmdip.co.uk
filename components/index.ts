@@ -6,6 +6,7 @@ import QuickActionBar from './QuickActionBar.vue';
 import PageTemplate from './PageTemplate.vue';
 import TheMap from './TheMap.vue';
 import Carousel from './Carousel.vue';
+import SubContractorForm from './SubContractorForm.vue';
 
 export {
   Hero,
@@ -15,5 +16,6 @@ export {
   QuickActionBar,
   PageTemplate,
   TheMap,
-  Carousel
+  Carousel,
+  SubContractorForm
 }

@@ -124,6 +124,11 @@ import CompanyInfo from "@/middleware/companyInfo";
 
 @Component({
   components: { Carousel, PageTemplate, SiteLink, TheMap },
+  head () {
+    return {
+      title: 'Home'
+    };
+  }
 })
 export default class Index extends Vue {
   private readonly carouselItems: object[] = [

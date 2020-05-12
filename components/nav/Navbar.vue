@@ -135,7 +135,7 @@ export default class Navbar extends Vue {
       user-select: none;
 
       &:hover,
-      &.router-link-exact-active {
+      &.nuxt-link-exact-active {
         background-color: var(--color-grey-200);
       }
     }

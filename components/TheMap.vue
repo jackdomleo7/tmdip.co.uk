@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import L from 'leaflet';
 import CompanyInfo from "@/middleware/companyInfo";
 
 @Component
