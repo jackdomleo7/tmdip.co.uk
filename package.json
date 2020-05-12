@@ -1,12 +1,17 @@
 {
   "name": "tmdip.co.uk",
   "version": "1.0.0",
+  "private": true,
   "description": "Website for TMD Interior Projects & Building Services Ltd",
   "author": {
     "name": "Jack Domleo",
     "url": "https://jackdomleo.dev"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDomleo/tmdip.co.uk.git"
+  },
+  "homepage": "https://www.tmdip.co.uk",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
