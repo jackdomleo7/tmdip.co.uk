@@ -72,7 +72,8 @@ export default {
     }
   },
   generate: {
-    dir: 'docs'
+    dir: 'docs',
+    fallback: '404.html'
   },
   publicPath: '/'
 };
