@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator';
 import SiteLink from './SiteLink.vue';
 import CompanyInfo from '@/middleware/companyInfo';
 

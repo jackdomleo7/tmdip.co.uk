@@ -423,7 +423,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator';
 import { SiteLink, PageTemplate } from '@/components';
 import CompanyInfo, { TelNumber, WebDomain } from '@/middleware/companyInfo';
 

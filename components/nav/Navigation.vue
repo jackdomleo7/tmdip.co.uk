@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import 'normalize.css';
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator';
 import Navbar from './Navbar.vue';
 
 @Component({

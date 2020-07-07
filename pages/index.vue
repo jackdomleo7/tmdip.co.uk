@@ -122,7 +122,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator';
 import { PageTemplate, SiteLink, Carousel, TheMap } from '@/components';
 import CompanyInfo from '@/middleware/companyInfo';
 

@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue } from 'nuxt-property-decorator';
 
 interface NavList {
   text: string;
