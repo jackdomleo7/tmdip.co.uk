@@ -13,8 +13,8 @@ export default class CompanyInfo {
   private static readonly _websiteDomain: string = 'https://www.tmdip.co.uk';
   private static readonly _registration: string = '11272002';
   private static readonly _vatNumber: string = '291620212';
-  private static readonly _telNumber: string = '+44 (0)115 772 2100';
-  private static readonly _email: string = 'info@tmdip.co.uk';
+  private static readonly _telNumber: string = '+44 (0)7454 689 132';
+  private static readonly _email: string = 'tony@tmdip.co.uk';
   private static readonly _safeContractorAccreditation: string = 'DQ7779';
   private static readonly _icoCertificateNumber: string = 'ZA469003';
 

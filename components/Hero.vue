@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import SiteLink from './SiteLink.vue';
 import CompanyInfo from '@/middleware/companyInfo';
+import SiteLink from './SiteLink.vue';
 
 @Component({
   components: { SiteLink }
