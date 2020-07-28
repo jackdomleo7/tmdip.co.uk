@@ -1,24 +1,8 @@
 <template>
   <page-template header="Sub-contractors">
     <h3>
-      Subscribe below to subscribe to our business updates and sub-contractor
-      job opportunities
+      Fill out the form below to be considered for future contractor work
     </h3>
-    <p>
-      Every now and then, we may send emails to our subscribed database that may
-      include:
-    </p>
-    <ul>
-      <li>
-        Business updates
-      </li>
-      <li>
-        Sub-contractor job opportunities
-      </li>
-      <li>
-        Legal notifications such as policy changes
-      </li>
-    </ul>
     <p>
       You are not required to fill out every field, however the more information
       you provide us, will increase your chances to work with us. We only

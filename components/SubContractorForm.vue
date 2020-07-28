@@ -1,219 +1,137 @@
 <template>
-  <!-- Begin Mailchimp Signup Form -->
-  <div id="mc_embed_signup">
-    <form
-      id="mc-embedded-subscribe-form"
-      action="https://tmdip.us20.list-manage.com/subscribe/post?u=8ce2b42d4c9d2c368b0f812d1&amp;id=77f72d1c71"
-      method="post"
-      name="mc-embedded-subscribe-form"
-      class="validate form"
-      target="_blank"
-      novalidate
-    >
-      <p id="required-legend" class="form__legend" aria-hidden="true">
-        <small>
-          <span class="form__required" aria-hidden="true">*</span> Indicates
-          required
-        </small>
-      </p>
-      <div id="mc_embed_signup_scroll" class="form__fields">
-        <div class="form__field form__field--half form__field--new-line">
-          <label class="textbox">
-            <span>Email Address
-              <span class="form__required" aria-hidden="true">*</span></span>
-            <input
-              id="mce-EMAIL"
-              type="email"
-              value=""
-              name="EMAIL"
-              class="textbox__entry"
-              aria-describedby="required-legend"
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--half">
-          <label class="textbox">
-            Name
-            <input
-              id="mce-NAME"
-              type="text"
-              value=""
-              name="NAME"
-              class="textbox__entry"
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--half">
-          <label class="textbox">
-            Phone Number
-            <input
-              id="mce-PHONE"
-              type="text"
-              name="PHONE"
-              class="textbox__entry"
-              value=""
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--half">
-          <label class="textbox">
-            Company Name
-            <input
-              id="mce-COMPANY"
-              type="text"
-              value=""
-              name="COMPANY"
-              class="textbox__entry"
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--half">
-          <label class="textbox">
-            Website
-            <input
-              id="mce-CWEBSITE"
-              type="url"
-              value=""
-              name="CWEBSITE"
-              class="textbox__entry"
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--third">
-          <label class="textbox">
-            Public Liability Value
-            <input
-              id="mce-PLV"
-              type="number"
-              name="PLV"
-              class="textbox__entry"
-              value=""
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--third">
-          <label class="textbox">
-            Employers Liability Value
-            <input
-              id="mce-ELV"
-              type="number"
-              name="ELV"
-              class="textbox__entry"
-              value=""
-            >
-          </label>
-        </div>
-        <div class="form__field form__field--third">
-          <label class="textbox">
-            Professional Indemnity Value
-            <input
-              id="mce-PIV"
-              type="number"
-              name="PIV"
-              class="textbox__entry"
-              value=""
-            >
-          </label>
-        </div>
-        <div class="form__field">
-          <label class="textbox">
-            Trade
-            <input
-              id="mce-TRADE"
-              type="text"
-              value=""
-              name="TRADE"
-              class="textbox__entry"
-            >
-          </label>
-        </div>
-        <p>
-          Powered by
-          <site-link
-            type="external"
-            link="http://eepurl.com/gkX3jv"
-            title="Mailchimp - email marketing made easy and fun"
-          >
-            Mailchimp
-          </site-link>
-        </p>
-        <div id="mergeRow-gdpr" class="form__gdpr">
-          <div class="content__gdpr">
-            <label>Marketing Permissions</label>
-            <p>
-              {{ companyNameWithLtd }} will use the information you provide on
-              this form to be in touch with you and to provide updates and
-              marketing.
-            </p>
-            <fieldset class="form__fieldset" name="interestgroup_field">
-              <label class="checkbox">
-                <input
-                  id="gdpr_12847"
-                  type="checkbox"
-                  name="gdpr[12847]"
-                  value="Y"
-                  class="checkbox__input"
-                >
-                <span class="checkbox__checkmark" />
-                <span>
-                  I agree to let {{ companyNameWithLtd }} send me newsletters
-                  and promotional emails
-                </span>
-              </label>
-            </fieldset>
-            <p>
-              You can unsubscribe at any time by clicking the link in the footer
-              of our emails. For information about our privacy practices, please
-              visit our website.
-            </p>
-          </div>
-          <div class="content__gdprLegal">
-            <p>
-              We use Mailchimp as our marketing platform. By clicking below to
-              subscribe, you acknowledge that your information will be
-              transferred to Mailchimp for processing.
-              <site-link
-                type="external"
-                link="https://mailchimp.com/legal"
-              >
-                Learn more about Mailchimp's privacy practices here.
-              </site-link>
-            </p>
-          </div>
-        </div>
-        <div id="mce-responses" class="clear">
-          <div
-            id="mce-error-response"
-            class="response"
-            style="display: none;"
-          />
-          <div
-            id="mce-success-response"
-            class="response"
-            style="display: none;"
-          />
-        </div>
-        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="left: -5000px;position: absolute;" aria-hidden="true">
+  <form
+    action="https://formspree.io/xknqkylj"
+    method="POST"
+    class="form"
+  >
+    <p id="required-legend" class="form__legend" aria-hidden="true">
+      <small>
+        <span class="form__required" aria-hidden="true">*</span> Indicates
+        required
+      </small>
+    </p>
+    <div class="form__field form__field--half form__field--new-line">
+      <label class="textbox">
+        <span>Name:
+        </span>
+        <input class="textbox__entry" type="text" name="Name" placeholder="Your name">
+      </label>
+    </div>
+    <div class="form__fields">
+      <div class="form__field form__field--half">
+        <label class="textbox">
+          <span>Email address:
+            <span class="form__required" aria-hidden="true">*</span>
+          </span>
           <input
-            type="text"
-            name="b_8ce2b42d4c9d2c368b0f812d1_77f72d1c71"
-            tabindex="-1"
-            value=""
+            v-model="email"
+            class="textbox__entry"
+            type="email"
+            name="Email"
+            placeholder="your.email@example.com"
+            required
           >
-        </div>
-        <input
-          id="mc-embedded-subscribe"
-          type="submit"
-          value="Subscribe"
-          name="subscribe"
-          class="button"
-        >
+        </label>
       </div>
-    </form>
-  </div>
-
-  <!--End mc_embed_signup-->
+      <div class="form__field form__field--half">
+        <label class="textbox">
+          <span>Telephone:
+            <span class="form__required" aria-hidden="true">*</span>
+          </span>
+          <input
+            v-model="telephone"
+            class="textbox__entry"
+            type="tel"
+            name="Telephone"
+            placeholder="+44 115..."
+            required
+          >
+        </label>
+      </div>
+      <div class="form__field form__field--half">
+        <label class="textbox">
+          <span>Company name:
+            <span class="form__required" aria-hidden="true">*</span>
+          </span>
+          <input
+            v-model="companyName"
+            class="textbox__entry"
+            type="text"
+            name="Company name"
+            placeholder="Your company's name"
+            required
+          >
+        </label>
+      </div>
+      <div class="form__field form__field--half">
+        <label class="textbox">
+          <span>Website:
+          </span>
+          <input class="textbox__entry" type="url" name="Website" placeholder="yourwebsite.com">
+        </label>
+      </div>
+      <div class="form__field form__field--third">
+        <label class="textbox">
+          <span>Public liability value (£m):
+            <span class="form__required" aria-hidden="true">*</span>
+          </span>
+          <input
+            v-model="plv"
+            class="textbox__entry"
+            type="number"
+            name="Public liability value (£m)"
+            step="0.01"
+            placeholder="10"
+            required
+          >
+        </label>
+      </div>
+      <div class="form__field form__field--third">
+        <label class="textbox">
+          <span>Employer's liability value (£m):
+          </span>
+          <input class="textbox__entry" type="number" name="Employer's liability value (£m)" step="0.01" placeholder="12">
+        </label>
+      </div>
+      <div class="form__field form__field--third">
+        <label class="textbox">
+          <span>Professional Indemnity value (£m):
+          </span>
+          <input class="textbox__entry" type="number" name="Professional Indemnity value (£m)" step="0.01" placeholder="6.5">
+        </label>
+      </div>
+      <div class="form__field">
+        <label class="textbox">
+          <span>Trade:
+          </span>
+          <input class="textbox__entry" type="text" name="Trade" placeholder="Construction / Plumber / Electrician / Plasterer">
+        </label>
+      </div>
+      <div class="form__field">
+        <label class="textbox">
+          <span>Message:
+          </span>
+          <textarea class="textbox__entry" type="number" name="Message" placeholder="We would love to be considered for future contractor work..." />
+        </label>
+      </div>
+      <div class="form__field">
+        <label class="checkbox">
+          <input
+            v-model="agreed"
+            type="checkbox"
+            class="checkbox__input"
+          >
+          <span class="checkbox__checkmark" />
+          <span>
+            I agree to let {{ companyNameWithLtd }} use my information provided to contact me about potential job/contact opportunities.
+          </span>
+        </label>
+      </div>
+      <button :disabled="!agreed || !email || !telephone || !plv || !companyName" class="button" type="submit">
+        Send
+      </button>
+    </div>
+  </form>
 </template>
 
 <script lang="ts">
@@ -225,6 +143,12 @@ import CompanyInfo from '@/middleware/companyInfo';
   components: { SiteLink }
 })
 export default class SubContractorForm extends Vue {
+  private agreed: boolean = false;
+  private email: string = '';
+  private telephone: string = '';
+  private plv: string = '';
+  private companyName: string = '';
+
   private get companyNameWithLtd (): string {
     return CompanyInfo.companyNameWithLtd;
   }
@@ -283,13 +207,6 @@ export default class SubContractorForm extends Vue {
       width: 33.3333%;
     }
   }
-
-  &__fieldset {
-    align-items: center;
-    border: none;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .button {
@@ -308,6 +225,11 @@ export default class SubContractorForm extends Vue {
   &:hover,
   &:focus {
     box-shadow: 0 0 1rem var(--color-grey-500);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
@@ -336,6 +258,13 @@ export default class SubContractorForm extends Vue {
     &:focus {
       border-color: var(--color-grey-900);
     }
+  }
+
+  textarea {
+    resize: vertical;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 5rem;
   }
 
   .form__required {
