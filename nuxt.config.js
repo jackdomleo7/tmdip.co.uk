@@ -1,7 +1,6 @@
 const companyName = 'TMD Interior Projects & Building Services';
 
 export default {
-  mode: 'universal',
   head: {
     titleTemplate: `%s | Shop fitting, Interior fit-outs, Timber homes | ${companyName}`,
     meta: [
