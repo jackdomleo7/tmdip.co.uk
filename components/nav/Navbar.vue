@@ -83,10 +83,6 @@ export default class Navbar extends Vue {
           link: '/policies/environmental-policy'
         },
         {
-          text: 'Quality Managemnet System',
-          link: '/policies/quality-management-system'
-        },
-        {
           text: 'Privacy Policy',
           link: '/policies/privacy-policy'
         }

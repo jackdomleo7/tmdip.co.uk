@@ -101,22 +101,6 @@
           <span hidden>Safe Contractor Approved</span>
         </site-link>
       </div>
-      <div class="extra__row">
-        <site-link
-          type="internal"
-          link="/policies/quality-management-system"
-        >
-          <img src="/img/qms9001.png" alt="QMS ISO 9001">
-          <span hidden>QMS ISO 9001</span>
-        </site-link>
-        <site-link
-          type="internal"
-          link="/policies/quality-management-system"
-        >
-          <img src="/img/qms14001.png" alt="QMS ISO 14001">
-          <span hidden>QMS ISO 14001</span>
-        </site-link>
-      </div>
     </section>
   </page-template>
 </template>
@@ -193,22 +177,6 @@ export default class Index extends Vue {
     flex-direction: column;
     justify-content: space-around;
     margin: 0.5rem 0;
-
-    @media (min-width: 45.625em) {
-      flex-direction: row;
-    }
-
-    * {
-      margin: 0.5rem 0;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
   }
 }
 </style>
