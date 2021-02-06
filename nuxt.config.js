@@ -34,11 +34,16 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/svg-sprite',
     '@nuxt/image',
-    '@luxdamore/nuxt-prune-html'
+    '@luxdamore/nuxt-prune-html',
+    '@nuxtjs/sitemap' // Always declare last
   ],
   robots: {
     UserAgent: '*',
     Allow: '/'
+  },
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    exclude: ['/_icons']
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
