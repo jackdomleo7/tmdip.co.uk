@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 export default {
   ssr: false,
   target: 'static',
@@ -25,6 +27,7 @@ export default {
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv'
   ],
   modules: [
     '@nuxtjs/pwa',
