@@ -31,8 +31,13 @@ export default {
   ],
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/robots',
     '@luxdamore/nuxt-prune-html'
   ],
+  robots: {
+    UserAgent: '*',
+    Allow: '/'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
