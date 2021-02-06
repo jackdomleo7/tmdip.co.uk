@@ -27,8 +27,15 @@ export default {
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/prismic'
   ],
+  prismic: {
+    endpoint: 'https://www-tmdip-co-uk.cdn.prismic.io/api/v2',
+    apiOptions: {
+      accessToken: process.env.PRISMIC_ACCESS_TOKEN
+    }
+  },
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/robots',
