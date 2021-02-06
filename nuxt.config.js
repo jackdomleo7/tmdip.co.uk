@@ -33,6 +33,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/robots',
     '@nuxtjs/svg-sprite',
+    '@nuxt/image',
     '@luxdamore/nuxt-prune-html'
   ],
   robots: {
