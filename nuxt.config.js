@@ -1,4 +1,5 @@
 require('dotenv').config();
+const siteconfig = require('./siteconfig.json')
 
 export default {
   ssr: false,
@@ -6,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tmdip.co.uk',
+    titleTemplate: `%s | ${siteconfig.brand_name.full}`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -48,7 +49,7 @@ export default {
     Allow: '/'
   },
   sitemap: {
-    hostname: process.env.BASE_URL,
+    hostname: siteconfig.base_url,
     exclude: ['/_icons']
   },
 
