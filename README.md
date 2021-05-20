@@ -1,6 +1,18 @@
 # tmdip.co.uk
 
-## Build Setup
+![Website online status](https://img.shields.io/website?down_color=red&down_message=Offline&up_color=green&up_message=Online&url=https%3A%2F%2Fwww.tmdip.co.uk)
+
+## Development
+
+### Setup
+
+- `git clone https://github.com/jackdomleo7/tmdip.co.uk`
+- `cd tmdip.co.uk`
+- `npm i`
+- Create a `.env` file in the root with the following variables (these are not committed to git):
+  - `PRISMIC_ACCESS_TOKEN`
+
+### Scripts
 
 ```bash
 # install dependencies
