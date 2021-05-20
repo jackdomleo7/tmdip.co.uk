@@ -1,0 +1,1 @@
+export { default as THeader } from './Header.vue'
