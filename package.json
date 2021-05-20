@@ -8,9 +8,9 @@
   },
   "scripts": {
     "dev": "nuxt --open",
-    "build": "nuxt build",
+    "build": "nuxt build --modern=client",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate -m",
     "test": "jest"
   },
   "dependencies": {
