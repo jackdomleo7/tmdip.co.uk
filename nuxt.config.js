@@ -25,7 +25,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
-  components: true,
+  components: false, // Set to true when Jest has resolved auto-components
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
