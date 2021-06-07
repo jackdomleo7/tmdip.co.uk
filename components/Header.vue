@@ -9,15 +9,18 @@
         <p>{{ $prismic.asText(header.data.subheader) }}</p>
       </div>
     </div>
+    <navigation />
   </header>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Navigation from './Navigation.vue'
 import siteconfig from '@/siteconfig.json'
 
 export default Vue.extend({
   name: 'Header',
+  components: { Navigation },
   data () {
     return {
       siteconfig
