@@ -50,7 +50,7 @@ export default {
   },
   sitemap: {
     hostname: siteconfig.base_url,
-    exclude: ['/_icons']
+    exclude: ['/_icons', '/preview']
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
