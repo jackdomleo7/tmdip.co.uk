@@ -16,17 +16,17 @@
     </div>
     <ul class="nav__primary" :class="{'nav__primary--mobile-open': isMobile && showMobileNav}">
       <li v-for="(navItem, index) in navItems" :key="navItem.text" :aria-setsize="navItems.length" :aria-posinset="index + 1" :class="{ 'open': displayedMobileNavItemIndex === index }">
-        <nuxt-link v-if="navItem.url" :to="navItem.url" @click="navItemClick($event, index)">
+        <nuxt-link v-if="navItem.url" :to="navItem.url" :aria-current="isCurrentPage(navItem.url)" @click="navItemClick($event, index)">
           {{ navItem.text }}
           <svg-icon v-if="navItem.subMenu" name="chevron-down" />
         </nuxt-link>
-        <a v-else href="javascript:void(0)" @click="navItemClick($event, index)">
+        <a v-else href="javascript:void(0)" :aria-current="isCurrentPage(navItem.url)" @click="navItemClick($event, index)">
           {{ navItem.text }}
           <svg-icon v-if="navItem.subMenu" name="chevron-down" />
         </a>
         <ul v-if="navItem.subMenu" class="nav__submenu">
           <li v-for="(subItem, index) in navItem.subMenu" :key="subItem.url" :aria-setsize="navItem.subMenu.length" :aria-posinset="index + 1">
-            <nuxt-link :to="subItem.url">{{ subItem.text }}</nuxt-link>
+            <nuxt-link :to="subItem.url" :aria-current="isCurrentPage(subItem.url)">{{ subItem.text }}</nuxt-link>
           </li>
         </ul>
       </li>
@@ -135,6 +135,9 @@ export default Vue.extend({
     setResponsiveness (): void {
       const navBreak = 54.5 // Number should match em value on $nav-break in below SCSS
       this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches || window.innerWidth <= (navBreak * 16 /* em to px */)
+    },
+    isCurrentPage (path: string): 'page' | undefined {
+      return this.$route.path === path ? 'page' : undefined
     },
     navItemClick(event: Event, index: number): void {
       if (this.isMobile && this.navItems[index].subMenu) {
