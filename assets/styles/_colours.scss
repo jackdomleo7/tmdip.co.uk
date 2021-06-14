@@ -1,11 +1,15 @@
 $color-white: #fff;
 $color-black: #000;
+$color-grey-lightest: #f7f8fe;
+$color-grey-light: #edeef0;
 $color-orange: #ff5921;
 $color-orange-o50: fade_out($color-orange, 0.5);
 
 :root {
   --color-white: #{$color-white};
   --color-black: #{$color-black};
+  --color-grey-lightest: #{$color-grey-lightest};
+  --color-grey-light: #{$color-grey-light};
   --color-orange: #{$color-orange};
   --color-orange-o50: #{$color-orange-o50};
 }
