@@ -13,6 +13,7 @@
           <span></span>
           <span></span>
         </div>
+        <div class="sr-only">{{ showMobileNav ? 'Close' : 'Show' }} menu</div>
       </button>
       <a :href="`tel:${siteconfig.tel.country.replace(/\s/g, '')}`" target="_blank" rel="noopener noreferrer">
         <svg-icon name="phone" />
