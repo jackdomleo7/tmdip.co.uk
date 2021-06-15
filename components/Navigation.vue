@@ -5,9 +5,14 @@
         <svg-icon name="mail" />
         Email Us
       </a>
-      <button class="nav__hamburger" @click="showMobileNav = !showMobileNav">
+      <button class="nav__hamburger" :class="{'nav__hamburger--open': showMobileNav}" @click="showMobileNav = !showMobileNav">
         <span></span>
-        <svg-icon name="menu" />
+        <div class="nav__hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </button>
       <a :href="`tel:${siteconfig.tel.country.replace(/\s/g, '')}`" target="_blank" rel="noopener noreferrer">
         <svg-icon name="phone" />
@@ -184,59 +189,103 @@ $nav-height: 3.8rem;
           fill: var(--color-black);
         }
       }
+    }
 
-      button {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        bottom: 25%;
+    &__hamburger {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      bottom: 25%;
+      width: 3.375rem;
+      height: 1.9375rem;
+      background-color: var(--color-orange);
+      border: none;
+      margin: 1rem 0;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 2.375rem;
+        height: 2.375rem;
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: inherit;
+        left: 0.5rem;
+        box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      }
+
+      &::before {
+        top: -1.1875rem;
+      }
+
+      &::after {
+        bottom: -1.1875rem;
+      }
+
+      > span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 3.375rem;
         height: 1.9375rem;
-        background-color: var(--color-orange);
-        border: none;
-        margin: 1rem 0;
-        box-shadow: 0 0 8px rgba(0,0,0,0.4);
+        z-index: 2;
+        background: inherit;
+      }
 
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          width: 2.375rem;
-          height: 2.375rem;
-          transform: scaleY(0.5774) rotate(-45deg);
-          background-color: inherit;
-          left: 0.5rem;
-          box-shadow: 0 0 8px rgba(0,0,0,0.4);
-        }
-
-        &::before {
-          top: -1.1875rem;
-        }
-
-        &::after {
-          bottom: -1.1875rem;
-        }
+      &-icon {
+        width: 1.875rem;
+        height: 1.375rem;
+        position: relative;
+        z-index: 2;
+        transform: rotate(0deg);
+        cursor: pointer;
 
         span {
           display: block;
           position: absolute;
-          top: 0;
+          height: 0.25rem;
+          width: 100%;
+          background-color: var(--color-white);
+          border-radius: 0.5rem;
+          opacity: 1;
           left: 0;
-          width: 3.375rem;
-          height: 1.9375rem;
-          z-index: 2;
-          background: inherit;
-        }
+          transform: rotate(0deg);
+          transition: 0.25s ease-in-out;
 
-        svg {
-          height: 2.4rem;
-          width: 2.4rem;
-          fill: var(--color-white);
-          position: relative;
-          z-index: 2;
+          &:nth-child(1) {
+            top: 0;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            top: 45%;
+          }
+
+          &:nth-child(4) {
+            top: 90%;
+          }
+
+          .nav__hamburger--open & {
+            &:nth-child(1),
+            &:nth-child(4) {
+              top: 45%;
+              width: 0;
+              left: 50%;
+            }
+
+            &:nth-child(2) {
+              transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+            }
+          }
         }
       }
     }
