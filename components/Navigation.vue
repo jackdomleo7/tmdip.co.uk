@@ -363,7 +363,7 @@ $nav-height: 3.8rem;
   }
 
   @media (min-width: $nav-break) {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     border-bottom: 1px solid var(--color-black);
     position: relative;
 

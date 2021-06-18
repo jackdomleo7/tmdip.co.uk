@@ -1,6 +1,9 @@
 <template>
   <div>
     <t-header :header="header" />
+    <div class="container">
+      <prismic-rich-text class="intro" :field="homepage.data.intro" />
+    </div>
   </div>
 </template>
 
@@ -32,8 +35,9 @@ export default Vue.extend({
   },
   async asyncData ({ $prismic, error }) {
     const header = await $prismic.api.getSingle('header')
-    if (header) {
-      return { header }
+    const homepage = await $prismic.api.getSingle('homepage')
+    if (header && homepage) {
+      return { header, homepage }
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }
@@ -42,5 +46,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-
+.intro {
+  text-align: center;
+}
 </style>
