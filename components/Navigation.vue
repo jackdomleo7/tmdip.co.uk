@@ -21,7 +21,7 @@
       </a>
     </div>
     <ul class="nav__primary" :class="{'nav__primary--mobile-open': isMobile && showMobileNav}">
-      <li v-for="(navItem, index) in navItems" :key="navItem.text" :aria-setsize="navItems.length" :aria-posinset="index + 1" :class="{ 'open': displayedMobileNavItemIndex === index }">
+      <li v-for="(navItem, index) in navItems" :key="navItem.text" :aria-setsize="navItems.length" :aria-posinset="index + 1" :class="{ 'nav__item--open': displayedMobileNavItemIndex === index }">
         <nuxt-link v-if="navItem.url" :to="navItem.url" :aria-current="isCurrentPage(navItem.url)" @click="navItemClick($event, index)">
           {{ navItem.text }}
           <svg-icon v-if="navItem.subMenu" name="chevron-down" />
@@ -59,6 +59,7 @@ export default Vue.extend({
     return {
       siteconfig,
       isMobile: false,
+      isTouchscreen: false,
       showMobileNav: false,
       displayedMobileNavItemIndex: null as null | number,
       navItems: [
@@ -140,15 +141,15 @@ export default Vue.extend({
   methods: {
     setResponsiveness (): void {
       const navBreak = 54.5 // Number should match em value on $nav-break in below SCSS
-      this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches || window.innerWidth <= (navBreak * 16 /* em to px */)
+      this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches
+      this.isTouchscreen = !window.matchMedia('hover: hover').matches
+
     },
     isCurrentPage (path: string): 'page' | undefined {
       return this.$route.path === path ? 'page' : undefined
     },
-    navItemClick(event: Event, index: number): void {
-      if (this.isMobile && this.navItems[index].subMenu) {
-        console.log(index)
-        console.log(this.displayedMobileNavItemIndex)
+    navItemClick (event: Event, index: number): void {
+      if (this.navItems[index].subMenu && (this.isMobile || this.isTouchscreen)) {
         event.preventDefault()
         this.displayedMobileNavItemIndex = this.displayedMobileNavItemIndex === index ? null : index
       }
@@ -324,7 +325,7 @@ $nav-height: 3.8rem;
           border-bottom-color: var(--color-grey-light);
         }
 
-        &.open {
+        &.nav__item--open {
           max-height: 9999rem;
 
           ul {
@@ -401,6 +402,13 @@ $nav-height: 3.8rem;
               opacity: 1;
               visibility: visible;
             }
+          }
+        }
+
+        &.nav__item--open {
+          .nav__submenu {
+            opacity: 1;
+            visibility: visible;
           }
         }
       }
