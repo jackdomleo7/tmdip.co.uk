@@ -141,8 +141,9 @@ export default Vue.extend({
   methods: {
     setResponsiveness (): void {
       const navBreak = 54.5 // Number should match em value on $nav-break in below SCSS
-      this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches
+      this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches || window.innerWidth <= (navBreak * 16 /* em to px */)
       this.isTouchscreen = !window.matchMedia('hover: hover').matches
+      console.log(this.isMobile)
 
     },
     isCurrentPage (path: string): 'page' | undefined {
