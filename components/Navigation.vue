@@ -97,6 +97,10 @@ export default Vue.extend({
           ] as ISubNav[]
         },
         {
+          text: 'Projects',
+          url: '/projects'
+        },
+        {
           text: 'Contact',
           url: '/contact'
         },
@@ -140,10 +144,11 @@ export default Vue.extend({
   },
   methods: {
     setResponsiveness (): void {
-      const navBreak = 54.5 // Number should match em value on $nav-break in below SCSS
-      this.isMobile = window.matchMedia(`max-width: ${navBreak}em`).matches || window.innerWidth <= (navBreak * 16 /* em to px */)
+      const navBreak = getComputedStyle(document.querySelector('nav.nav')!).getPropertyValue('--nav-break')
+      this.isMobile = window.matchMedia(`max-width: ${navBreak}`).matches || window.innerWidth <= (+(navBreak.replace('em', '')) * 16 /* em to px */)
       this.isTouchscreen = !window.matchMedia('hover: hover').matches
       console.log(this.isMobile)
+      console.log(navBreak)
 
     },
     isCurrentPage (path: string): 'page' | undefined {
@@ -160,10 +165,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$nav-break: 54.5em;
+$nav-break: 65.75em;
 $nav-height: 3.8rem;
 
 .nav {
+  --nav-break: #{$nav-break};
+
   @media (max-width: $nav-break - (1em/16)) {
     &__mobile {
       position: fixed;
