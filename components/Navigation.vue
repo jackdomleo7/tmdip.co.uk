@@ -145,10 +145,8 @@ export default Vue.extend({
   methods: {
     setResponsiveness (): void {
       const navBreak = getComputedStyle(document.querySelector('nav.nav')!).getPropertyValue('--nav-break')
-      this.isMobile = window.matchMedia(`max-width: ${navBreak}`).matches || window.innerWidth <= (+(navBreak.replace('em', '')) * 16 /* em to px */)
+      this.isMobile = window.matchMedia(`(max-width: ${navBreak})`).matches
       this.isTouchscreen = !window.matchMedia('hover: hover').matches
-      console.log(this.isMobile)
-      console.log(navBreak)
 
     },
     isCurrentPage (path: string): 'page' | undefined {
