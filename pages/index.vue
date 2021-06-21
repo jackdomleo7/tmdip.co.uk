@@ -1,9 +1,11 @@
 <template>
   <div>
     <t-header :header="header" />
-    <div class="container">
-      <prismic-rich-text class="intro" :field="homepage.data.intro" />
-    </div>
+    <main>
+      <div class="container">
+        <prismic-rich-text class="intro" :field="homepage.data.intro" />
+      </div>
+    </main>
   </div>
 </template>
 
@@ -48,5 +50,36 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .intro {
   text-align: center;
+  position: relative;
+  max-width: 50rem;
+  margin-inline: auto;
+
+  &::before {
+    content: '';
+    background-image: url('@/assets/sprite/svg/triangle.svg');
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    top: -20px;
+    left: -53px;
+  }
+
+  &::after {
+    content: '';
+    background-image: url('@/assets/sprite/svg/hexagon.svg');
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+  }
+
+  ::v-deep > p {
+    position: relative;
+    z-index: 0;
+    background-color: rgba(255,255,255,0.8);
+  }
 }
 </style>
