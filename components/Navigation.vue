@@ -139,7 +139,7 @@ export default Vue.extend({
     this.setResponsiveness()
     window.addEventListener('resize', this.setResponsiveness)
   },
-  destroyed () {
+  destroyed (): void {
     window.removeEventListener('resize', this.setResponsiveness)
   },
   methods: {
