@@ -5,6 +5,15 @@
       <div class="container">
         <prismic-rich-text class="intro" :field="homepage.data.intro" />
       </div>
+      <div class="container what-we-do">
+        <h2>What we do</h2>
+        <ul>
+          <li v-for="(item, index) in homepage.data.what_we_do" :key="item.name" :aria-setsize="homepage.data.what_we_do.length" :aria-posinset="index + 1">
+            <svg-icon :name="item.icon" />
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
     </main>
   </div>
 </template>
@@ -80,6 +89,37 @@ export default Vue.extend({
     position: relative;
     z-index: 0;
     background-color: rgba(255,255,255,0.8);
+  }
+}
+
+.what-we-do {
+  margin-top: 4rem;
+  max-width: 70rem;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    justify-content: center;
+    grid-template: auto / repeat(2, 1fr);
+    gap: 2rem;
+
+    @media (min-width: 630px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
+
+  svg {
+    height: 6rem;
+    width: 6rem;
   }
 }
 </style>
