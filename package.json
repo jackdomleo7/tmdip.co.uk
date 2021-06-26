@@ -19,7 +19,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg-sprite": "^0.5.2",
-    "core-js": "^3.14.0",
+    "core-js": "^3.15.1",
     "modern-normalize": "^1.1.0",
     "nuxt": "^2.15.7"
   },
@@ -35,8 +35,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "fibers": "^5.0.0",
     "jest": "^26.6.3",
-    "prettier": "^2.3.1",
-    "sass": "^1.35.0",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.1",
     "sass-loader": "^10.2.0",
     "ts-jest": "^26.5.6",
     "vue-jest": "^3.0.7"
