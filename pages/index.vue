@@ -1,9 +1,9 @@
 <template>
   <div>
     <t-nav />
-    <header class="hero">
+    <header class="hero" :style="{'--hero-bg-image': `url(${homepage.data.hero_bg_image.url})`}">
       <div class="hero__inner">
-        <h1>{{ siteconfig.brand_name.full }}</h1>
+        <h1>{{ $prismic.asText(homepage.data.page_title) || siteconfig.brand_name.full }}</h1>
       </div>
       <div class="hero__curve">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -61,10 +61,9 @@ export default Vue.extend({
     }
   },
   async asyncData ({ $prismic, error }) {
-    const header = await $prismic.api.getSingle('header')
     const homepage = await $prismic.api.getSingle('homepage')
-    if (header && homepage) {
-      return { header, homepage }
+    if (homepage) {
+      return { homepage }
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }
@@ -95,7 +94,8 @@ export default Vue.extend({
     width: 100%;
     height: 100%;
     filter: brightness(0.5);
-    background-image: url(https://www.tmdip.co.uk/img/hero.jpg);
+    background-color: var(--color-white);
+    background-image: var(--hero-bg-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
