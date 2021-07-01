@@ -28,6 +28,10 @@ img {
   user-select: none;
 }
 
+a, button {
+  touch-action: manipulation;
+}
+
 button {
   color: inherit;
 }
