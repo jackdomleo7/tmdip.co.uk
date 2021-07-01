@@ -1,5 +1,8 @@
 <template>
   <nav class="nav">
+    <nuxt-link to="/" :aria-current="isCurrentPage('/')" class="nav__logo">
+      <img src="@/assets/img/logo-w-text.png" :alt="siteconfig.brand_name.full" />
+    </nuxt-link>
     <div class="nav__mobile">
       <a :href="`mailto:${siteconfig.email}`" target="_blank" rel="noopener noreferrer">
         <svg-icon name="mail" />
@@ -20,8 +23,13 @@
         Call Us
       </a>
     </div>
-    <ul class="nav__primary" :class="{'nav__primary--mobile-open': isMobile && showMobileNav}">
-      <li v-for="(navItem, index) in navItems" :key="navItem.text" :aria-setsize="navItems.length" :aria-posinset="index + 1" :class="{ 'nav__item--open': displayedMobileNavItemIndex === index }">
+    <ul class="nav__primary" :class="{'nav__primary--mobile-open': isMobile && showMobileNav}" :style="{'--nav-desktop-columns': navItems.length}">
+      <li>
+        <nuxt-link to="/" :aria-current="isCurrentPage('/')">
+          <img src="@/assets/img/logo-w-text.png" :alt="siteconfig.brand_name.full" />
+        </nuxt-link>
+      </li>
+      <li v-for="(navItem, index) in navItems" :key="navItem.text" :class="{ 'nav__item--open': displayedMobileNavItemIndex === index }">
         <nuxt-link v-if="navItem.url" :to="navItem.url" :aria-current="isCurrentPage(navItem.url)" @click="navItemClick($event, index)">
           {{ navItem.text }}
           <svg-icon v-if="navItem.subMenu" name="chevron-down" />
@@ -31,7 +39,7 @@
           <svg-icon v-if="navItem.subMenu" name="chevron-down" />
         </a>
         <ul v-if="navItem.subMenu" class="nav__submenu">
-          <li v-for="(subItem, index) in navItem.subMenu" :key="subItem.url" :aria-setsize="navItem.subMenu.length" :aria-posinset="index + 1">
+          <li v-for="subItem in navItem.subMenu" :key="subItem.url">
             <nuxt-link :to="subItem.url" :aria-current="isCurrentPage(subItem.url)">{{ subItem.text }}</nuxt-link>
           </li>
         </ul>
@@ -63,10 +71,6 @@ export default Vue.extend({
       showMobileNav: false,
       displayedMobileNavItemIndex: null as null | number,
       navItems: [
-        {
-          text: 'Home',
-          url: '/'
-        },
         {
           text: 'Services',
           subMenu: [
@@ -101,10 +105,6 @@ export default Vue.extend({
           url: '/projects'
         },
         {
-          text: 'Contact',
-          url: '/contact'
-        },
-        {
           text: 'Policies',
           subMenu: [
             {
@@ -124,6 +124,10 @@ export default Vue.extend({
               url: '/policies/privacy-policy'
             }
           ] as ISubNav[]
+        },
+        {
+          text: 'Contact',
+          url: '/contact'
         }
       ] as INav[]
     }
@@ -170,6 +174,14 @@ $nav-height: 3.8rem;
   --nav-break: #{$nav-break};
 
   @media (max-width: $nav-break - (1em/16)) {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+
+    &__logo {
+      width: 18rem;;
+    }
+
     &__mobile {
       position: fixed;
       z-index: 2;
@@ -340,6 +352,13 @@ $nav-height: 3.8rem;
         }
       }
 
+      > li:first-of-type { // Logo
+        max-height: unset;
+        max-width: 18rem;
+        margin-inline: auto;
+        border-bottom-color: transparent;
+      }
+
       a {
         text-decoration: none;
         font-weight: 700;
@@ -369,30 +388,26 @@ $nav-height: 3.8rem;
   }
 
   @media (min-width: $nav-break) {
-    margin-bottom: 3rem;
-    border-bottom: 1px solid var(--color-black);
+    padding: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-around;
 
     &__mobile {
       display: none;
     }
 
-    &::before {
-      content: '';
-      display: block;
-      border-top: 1px solid var(--color-black);
-      width: 80%;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+    &__logo {
+      width: 16rem;
     }
 
     &__primary {
       position: unset;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
+      display: grid;
+      grid-template-columns: repeat(var(--nav-desktop-columns), minmax(0, 1fr));
       list-style-type: none;
       padding-left: 0;
       margin: 0;
@@ -417,10 +432,13 @@ $nav-height: 3.8rem;
             visibility: visible;
           }
         }
+
+        &:first-of-type {
+          display: none;
+        }
       }
       
       a {
-        font-weight: 700;
         color: var(--color-black);
         text-decoration: none;
         padding: 1rem;
@@ -433,11 +451,7 @@ $nav-height: 3.8rem;
 
         @media (hover: hover) {
           &:hover {
-            background-color: var(--color-orange-o50);
-
-            svg {
-              color: var(--color-black);
-            }
+            text-decoration: underline;
           }
         }
       }
@@ -457,8 +471,7 @@ $nav-height: 3.8rem;
       transition: 160ms ease;
       transition-property: opacity, visibility;
       will-change: opacity, visibility;
-      border: 1px solid var(--color-black);
-      border-top-color: transparent;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       background-color: var(--color-white);
       padding-left: 0;
       list-style-type: none;

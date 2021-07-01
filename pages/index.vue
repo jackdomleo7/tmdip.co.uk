@@ -1,9 +1,14 @@
 <template>
   <div>
-    <t-header :header="header" />
+    <t-nav />
     <main>
       <div class="container">
-        <prismic-rich-text class="intro" :field="homepage.data.intro" />
+        <ul class="intro">
+          <li v-for="intro in homepage.data.intro" :key="intro.text">
+            <prismic-rich-text class="intro__text" :field="intro.text" />
+            <img :src="intro.image.url" :alt="intro.image.alt" />
+          </li>
+        </ul>
       </div>
       <div class="container what-we-do">
         <h2>What we do</h2>
@@ -20,13 +25,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { THeader } from '@/components'
+import { TNav } from '@/components'
 
 export default Vue.extend({
   name: 'Home-Index',
-  components: { THeader },
+  components: { TNav },
   head () {
-    const description = 'Experts in interior fit-outs with over 30 years\' experience available all across the UK. We provide a range of services to meet all your needs.'
+    const description = 'Experts in interior fit-outs with over 30 years\' experience available all across the East Midlands, UK. We provide a range of services to meet all your needs.'
 
     return {
       title: 'Shop-fitting, Interior Fit-outs, Timber Homes',
@@ -58,37 +63,33 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .intro {
-  text-align: center;
-  position: relative;
-  max-width: 50rem;
-  margin-inline: auto;
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 
-  &::before {
-    content: '';
-    background-image: url('@/assets/sprite/svg/triangle.svg');
-    display: block;
-    height: 3rem;
-    width: 3rem;
-    position: absolute;
-    top: -20px;
-    left: -53px;
+  li {
+    display: flex;
+    align-items: center;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
   }
 
-  &::after {
-    content: '';
-    background-image: url('@/assets/sprite/svg/hexagon.svg');
-    display: block;
-    height: 3rem;
-    width: 3rem;
-    position: absolute;
-    bottom: -20px;
-    right: -30px;
+  &__text {
+    ::v-deep p {
+      background-color: var(---color-white);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+    }
   }
 
-  ::v-deep > p {
-    position: relative;
-    z-index: 0;
-    background-color: rgba(255,255,255,0.8);
+  img {
+    min-width: 60%;
+    max-width: 60%;
   }
 }
 
