@@ -1,6 +1,16 @@
 <template>
   <div>
     <t-nav />
+    <header class="hero">
+      <div class="hero__inner">
+        <h1>{{ siteconfig.brand_name.full }}</h1>
+      </div>
+      <div class="hero__curve">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+        </svg>
+      </div>
+    </header>
     <main>
       <div class="container">
         <ul class="intro">
@@ -26,6 +36,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { TNav } from '@/components'
+import siteconfig from '@/siteconfig.json'
 
 export default Vue.extend({
   name: 'Home-Index',
@@ -57,11 +68,71 @@ export default Vue.extend({
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }
+  },
+  data () {
+    return {
+      siteconfig
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 20rem;
+  max-height: 33rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+    background-image: url(https://www.tmdip.co.uk/img/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--color-white);
+    text-shadow: 1px 1px var(--color-black);
+    text-align: center;
+  }
+
+  &__curve {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 10vmin;
+    }
+
+    .shape-fill {
+      fill: var(--color-white);
+    }
+  }
+}
+
 .intro {
   padding-left: 0;
   list-style-type: none;

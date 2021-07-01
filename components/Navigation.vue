@@ -388,8 +388,9 @@ $nav-height: 3.8rem;
   }
 
   @media (min-width: $nav-break) {
+    z-index: 99;
     padding: 0.5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: relative;
     display: flex;
     align-items: center;
@@ -471,7 +472,7 @@ $nav-height: 3.8rem;
       transition: 160ms ease;
       transition-property: opacity, visibility;
       will-change: opacity, visibility;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       background-color: var(--color-white);
       padding-left: 0;
       list-style-type: none;
