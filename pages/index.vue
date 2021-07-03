@@ -12,12 +12,22 @@
       </div>
     </header>
     <main>
-      <div id="about" class="container about">
+      <section id="about" class="container about">
         <svg-icon name="architecture" />
         <h2>About {{ siteconfig.brand_name.short }}</h2>
         <prismic-rich-text :field="homepage.data.about" />
         <nuxt-link to="/projects" class="btn btn--secondary">Our work</nuxt-link>
-      </div>
+      </section>
+      <section id="promise" class="container--fluid promise" :style="{'--promise-bg-image': `url(${homepage.data.promise_image.url})`}">
+        <div class="promise__img">
+          <img :src="homepage.data.promise_image.url" :alt="homepage.data.promise_image.alt" />
+        </div>
+        <div class="promise__info">
+          <h2>{{ $prismic.asText(homepage.data.promise_title) }}</h2>
+          <prismic-rich-text :field="homepage.data.promise_text" />
+          <a href="/contact" class="btn btn--primary">Contact</a>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -100,11 +110,7 @@ export default Vue.extend({
     color: var(--color-white);
     text-shadow: 1px 1px var(--color-black);
     text-align: center;
-    font-size: 1.8rem;
-
-    @media (min-width: 62em) {
-      font-size: 2.4rem;
-    }
+    font-size: var(--font-size-title);
   }
 
   &__curve {
@@ -141,11 +147,59 @@ export default Vue.extend({
   }
 
   h2 {
-    font-size: 1.8rem;;
+    font-size: var(--font-size-subtitle);
   }
 
   a {
     margin-top: 2rem;
+  }
+}
+
+.promise {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--color-grey-light);
+  background-image: var(--promise-bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-black);
+  padding: 1rem;
+
+  @media (min-width: 83em) {
+    grid-template-columns: repeat(2, 1fr);
+    background-image: none;
+    padding: 0;
+  }
+
+  &__img {
+    display: none;
+
+    @media (min-width: 83em) {
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__info {
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 45rem;
+    margin-inline: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    @media (min-width: 83em) {
+      padding-block: 4rem;
+      background-color: transparent;
+    }
+
+    h2 {
+      font-size: var(--font-size-subtitle);
+      margin: 0;
+    }
   }
 }
 
@@ -154,8 +208,17 @@ export default Vue.extend({
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  font-weight: var(--font-medium);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
   letter-spacing: 0.8px;
+  color: inherit;
+
+  &--primary {
+    border-radius: 3rem;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: 0.8rem 1.2rem;
+  }
 
   &--secondary {
     border: 1px solid var(--color-grey);
