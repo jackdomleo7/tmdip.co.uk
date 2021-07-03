@@ -2,6 +2,7 @@ $color-white: #fff;
 $color-black: #000;
 $color-grey-lightest: #f7f8fe;
 $color-grey-light: #edeef0;
+$color-grey: #b5b6ba;
 $color-orange: #ff5921;
 $color-orange-lighter: lighten($color-orange, 20%);
 
@@ -10,6 +11,7 @@ $color-orange-lighter: lighten($color-orange, 20%);
   --color-black: #{$color-black};
   --color-grey-lightest: #{$color-grey-lightest};
   --color-grey-light: #{$color-grey-light};
+  --color-grey: #{$color-grey};
   --color-orange: #{$color-orange};
   --color-orange-lighter: #{$color-orange-lighter};
 }

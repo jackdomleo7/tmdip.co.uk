@@ -12,22 +12,11 @@
       </div>
     </header>
     <main>
-      <div class="container">
-        <ul class="intro">
-          <li v-for="intro in homepage.data.intro" :key="intro.text">
-            <prismic-rich-text class="intro__text" :field="intro.text" />
-            <img :src="intro.image.url" :alt="intro.image.alt" />
-          </li>
-        </ul>
-      </div>
-      <div class="container what-we-do">
-        <h2>What we do</h2>
-        <ul>
-          <li v-for="(item, index) in homepage.data.what_we_do" :key="item.name" :aria-setsize="homepage.data.what_we_do.length" :aria-posinset="index + 1">
-            <svg-icon :name="item.icon" />
-            {{ item.name }}
-          </li>
-        </ul>
+      <div id="about" class="container about">
+        <svg-icon name="architecture" />
+        <h2>About {{ siteconfig.brand_name.short }}</h2>
+        <prismic-rich-text :field="homepage.data.about" />
+        <nuxt-link to="/projects" class="btn btn--secondary">Our work</nuxt-link>
       </div>
     </main>
   </div>
@@ -103,6 +92,7 @@ export default Vue.extend({
 
   &__inner {
     position: relative;
+    padding-inline: 0.5rem;
   }
 
   h1 {
@@ -110,6 +100,11 @@ export default Vue.extend({
     color: var(--color-white);
     text-shadow: 1px 1px var(--color-black);
     text-align: center;
+    font-size: 1.8rem;
+
+    @media (min-width: 62em) {
+      font-size: 2.4rem;
+    }
   }
 
   &__curve {
@@ -133,65 +128,39 @@ export default Vue.extend({
   }
 }
 
-.intro {
-  padding-left: 0;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+.about {
+  text-align: center;
+  padding-block: 2rem;
 
-  li {
-    display: flex;
-    align-items: center;
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-  }
-
-  &__text {
-    ::v-deep p {
-      background-color: var(---color-white);
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      padding: 1.5rem;
-      font-size: 1.4rem;
-    }
-  }
-
-  img {
-    min-width: 60%;
-    max-width: 60%;
-  }
-}
-
-.what-we-do {
-  margin-top: 4rem;
-  max-width: 70rem;
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    display: grid;
-    justify-content: center;
-    grid-template: auto / repeat(2, 1fr);
-    gap: 2rem;
-
-    @media (min-width: 630px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.2rem;
+  @media (min-width: 62em) {
+    padding-block: 3rem;
   }
 
   svg {
-    height: 6rem;
-    width: 6rem;
+    height: 4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;;
+  }
+
+  a {
+    margin-top: 2rem;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.8px;
+
+  &--secondary {
+    border: 1px solid var(--color-grey);
+    padding: 0.8rem 1.2rem;
+    color: var(--color-black);
   }
 }
 </style>

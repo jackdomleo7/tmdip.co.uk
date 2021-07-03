@@ -1,7 +1,8 @@
 {
   "base_url": "https://www.tmdip.co.uk",
   "brand_name": {
-    "full": "TMD Interior Projects & Building Services"
+    "full": "TMD Interior Projects & Building Services",
+    "short": "TMD Interiors"
   },
   "email": "tony@tmdip.co.uk",
   "tel": {
