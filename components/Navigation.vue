@@ -361,7 +361,7 @@ $nav-height: 3.8rem;
 
       a {
         text-decoration: none;
-        font-weight: var(--font-bold);
+        font-weight: var(--font-weight-bold);
         color: var(--color-black);
         background-color: var(--color-white);
         display: flex;

@@ -10,7 +10,7 @@ $heebo-weights: (
   --font-family-heebo: '#{$font-family-heebo}', Arial, Helvetica, sans-serif;
 
   @each $name, $weight in $heebo-weights {
-    --font-#{$name}: #{$weight};
+    --font-weight-#{$name}: #{$weight};
   }
 }
 
