@@ -28,6 +28,33 @@
           <a href="/contact" class="btn btn--primary">Contact</a>
         </div>
       </section>
+      <section id="services" class="container services">
+        <h2>Our Services</h2>
+        <ul class="services__main">
+          <li v-for="service in homepage.data.services" :key="service.service_name">
+            <div class="services__icon">
+              <svg-icon :name="service.service_icon" />
+            </div>
+            <div>
+              <p class="services__heading">{{ service.service_name }}</p>
+              <prismic-rich-text :field="service.service_description" />
+            </div>
+          </li>
+        </ul>
+        <div class="what-we-do">
+          <div>
+            <h3>What we do for you</h3>
+            <ul class="what-we-do__list">
+              <li v-for="subservice in homepage.data.what_we_do" :key="subservice.subservice_name">
+                {{ subservice.subservice_name }}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img :src="homepage.data.what_we_do_img.url" :alt="homepage.data.what_we_do_img.alt" />
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -136,11 +163,6 @@ export default Vue.extend({
 
 .about {
   text-align: center;
-  padding-block: 2rem;
-
-  @media (min-width: 62em) {
-    padding-block: 3rem;
-  }
 
   svg {
     height: 4rem;
@@ -203,6 +225,96 @@ export default Vue.extend({
   }
 }
 
+.services {
+  text-align: center;
+
+  h2 {
+    font-size: var(--font-size-subtitle);
+    margin-bottom: 3rem;
+  }
+
+  &__main {
+    padding-left: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @media (min-width: 45em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+
+      .services__heading {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-large);
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__icon {
+    border-radius: 1rem;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    min-height: 4.5rem;
+    height: 4.5rem;
+    min-width: 4.5rem;
+    width: 4.5rem;
+    padding: 0.5rem;
+  }
+
+  .what-we-do {
+    margin-top: 2rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1rem;
+
+    @media (min-width: 45em) {
+      position: relative;
+      top: -50px;
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+        position: relative;
+        top: -130px;
+      }
+    }
+
+    h3 {
+      font-size: var(--font-size-heading);
+    }
+
+    &__list {
+      text-align: left;
+      list-style-image: url(~assets/sprite/svg/tick.svg);
+      font-size: var(--font-size-large);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      li {
+        &::marker {
+          font-size: 2.2rem;
+          color: var(--color-orange);
+        }
+      }
+    }
+
+    img {
+      border-radius: 2rem;
+      border: 6px solid var(--color-white);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+  }
+}
+
 .btn {
   text-transform: uppercase;
   text-align: center;
@@ -212,6 +324,7 @@ export default Vue.extend({
   font-size: var(--font-size-body);
   letter-spacing: 0.8px;
   color: inherit;
+  user-select: none;
 
   &--primary {
     border-radius: 3rem;
