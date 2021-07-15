@@ -413,7 +413,7 @@ $nav-height: 3.8rem;
       padding-left: 0;
       margin: 0;
 
-      li {
+      > li {
         position: relative;
 
         @media (hover: hover) {
