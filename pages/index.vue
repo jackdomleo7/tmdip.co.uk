@@ -279,14 +279,7 @@ export default Vue.extend({
     gap: 1rem;
 
     @media (min-width: 45em) {
-      position: relative;
-      top: -50px;
       grid-template-columns: repeat(2, 1fr);
-
-      img {
-        position: relative;
-        top: -130px;
-      }
     }
 
     h3 {
@@ -296,9 +289,16 @@ export default Vue.extend({
     &__list {
       text-align: left;
       list-style-image: url(~assets/sprite/svg/tick.svg);
+      list-style-position: inside;
+      padding-left: 0;
       font-size: var(--font-size-large);
       display: grid;
+      gap: 0.4rem 0.8rem;
       grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: 20em) {
+        grid-template-columns: 1fr;
+      }
 
       li {
         &::marker {
