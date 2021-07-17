@@ -1,14 +1,18 @@
 <template>
   <div :class="{'w-bottom-nav': isMobile}">
+    <t-nav />
     <Nuxt />
+    <t-footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { TFooter, TNav } from '@/components'
 
 export default Vue.extend({
   name: 'DefaultLayout',
+  components: { TFooter, TNav },
   data () {
     return {
       isMobile: false
