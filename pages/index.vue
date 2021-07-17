@@ -56,17 +56,18 @@
         </div>
       </section>
     </main>
+    <t-footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { TNav } from '@/components'
+import { TNav, TFooter } from '@/components'
 import siteconfig from '@/siteconfig.json'
 
 export default Vue.extend({
   name: 'Home-Index',
-  components: { TNav },
+  components: { TNav, TFooter },
   head () {
     const description = 'Experts in interior fit-outs with over 30 years\' experience available all across the East Midlands, UK. We provide a range of services to meet all your needs.'
 
