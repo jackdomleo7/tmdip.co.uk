@@ -7,12 +7,13 @@
       </div>
       <hr />
       <div>
-        <nuxt-link to="/privacy-policy" class="link--mute">Privacy Policy</nuxt-link>
+        <nuxt-link to="/policies/privacy-policy" class="link--mute">Privacy Policy</nuxt-link>
         <div class="footer__social">
           <ul>
             <li v-for="social in socials" :key="social.text">
               <a :href="social.url" rel="noopener nofollow" data-cooltipz-dir="top" :aria-label="social.text">
                 <svg-icon :name="social.icon" />
+                <span class="sr-only">{{ social.text }}</span>
               </a>
             </li>
           </ul>

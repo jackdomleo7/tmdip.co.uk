@@ -21,7 +21,7 @@ export default Vue.extend({
       required: true
     },
     bgImage: {
-      type: [String, undefined],
+      type: String,
       default: undefined
     }
   },
