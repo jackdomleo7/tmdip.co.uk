@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-header class="hero" :heading="$prismic.asText(homepage.data.page_title)" :bg-image="homepage.data.hero_bg_image.url" />
+    <t-header :heading="$prismic.asText(homepage.data.page_title)" :bg-image="homepage.data.hero_bg_image.url" />
     <main>
       <section id="about" class="container about">
         <svg-icon name="architecture" />
