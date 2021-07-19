@@ -6,7 +6,7 @@
         <svg-icon name="architecture" />
         <h2>About {{ siteconfig.brand_name.short }}</h2>
         <prismic-rich-text :field="homepage.data.about" />
-        <nuxt-link to="/projects" class="btn btn--secondary">Our work</nuxt-link>
+        <t-btn tag="nuxt-link" url="/projects" state="secondary">Our work</t-btn>
       </section>
       <section id="promise" class="container--fluid promise" :style="{'--promise-bg-image': `url(${homepage.data.promise_image.url})`}">
         <div class="promise__img">
@@ -15,7 +15,7 @@
         <div class="promise__info">
           <h2>{{ $prismic.asText(homepage.data.promise_title) }}</h2>
           <prismic-rich-text :field="homepage.data.promise_text" />
-          <a href="/contact" class="btn btn--primary">Contact</a>
+          <t-btn tag="nuxt-link" url="/contact" state="primary">Contact</t-btn>
         </div>
       </section>
       <section id="services" class="container services">
@@ -52,11 +52,11 @@
 <script lang="ts">
 import Vue from 'vue'
 import siteconfig from '@/siteconfig.json'
-import { THeader } from '@/components'
+import { THeader, TBtn } from '@/components'
 
 export default Vue.extend({
   name: 'Home-Index',
-  components: { THeader },
+  components: { THeader, TBtn },
   head () {
     const description = 'Experts in interior fit-outs with over 30 years\' experience available all across the East Midlands, UK. We provide a range of services to meet all your needs.'
 
@@ -244,31 +244,6 @@ export default Vue.extend({
       border: 6px solid var(--color-white);
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
-  }
-}
-
-.btn {
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  display: inline-flex;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-body);
-  letter-spacing: 0.8px;
-  color: inherit;
-  user-select: none;
-
-  &--primary {
-    border-radius: 3rem;
-    background-color: var(--color-orange);
-    color: var(--color-white);
-    padding: 0.8rem 1.2rem;
-  }
-
-  &--secondary {
-    border: 1px solid var(--color-grey);
-    padding: 0.8rem 1.2rem;
-    color: var(--color-black);
   }
 }
 </style>
