@@ -10,6 +10,7 @@
 - `cd tmdip.co.uk`
 - `npm i`
 - Create a `.env` file in the root with the following variables (these are not committed to git):
+  - `PRISMIC_ENDPOINT`
   - `PRISMIC_ACCESS_TOKEN`
 
 ### Scripts

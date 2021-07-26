@@ -34,7 +34,7 @@ export default {
     '@nuxtjs/prismic'
   ],
   prismic: {
-    endpoint: 'https://www-tmdip-co-uk.cdn.prismic.io/api/v2',
+    endpoint: process.env.PRISMIC_ENDPOINT,
     apiOptions: {
       accessToken: process.env.PRISMIC_ACCESS_TOKEN
     }
@@ -75,7 +75,7 @@ export default {
 
       // Policy pages
 
-      const client = Prismic.client("https://www-tmdip-co-uk.cdn.prismic.io/api/v2", {
+      const client = Prismic.client(process.env.PRISMIC_ENDPOINT, {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN
       })
       let policies = await client.query(Prismic.Predicates.at('document.type', 'policy'))
@@ -86,7 +86,7 @@ export default {
             payload: policyPage
           }
         )
-      });
+      })
 
       return generatedRoutes
     }
