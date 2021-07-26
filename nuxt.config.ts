@@ -1,5 +1,11 @@
 require('dotenv').config();
 const siteconfig = require('./siteconfig.json')
+const Prismic = require('@prismicio/client')
+
+interface IGenerateRoute {
+  route: string;
+  payload?: Record<string, any>;
+}
 
 export default {
   ssr: false,
@@ -34,9 +40,9 @@ export default {
     '@nuxtjs/prismic'
   ],
   prismic: {
-    endpoint: process.env.PRISMIC_ENDPOINT,
+    endpoint: process.env.PRISMIC_ENDPOINT!,
     apiOptions: {
-      accessToken: process.env.PRISMIC_ACCESS_TOKEN
+      accessToken: process.env.PRISMIC_ACCESS_TOKEN!
     }
   },
   modules: [
@@ -69,17 +75,15 @@ export default {
 
   generate: {
     fallback: '404.html',
-    async routes () {
-      const Prismic = require('@prismicio/client');
-      let generatedRoutes = []
+    async routes (): Promise<IGenerateRoute[]> {
+      let generatedRoutes: IGenerateRoute[] = []
 
       // Policy pages
-
       const client = Prismic.client(process.env.PRISMIC_ENDPOINT, {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN
       })
-      let policies = await client.query(Prismic.Predicates.at('document.type', 'policy'))
-      policies.results.forEach((policyPage) => {
+      const policies = await client.query(Prismic.Predicates.at('document.type', 'policy'))
+      policies.results.forEach((policyPage: Record<string, any>) => {
         generatedRoutes.push(
           {
             route: `/policies/${policyPage.uid}`,
