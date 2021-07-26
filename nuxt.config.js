@@ -51,6 +51,7 @@ export default {
     Allow: '/'
   },
   sitemap: {
+    path: '/sitemap.xml',
     hostname: siteconfig.base_url,
     exclude: ['/_icons', '/preview']
   },
@@ -64,5 +65,26 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  generate: {
+    fallback: '404.html',
+    async routes () {
+      const Prismic = require('@prismicio/client');
+      let generatedRoutes = []
+
+      // Policy pages
+
+      const client = Prismic.client("https://www-tmdip-co-uk.cdn.prismic.io/api/v2", {
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN
+      })
+      let policies = await client.query(Prismic.Predicates.at('document.type', 'policy'))
+      policies = policies.results.map(page => page.uid)
+      policies.forEach((policyUid) => {
+        generatedRoutes.push(`/policies/${policyUid}`)
+      });
+
+      return generatedRoutes
+    }
   }
 }
