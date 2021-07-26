@@ -16,22 +16,25 @@ export default Vue.extend({
   components: { THeader },
   head () {
     return {
+      // @ts-ignore
       title: this.policyPage.data.meta_title,
       meta: [
         {
           hid: 'description',
           name: 'description',
+          // @ts-ignore
           content: this.policyPage.data.meta_description
         },
         {
           hid: 'og:description',
           name: 'og:description',
+          // @ts-ignore
           content: this.policyPage.data.meta_description
         }
       ]
     }
   },
-  async asyncData({ $prismic, params, error }) {
+  async asyncData({ $prismic, params, error }: any) {
     const policyPage = await $prismic.api.getByUID('policy', params.slug)
 
     if (policyPage) {

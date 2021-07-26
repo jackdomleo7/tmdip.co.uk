@@ -76,7 +76,7 @@ export default Vue.extend({
       ]
     }
   },
-  async asyncData ({ $prismic, error }) {
+  async asyncData ({ $prismic, error }: any) {
     const homepage = await $prismic.api.getSingle('homepage')
     if (homepage) {
       return { homepage }

@@ -51,22 +51,25 @@ export default Vue.extend({
   },
   head () {
     return {
+      // @ts-ignore
       title: this.projects.data.meta_title,
       meta: [
         {
           hid: 'description',
           name: 'description',
+          // @ts-ignore
           content: this.projects.data.meta_description
         },
         {
           hid: 'og:description',
           name: 'og:description',
+          // @ts-ignore
           content: this.projects.data.meta_description
         }
       ]
     }
   },
-  async asyncData ({ $prismic, error }) {
+  async asyncData ({ $prismic, error }: any) {
     const projects = await $prismic.api.getSingle('projects')
     if (projects) {
       return { projects }
