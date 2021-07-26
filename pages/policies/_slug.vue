@@ -34,8 +34,8 @@ export default Vue.extend({
       ]
     }
   },
-  async asyncData({ $prismic, params, error }: any) {
-    const policyPage = await $prismic.api.getByUID('policy', params.slug)
+  async asyncData({ $prismic, params, error, payload }: any) {
+    const policyPage = payload || await $prismic.api.getByUID('policy', params.slug)
 
     if (policyPage) {
       return { policyPage }

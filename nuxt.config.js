@@ -79,9 +79,13 @@ export default {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN
       })
       let policies = await client.query(Prismic.Predicates.at('document.type', 'policy'))
-      policies = policies.results.map(page => page.uid)
-      policies.forEach((policyUid) => {
-        generatedRoutes.push(`/policies/${policyUid}`)
+      policies.forEach((policyPage) => {
+        generatedRoutes.push(
+          {
+            route: `/policies/${policyPage.uid}`,
+            payload: policyPage
+          }
+        )
       });
 
       return generatedRoutes
