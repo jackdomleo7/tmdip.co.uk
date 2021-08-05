@@ -1,7 +1,7 @@
 <template>
   <header class="hero" :style="{'--hero-bg-image': `url(${bgImage})`}">
     <div class="hero__inner">
-      <h1>{{ heading || siteconfig.brand_name.full }}</h1>
+      <h1 :translate="!heading ? 'no' : undefined">{{ heading || siteconfig.brand_name.full }}</h1>
     </div>
     <div class="hero__curve">
       <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" preserveAspectRatio="none" viewBox="0 0 1200 120"><defs/><path d="M600 112.77C268.63 112.77 0 65.52 0 7.23V120h1200V7.23c0 58.29-268.63 105.54-600 105.54z" class="shape-fill"/></svg>

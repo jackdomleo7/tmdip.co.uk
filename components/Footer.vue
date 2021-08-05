@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__legal">
       <div>
-        <p>&copy;{{ year }} {{ siteconfig.brand_name.full }}.<br/>All rights reserved.</p>
+        <p role="text">&copy;{{ year }} <span translate="no">{{ siteconfig.brand_name.full }}</span>.<br/>All rights reserved.</p>
         <p>Company Registration: {{ siteconfig.company_registration }}<br/>VAT Number: {{ siteconfig.vat_number }}</p>
       </div>
       <hr />

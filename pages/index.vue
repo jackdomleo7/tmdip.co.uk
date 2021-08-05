@@ -4,7 +4,7 @@
     <main>
       <section id="about" class="container about">
         <svg-icon name="architecture" />
-        <h2>About {{ siteconfig.brand_name.short }}</h2>
+        <h2><span role="text">About <span translate="no">{{ siteconfig.brand_name.short }}</span></span></h2>
         <prismic-rich-text :field="homepage.data.about" />
         <t-btn tag="nuxt-link" url="/projects" state="secondary">Our work</t-btn>
       </section>
