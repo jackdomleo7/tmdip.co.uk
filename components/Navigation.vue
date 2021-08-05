@@ -72,35 +72,6 @@ export default Vue.extend({
       displayedMobileNavItemIndex: null as null | number,
       navItems: [
         {
-          text: 'Services',
-          subMenu: [
-            {
-              text: 'Shop fitting',
-              url: '/services/shop-fitting'
-            },
-            {
-              text: 'Commercial Projects',
-              url: '/services/commercial-projects'
-            },
-            {
-              text: 'Timber Homes',
-              url: '/services/timber-homes'
-            },
-            {
-              text: 'Domestics',
-              url: '/services/domestics'
-            },
-            {
-              text: 'Building Conversion',
-              url: '/services/building-conversion'
-            },
-            {
-              text: 'White Boxes',
-              url: '/services/white-boxes'
-            }
-          ] as ISubNav[]
-        },
-        {
           text: 'Projects',
           url: '/projects'
         },
