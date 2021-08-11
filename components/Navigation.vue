@@ -134,13 +134,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
+
 $nav-break: 65.75em;
 $nav-height: 3.8rem;
 
 .nav {
   --nav-break: #{$nav-break};
 
-  @media (max-width: $nav-break - (1em/16)) {
+  @media (max-width: $nav-break - math.div(1em, 16)) {
     display: flex;
     justify-content: center;
     padding: 0.5rem;
