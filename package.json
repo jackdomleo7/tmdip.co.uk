@@ -24,14 +24,14 @@
     "cooltipz-css": "^1.6.8",
     "core-js": "^3.16.1",
     "modern-normalize": "^1.1.0",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.15.8",
     "swiper": "5.4.5",
     "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@nuxt/image": "^0.3.0",
-    "@nuxt/types": "^2.15.7",
+    "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@vue/test-utils": "^1.2.2",
