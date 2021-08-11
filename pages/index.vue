@@ -56,10 +56,10 @@
               </div>
               <h3>{{ $prismic.asText(card.heading) }}</h3>
               <a class="card__link" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}`: `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
-                {{ card.icon === 'phone' ? siteconfig.tel.country: siteconfig.email }}
+                {{ card.icon === 'phone' ? siteconfig.tel.long : siteconfig.email }}
               </a>
               <p>{{ $prismic.asText(card.description) }}</p>
-              <a class="card__cta" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}`: `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
+              <a class="card__cta" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}` : `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
                 <span>{{ card.cta }}</span>
               </a>
             </li>
