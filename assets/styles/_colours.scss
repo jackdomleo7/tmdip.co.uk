@@ -5,7 +5,8 @@ $color-grey-light: #edeef0;
 $color-grey: #b5b6ba;
 $color-grey-darkest: #444;
 $color-orange: #ff5921;
-$color-orange-lighter: lighten($color-orange, 20%);
+$color-orange-lighter: #ff9470;
+$color-orange-lightest: lighten($color-orange, 25%);
 
 :root {
   --color-white: #{$color-white};
@@ -16,4 +17,5 @@ $color-orange-lighter: lighten($color-orange, 20%);
   --color-grey-darkest: #{$color-grey-darkest};
   --color-orange: #{$color-orange};
   --color-orange-lighter: #{$color-orange-lighter};
+  --color-orange-lightest: #{$color-orange-lightest};
 }

@@ -95,10 +95,6 @@ export default Vue.extend({
               url: '/policies/privacy-policy'
             }
           ] as ISubNav[]
-        },
-        {
-          text: 'Contact',
-          url: '/contact'
         }
       ] as INav[]
     }

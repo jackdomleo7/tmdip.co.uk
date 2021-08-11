@@ -15,7 +15,7 @@
         <div class="promise__info">
           <h2>{{ $prismic.asText(homepage.data.promise_title) }}</h2>
           <prismic-rich-text :field="homepage.data.promise_text" />
-          <t-btn tag="nuxt-link" url="/contact" state="primary">Contact</t-btn>
+          <t-btn tag="nuxt-link" url="#contact" state="primary">Contact</t-btn>
         </div>
       </section>
       <section id="services" class="container services">
@@ -43,6 +43,27 @@
           <div>
             <img :src="homepage.data.what_we_do_img.url" :alt="homepage.data.what_we_do_img.alt" />
           </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="contact__heading">{{ $prismic.asText(homepage.data.contact_header) }}</h2>
+          <p v-if="homepage.data.contact_opener" class="contact__opener">{{ homepage.data.contact_opener }}</p>
+          <ul class="contact__cards">
+            <li v-for="card in homepage.data.contact_cards" :key="card.heading" class="card">
+              <div class="card__icon">
+                <svg-icon :name="`${card.icon}-duo`" />
+              </div>
+              <h3>{{ $prismic.asText(card.heading) }}</h3>
+              <a class="card__link" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}`: `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
+                {{ card.icon === 'phone' ? siteconfig.tel.country: siteconfig.email }}
+              </a>
+              <p>{{ $prismic.asText(card.description) }}</p>
+              <a class="card__cta" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}`: `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
+                <span>{{ card.cta }}</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
@@ -93,6 +114,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@keyframes jumpy-arrow {
+  80% {
+    transform: translate(0.3rem, -50%);
+  }
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+}
+
 .about {
   text-align: center;
 
@@ -242,7 +272,129 @@ export default Vue.extend({
     img {
       border-radius: 2rem;
       border: 6px solid var(--color-white);
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+    }
+  }
+}
+
+.contact {
+  background-color: var(--color-grey-light);
+
+  &__heading {
+    font-size: var(--font-size-subtitle);
+    text-align: center;
+  }
+
+  &__opener {
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 3rem;
+
+    @media (min-width: 680px) {
+      flex-direction: row;
+    }
+
+    .card {
+      background-color: var(--color-white);
+      border-radius: 4px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.05) 0 8px 32px;
+      width: 100%;
+      height: 16rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 4rem 2rem 1rem 2rem;
+
+      @media (min-width: 680px) {
+        width: 19rem;
+        height: 16rem;
+      }
+
+      @media (min-width: 720px) {
+        width: 20rem;
+        height: 16rem;
+      }
+
+      @media (min-width: 885px) {
+        width: 25rem;
+        height: 18rem;
+      }
+
+      &__icon {
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        height: 5rem;
+        width: 5rem;
+        background-color: var(--color-white);
+        box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+        padding: 1rem;
+        position: absolute;
+        top: -1.25rem;
+        color: var(--color-orange);
+      }
+
+      &__link{
+        font-size: var(--font-size-small);
+        color: var(--color-black);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--color-orange);
+        }
+      }
+
+      &__cta {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        background-color: var(--color-orange-lighter);
+        border-radius: 0 0 4px 4px;
+        color: var(--color-black);
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: var(--font-weight-medium);
+
+        > span {
+          position: relative;
+
+          &::after {
+            content: '';
+            background-image: url(~assets/sprite/svg/arrow-right.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            pointer-events: none;
+            display: block;
+            height: 1rem;
+            width: 1rem;
+            position: absolute;
+            left: 115%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:hover,
+        &:focus {
+          span::after {
+            animation: jumpy-arrow 0.8s forwards infinite;
+          }
+        }
+      }
     }
   }
 }
