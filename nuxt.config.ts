@@ -54,7 +54,8 @@ export default {
   ],
   robots: {
     UserAgent: '*',
-    Allow: '/'
+    Allow: '/',
+    Sitemap: `${siteconfig.base_url}/sitemap.xml`
   },
   sitemap: {
     path: '/sitemap.xml',
