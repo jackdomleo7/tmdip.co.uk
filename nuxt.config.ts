@@ -65,8 +65,19 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      ogHost: siteconfig.base_url,
+      ogSiteName: siteconfig.brand_name.full,
+      twitterCard: 'summary_large_image'
+    },
     manifest: {
-      lang: 'en'
+      name: siteconfig.brand_name.full,
+      short_name: siteconfig.brand_name.short,
+      /* icons: handled by pwa.icons module, */
+      description: 'Experts in interior fit-outs with over 30 years\' experience available all across the East Midlands, UK.',
+      start_url: '/',
+      display: 'browser',
+      useWebmanifestExtension: true
     }
   },
 
