@@ -79,20 +79,21 @@ export default Vue.extend({
   name: 'Home-Index',
   components: { THeader, TBtn },
   head () {
-    const description = 'Experts in interior fit-outs with over 30 years\' experience available all across the East Midlands, UK. We provide a range of services to meet all your needs.'
-
     return {
-      title: 'Shop-fitting, Interior Fit-outs, Timber Homes',
+          // @ts-ignore
+      title: this.homepage.data.meta_title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: description
+          // @ts-ignore
+          content: this.homepage.data.meta_description
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: description
+          // @ts-ignore
+          content: this.homepage.data.meta_description
         }
       ]
     }
