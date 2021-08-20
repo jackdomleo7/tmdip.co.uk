@@ -9,6 +9,8 @@ $color-orange-lighter: #ff9470;
 $color-orange-lightest: lighten($color-orange, 25%);
 
 :root {
+  color-scheme: light;
+  
   --color-white: #{$color-white};
   --color-black: #{$color-black};
   --color-grey-lightest: #{$color-grey-lightest};
