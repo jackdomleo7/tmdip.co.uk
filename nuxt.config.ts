@@ -68,6 +68,13 @@ export default {
     meta: {
       ogHost: siteconfig.base_url,
       ogSiteName: siteconfig.brand_name.full,
+      ogType: 'website',
+      ogImage: {
+        path: '/open-graph.png',
+        width: '1200',
+        height: '630',
+        type: 'image/png'
+      },
       twitterCard: 'summary_large_image'
     },
     manifest: {
