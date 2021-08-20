@@ -26,7 +26,7 @@
     "core-js": "^3.16.2",
     "modern-normalize": "^1.1.0",
     "nuxt": "^2.15.8",
-    "swiper": "5.4.5",
+    "swiper": "6.5.1",
     "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
