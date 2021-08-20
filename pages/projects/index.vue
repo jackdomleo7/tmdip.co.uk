@@ -2,7 +2,7 @@
   <div>
     <t-header :heading="$prismic.asText(projects.data.page_title)" :bg-image="projects.data.hero_bg_image.url" />
     <main>
-      <ul class="projects container">
+      <ul v-if="projects.data.projects.length" class="projects container">
         <li v-for="project in projects.data.projects" :key="project.short_description" class="projects__project">
           <div>
             <img v-if="project.client_logo" :src="project.client_logo.url" :alt="project.client_logo.alt" class="projects__logo" />
@@ -31,6 +31,7 @@
           </div>
         </li>
       </ul>
+      <p v-else style="display: flex; justify-content: center;">Coming soon...</p>
     </main>
   </div>
 </template>
