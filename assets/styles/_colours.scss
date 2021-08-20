@@ -1,24 +1,23 @@
+$color-white: #fff;
+$color-black: #000;
+$color-grey-lightest: #f7f8fe;
+$color-grey-light: #edeef0;
+$color-grey: #b5b6ba;
+$color-grey-darkest: #444;
+$color-orange: #ff5921;
+$color-orange-lighter: #ff9470;
+$color-orange-lightest: lighten($color-orange, 25%);
+
 :root {
-  // Double split complimentary colour scheme
-  --color-base: #f15a25;
-  --color-orange: #f29d30;
-  --color-green: #3df267;
-  --color-blue: #0ca4f2;
-  --color-red: #f2182b;
-
-  // Greys
-  --color-grey-50: rgb(255, 255, 255);
-  --color-grey-75: rgb(250, 250, 250);
-  --color-grey-100: rgb(245, 245, 245);
-  --color-grey-200: rgb(234, 234, 234);
-  --color-grey-300: rgb(225, 225, 225);
-  --color-grey-400: rgb(202, 202, 202);
-  --color-grey-500: rgb(179, 179, 179);
-  --color-grey-600: rgb(142, 142, 142);
-  --color-grey-700: rgb(110, 110, 110);
-  --color-grey-800: rgb(75, 75, 75);
-  --color-grey-900: rgb(44, 44, 44);
-
-  // Brand
-  --color-brand-orange: var(--color-base);
+  color-scheme: light;
+  
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-grey-lightest: #{$color-grey-lightest};
+  --color-grey-light: #{$color-grey-light};
+  --color-grey: #{$color-grey};
+  --color-grey-darkest: #{$color-grey-darkest};
+  --color-orange: #{$color-orange};
+  --color-orange-lighter: #{$color-orange-lighter};
+  --color-orange-lightest: #{$color-orange-lightest};
 }

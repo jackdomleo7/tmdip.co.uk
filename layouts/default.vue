@@ -1,27 +1,41 @@
 <template>
-  <div class="app">
-    <hero />
-    <navigation />
-    <nuxt />
-    <footer-bar />
-    <quick-action-bar />
+  <div :class="{'w-bottom-nav': isMobile}">
+    <t-nav />
+    <Nuxt />
+    <t-footer />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-import { Hero, Navigation, FooterBar, QuickActionBar } from '@/components';
+import Vue from 'vue'
+import { TFooter, TNav } from '@/components'
 
-@Component({
-  components: { Hero, Navigation, FooterBar, QuickActionBar }
+export default Vue.extend({
+  name: 'DefaultLayout',
+  components: { TFooter, TNav },
+  data () {
+    return {
+      isMobile: false
+    }
+  },
+  mounted (): void {
+    this.setFooterClass()
+    window.addEventListener('resize', this.setFooterClass)
+  },
+  destroyed (): void {
+    window.removeEventListener('resize', this.setFooterClass)
+  },
+  methods: {
+    setFooterClass (): void {
+      const navBreak = getComputedStyle(document.querySelector('nav.nav')!).getPropertyValue('--nav-break')
+      this.isMobile = window.matchMedia(`(max-width: ${navBreak})`).matches
+    }
+  }
 })
-export default class Default extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.w-bottom-nav {
+  padding-bottom: 5rem;
 }
 </style>

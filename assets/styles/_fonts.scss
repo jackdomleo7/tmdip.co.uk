@@ -1,0 +1,28 @@
+$font-family-heebo: 'Heebo';
+$heebo-weights: (
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "bold": 700
+);
+
+:root {
+  --font-family-heebo: '#{$font-family-heebo}', Arial, Helvetica, sans-serif;
+
+  @each $name, $weight in $heebo-weights {
+    --font-weight-#{$name}: #{$weight};
+  }
+}
+
+@each $name, $weight in $heebo-weights {
+  @font-face {
+    font-family: '#{$font-family-heebo}';
+    src:
+      local('#{$font-family-heebo}'),
+      url(~assets/fonts/heebo/heebo-#{$name}.woff2) format('woff2'),
+      url(~assets/fonts/heebo/heebo-#{$name}.woff) format('woff');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}

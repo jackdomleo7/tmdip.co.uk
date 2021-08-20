@@ -1,182 +1,402 @@
 <template>
-  <page-template header="We Turn Your Designs into Reality">
-    <p class="home__intro">
-      Based in Nottingham, East Midlands, we are ideally located to work
-      nationally across the UK on a wide variety of projects. From building new
-      bespoke houses to HMOs, from shops to offices and pubs to restaurants, we
-      can cover them all. Our fully skilled team provide quality workmanship
-      guaranteed on every project.<br>
-      <strong>For a free consultation, contact the team today.</strong>
-    </p>
-    <carousel class="home__carousel" :items="carouselItems" />
-    <article class="about">
-      <h3 class="about__title">
-        Services
-      </h3>
-      <p>
-        {{ companyName }} can currently provide the following services to our
-        clients (all of which include a free consultation and thorough quoting):
-      </p>
-      <ul>
-        <li>Shop fitting</li>
-        <li>Interior fit-outs</li>
-        <li>Timber homes</li>
-      </ul>
-      <p>
-        Our clients are our number one priority, and we’ll go the extra mile to
-        make sure they get the best from their investment. We can discuss your
-        vision and create the designs for you, or we can take your existing
-        designs and transform them to reality, or we can provide the whole
-        journey right from idea to vision, vision to design and design to
-        reality. <strong>Contact us today discuss your idea.</strong>
-      </p>
-      <p>
-        Making sure site surveys are conducted correctly means the
-        <abbr title="Computer Aided Design">CAD</abbr> drawings will produce
-        perfect manufacture drawings in either 2D or 3D detail. All of these
-        items are then laid onto the survey to make every piece of the jigsaw
-        fit together.
-      </p>
-      <p>
-        Project costs are a priority in the interest of {{ companyName }} and
-        our clients, which means efficient methods need to be incorporated into
-        projects. Detailed programmes with realistic timescales are important in
-        every project and we aim to start and complete on the required dates
-        with the minimum of fuss for the client. Our project managers will
-        organise everything to make sure the project runs smoothly on time, in a
-        safe and efficient manner. We will also organise and co-ordinate all
-        sub-trades.
-      </p>
-      <p>
-        The key to any project running safely is the ability to have a safe
-        running site. Our health &amp; safety advisers continually make sure
-        that {{ companyNameWithLtd }} are fully up to date with the current
-        health &amp; safety regulations and check that the site is fully
-        compliant with all requirements. Our site managers are trained to
-        continually check sites to make sure it’s a clean and safe working
-        environment.
-      </p>
-      <p>
-        The addition of our building division gives us the ability to expand our
-        working portfolio. We are currently undertaking various other projects
-        which include a 200 square meter new build house and a 8 bedroom HMO.
-        Having a building division will also give us the ability to take on the
-        build section of the project, which brings more of the project under one
-        roof, making it more cost effective and helping the project stay on
-        schedule.
-      </p>
-    </article>
-    <article class="about">
-      <h3 class="about__title">
-        About us
-      </h3>
-      <p>
-        With over 30 years’ experience, {{ companyName }} has earned its
-        reputation as a client focused company in the UK. We pride ourselves
-        making sure the end result meets the clients’ expectations. Working with
-        a strong team of industry professionals, we have a proven track record
-        in unlocking value in sites and translating client visions into reality.
-      </p>
-      <p>
-        Whether you’re looking to invest in new build and refurbishment schemes,
-        collaborate on bespoke projects, or are an existing retailer with a
-        joint venture idea, {{ companyName }} has the collective skills and
-        experience to translate your ideas.
-      </p>
-      <p>
-        Located centrally in the UK in Nottinghamshire, we are in an ideal
-        location to reach any part of the UK with very little fuss. Only a few
-        miles from Junction 26 of the M1, makes travel and deliveries relatively
-        easy and efficient.
-      </p>
-      <the-map />
-    </article>
-    <section class="extra">
-      <div class="extra__row">
-        <site-link type="external" link="https://www.safecontractor.com">
-          <img
-            src="/img/safecontractor.png"
-            alt="Safe Contractor Approved logo"
-          >
-          <span hidden>Safe Contractor Approved</span>
-        </site-link>
-      </div>
-    </section>
-  </page-template>
+  <div>
+    <t-header :heading="$prismic.asText(homepage.data.page_title)" :bg-image="homepage.data.hero_bg_image.url" />
+    <main>
+      <section id="about" class="container about">
+        <svg-icon name="architecture" />
+        <h2><span role="text">About <span translate="no">{{ siteconfig.brand_name.short }}</span></span></h2>
+        <prismic-rich-text :field="homepage.data.about" />
+        <t-btn tag="nuxt-link" url="/projects" state="secondary">Our work</t-btn>
+      </section>
+      <section id="promise" class="container--fluid promise" :style="{'--promise-bg-image': `url(${homepage.data.promise_image.url})`}">
+        <div class="promise__img">
+          <img :src="homepage.data.promise_image.url" :alt="homepage.data.promise_image.alt" />
+        </div>
+        <div class="promise__info">
+          <h2>{{ $prismic.asText(homepage.data.promise_title) }}</h2>
+          <prismic-rich-text :field="homepage.data.promise_text" />
+          <t-btn tag="nuxt-link" url="#contact" state="primary">Contact</t-btn>
+        </div>
+      </section>
+      <section id="services" class="container services">
+        <h2>Our Services</h2>
+        <ul class="services__main">
+          <li v-for="service in homepage.data.services" :key="service.service_name">
+            <div class="services__icon">
+              <svg-icon :name="service.service_icon" />
+            </div>
+            <div>
+              <p class="services__heading">{{ service.service_name }}</p>
+              <prismic-rich-text :field="service.service_description" />
+            </div>
+          </li>
+        </ul>
+        <div class="what-we-do">
+          <div>
+            <h3>What we do for you</h3>
+            <ul class="what-we-do__list">
+              <li v-for="subservice in homepage.data.what_we_do" :key="subservice.subservice_name">
+                {{ subservice.subservice_name }}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img :src="homepage.data.what_we_do_img.url" :alt="homepage.data.what_we_do_img.alt" />
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="contact__heading">{{ $prismic.asText(homepage.data.contact_header) }}</h2>
+          <p v-if="homepage.data.contact_opener" class="contact__opener">{{ homepage.data.contact_opener }}</p>
+          <ul class="contact__cards">
+            <li v-for="card in homepage.data.contact_cards" :key="card.heading" class="card">
+              <div class="card__icon">
+                <svg-icon :name="`${card.icon}-duo`" />
+              </div>
+              <h3>{{ $prismic.asText(card.heading) }}</h3>
+              <a class="card__link" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}`: `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
+                {{ card.icon === 'phone' ? siteconfig.tel.long : siteconfig.email }}
+              </a>
+              <p>{{ $prismic.asText(card.description) }}</p>
+              <a class="card__cta" :href="card.icon === 'phone' ? `tel:${siteconfig.tel.country}` : `mailto:${siteconfig.email}`" rel="noreferrer noopener" target="_blank">
+                <span>{{ card.cta }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-import { PageTemplate, SiteLink, Carousel, TheMap } from '@/components';
-import CompanyInfo from '@/middleware/companyInfo';
+import Vue from 'vue'
+import siteconfig from '@/siteconfig.json'
+import { THeader, TBtn } from '@/components'
 
-@Component({
-  components: { Carousel, PageTemplate, SiteLink, TheMap },
+export default Vue.extend({
+  name: 'Home-Index',
+  components: { THeader, TBtn },
   head () {
     return {
-      title: 'Home'
-    };
+          // @ts-ignore
+      title: this.homepage.data.meta_title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          // @ts-ignore
+          content: this.homepage.data.meta_description
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          // @ts-ignore
+          content: this.homepage.data.meta_description
+        }
+      ]
+    }
+  },
+  async asyncData ({ $prismic, error }: any) {
+    const homepage = await $prismic.api.getSingle('homepage')
+    if (homepage) {
+      return { homepage }
+    } else {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  data () {
+    return {
+      siteconfig
+    }
   }
 })
-export default class Index extends Vue {
-  private readonly carouselItems: object[] = [
-    {
-      image: 'smiler.jpg',
-      caption: 'The Smiler - Alton Towers'
-    },
-    {
-      image: 'smokehouse.jpg',
-      caption: 'Smokehouse, London'
-    },
-    {
-      image: 'selfridges.jpg',
-      caption: 'Selfridges, Birmingham'
-    },
-    {
-      image: 'bauer.jpg',
-      caption: 'BAUER - Ice Locker'
-    }
-  ];
-
-  private get companyName (): string {
-    return CompanyInfo.companyName;
-  }
-
-  private get companyNameWithLtd (): string {
-    return CompanyInfo.companyNameWithLtd;
-  }
-}
 </script>
 
 <style lang="scss" scoped>
-.home {
-  &__intro {
-    line-height: 2;
-    text-align: center;
+@keyframes jumpy-arrow {
+  80% {
+    transform: translate(0.3rem, -50%);
   }
-
-  &__carousel {
-    margin: 2rem 0;
+  0%, 100% {
+    transform: translateY(-50%);
   }
 }
 
 .about {
-  margin-top: 5rem;
+  text-align: center;
 
-  &__title {
-    font-size: 2rem;
+  svg {
+    height: 4rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-subtitle);
+  }
+
+  a {
+    margin-top: 2rem;
   }
 }
 
-.extra {
-  margin-top: 7rem;
+.promise {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--color-grey-light);
+  background-image: var(--promise-bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-black);
+  padding: 1rem;
 
-  &__row {
-    align-items: center;
+  @media (min-width: 83em) {
+    grid-template-columns: repeat(2, 1fr);
+    background-image: none;
+    padding: 0;
+  }
+
+  &__img {
+    display: none;
+
+    @media (min-width: 83em) {
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__info {
+    padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0.5rem 0;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 45rem;
+    margin-inline: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    @media (min-width: 83em) {
+      padding-block: 4rem;
+      background-color: transparent;
+    }
+
+    h2 {
+      font-size: var(--font-size-subtitle);
+      margin: 0;
+    }
+  }
+}
+
+.services {
+  text-align: center;
+
+  h2 {
+    font-size: var(--font-size-subtitle);
+    margin-bottom: 3rem;
+  }
+
+  &__main {
+    padding-left: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @media (min-width: 45em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+
+      .services__heading {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-large);
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__icon {
+    border-radius: 1rem;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    min-height: 4.5rem;
+    height: 4.5rem;
+    min-width: 4.5rem;
+    width: 4.5rem;
+    padding: 0.5rem;
+  }
+
+  .what-we-do {
+    margin-top: 2rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1rem;
+
+    @media (min-width: 45em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h3 {
+      font-size: var(--font-size-heading);
+    }
+
+    &__list {
+      text-align: left;
+      list-style-image: url(~assets/sprite/svg/tick.svg);
+      list-style-position: inside;
+      padding-left: 0;
+      font-size: var(--font-size-large);
+      display: grid;
+      gap: 0.4rem 0.8rem;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: 20em) {
+        grid-template-columns: 1fr;
+      }
+
+      li {
+        &::marker {
+          font-size: 2.2rem;
+          color: var(--color-orange);
+        }
+      }
+    }
+
+    img {
+      border-radius: 2rem;
+      border: 6px solid var(--color-white);
+      box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+    }
+  }
+}
+
+.contact {
+  background-color: var(--color-grey-light);
+
+  &__heading {
+    font-size: var(--font-size-subtitle);
+    text-align: center;
+  }
+
+  &__opener {
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 3rem;
+
+    @media (min-width: 680px) {
+      flex-direction: row;
+    }
+
+    .card {
+      background-color: var(--color-white);
+      border-radius: 4px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.05) 0 8px 32px;
+      width: 100%;
+      height: 16rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 4rem 2rem 1rem 2rem;
+
+      @media (min-width: 680px) {
+        width: 19rem;
+        height: 16rem;
+      }
+
+      @media (min-width: 720px) {
+        width: 20rem;
+        height: 16rem;
+      }
+
+      @media (min-width: 885px) {
+        width: 25rem;
+        height: 18rem;
+      }
+
+      &__icon {
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        height: 5rem;
+        width: 5rem;
+        background-color: var(--color-white);
+        box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+        padding: 1rem;
+        position: absolute;
+        top: -1.25rem;
+        color: var(--color-orange);
+      }
+
+      &__link{
+        font-size: var(--font-size-small);
+        color: var(--color-black);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--color-orange);
+        }
+      }
+
+      &__cta {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        background-color: var(--color-orange-lighter);
+        border-radius: 0 0 4px 4px;
+        color: var(--color-black);
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: var(--font-weight-medium);
+
+        > span {
+          position: relative;
+
+          &::after {
+            content: '';
+            background-image: url(~assets/sprite/svg/arrow-right.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            pointer-events: none;
+            display: block;
+            height: 1rem;
+            width: 1rem;
+            position: absolute;
+            left: 115%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:hover,
+        &:focus {
+          span::after {
+            animation: jumpy-arrow 0.8s forwards infinite;
+          }
+        }
+      }
+    }
   }
 }
 </style>

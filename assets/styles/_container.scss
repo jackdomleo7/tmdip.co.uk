@@ -1,0 +1,15 @@
+.container {
+  max-width: 70rem;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+
+  @media (min-width: 62em) {
+    padding-block: 3rem;
+  }
+
+  &--fluid {
+    max-width: 100%;
+    padding-inline: 0;
+    margin: 2rem auto;
+  }
+}

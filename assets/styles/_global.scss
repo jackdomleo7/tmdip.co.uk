@@ -1,17 +1,14 @@
 ::selection {
-  background-color: var(--color-blue);
-  color: var(--color-grey-50);
   text-shadow: none;
+  color: var(--color-black);
+  background-color: var(--color-orange-lightest);
 }
 
 html {
-  box-sizing: border-box;
   font-family: sans-serif;
+  font-size: 100%;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
-  }
 }
 
 *,
@@ -21,25 +18,11 @@ html {
 }
 
 body {
-  background-color: var(--color-grey-50);
-  color: var(--color-grey-800);
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 0.875rem;
-
-  @media (min-width: 45.625em) {
-    font-size: 1rem;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-grey-900);
-  font-weight: 700;
-  margin: 0;
+  font-family: var(--font-family-heebo);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--font-size-body);
 }
 
 img {
@@ -48,9 +31,17 @@ img {
   user-select: none;
 }
 
+a, button {
+  touch-action: manipulation;
+}
+
+button {
+  color: inherit;
+}
+
 svg {
   height: 100%;
   width: 100%;
+  fill: currentColor;
   pointer-events: none;
-  color: currentColor;
 }

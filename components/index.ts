@@ -1,21 +1,7 @@
-import Hero from './Hero.vue';
-import SiteLink from './SiteLink.vue';
-import Navigation from './nav/Navigation.vue';
-import FooterBar from './FooterBar.vue';
-import QuickActionBar from './QuickActionBar.vue';
-import PageTemplate from './PageTemplate.vue';
-import TheMap from './TheMap.vue';
-import Carousel from './Carousel.vue';
-import SubContractorForm from './SubContractorForm.vue';
+// Single use
+export { default as TNav } from './Navigation.vue'
+export { default as THeader } from './Header.vue'
+export { default as TFooter } from './Footer.vue'
 
-export {
-  Hero,
-  SiteLink,
-  Navigation,
-  FooterBar,
-  QuickActionBar,
-  PageTemplate,
-  TheMap,
-  Carousel,
-  SubContractorForm
-};
+// Multiple use
+export { default as TBtn } from './Btn.vue'
