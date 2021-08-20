@@ -10,7 +10,7 @@
     "dev": "nuxt --open",
     "build": "nuxt build --modern=client",
     "start": "nuxt start",
-    "generate": "nuxt generate -m",
+    "generate": "rimraf dist && nuxt generate -m",
     "test": "jest"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "fibers": "^5.0.0",
     "jest": "^26.6.3",
     "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.38.0",
     "sass-loader": "^10.2.0",
     "ts-jest": "^26.5.6",
