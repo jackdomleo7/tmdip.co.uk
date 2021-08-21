@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nuxt --open",
-    "build": "nuxt build --modern=client",
+    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "rimraf dist && nuxt generate -m",
     "test": "jest",
