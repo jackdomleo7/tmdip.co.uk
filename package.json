@@ -11,7 +11,6 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "rimraf dist && nuxt generate -m",
-    "test": "jest",
     "deploy": "git-branch-is master && npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
@@ -35,20 +34,15 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@vue/test-utils": "^1.2.2",
-    "babel-jest": "^26.6.3",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.4.1",
     "fibers": "^5.0.0",
     "git-branch-is": "^4.0.0",
-    "jest": "^26.6.3",
     "prettier": "^2.3.2",
     "push-dir": "^0.4.1",
     "rimraf": "^3.0.2",
     "sass": "^1.38.0",
     "sass-loader": "^10.2.0",
-    "ts-jest": "^26.5.6",
-    "typescript": "^4.3.5",
-    "vue-jest": "^3.0.7"
+    "typescript": "^4.3.5"
   }
 }
