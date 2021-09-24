@@ -18,22 +18,29 @@ A fully responsive static website for TMD Interior Projects & Building Services.
 
 ### Screenshots
 #### Desktop
+
 ![Desktop screenshot](./static/img/README/desktop.png)
 
 #### Tablet
+
 ![Tablet screenshot](./static/img/README/tablet.png)
 
 #### Mobile
+
 ![Mobile screenshot](./static/img/README/mobile.png)
 
 #### Navigation
+
 Desktop navigation
+
 ![Desktop navigation for hovering](./static/img/README/desktop-navigation.gif)
 
 The desktop navigtion was also built so that is could be usable by touch-screen devices (as demonstrated below).
+
 ![Desktop navigation for touch-screen](./static/img/README/desktop-navigation-touch.gif)
 
 Mobile & tablet navigation
+
 ![Mobile & tablet navigation](./static/img/README/mobile-navigation.gif)
 
 ## Development
